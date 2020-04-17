@@ -40,7 +40,7 @@ public class PaintWheel : MonoBehaviour
     {
         if (leftButtonSelected != rightButtonSelected)
         {
-            if (rightButtonSelected != 15)
+            if (leftButtonSelected != 15)
             {
                 //resets color of the last button selected.
                 transform.GetChild(0).GetChild(leftButtonSelected).GetComponent<Image>().color = new Color(1f, 1f, 1f);
