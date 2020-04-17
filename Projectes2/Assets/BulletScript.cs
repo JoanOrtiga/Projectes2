@@ -12,6 +12,8 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Random.InitState(System.Environment.TickCount);
+
         forward = new Vector3(0, -1, 0);
     }
 
@@ -28,14 +30,13 @@ public class BulletScript : MonoBehaviour
         {
             StainSelector();
             Instantiate(stainToSpawn, this.gameObject.transform.position,this.gameObject.transform.rotation);
-            Debug.Log("meh");
             Destroy(this.gameObject);
         }
     }
 
     void StainSelector()
     {
-        r = (int)Random.Range(0.0f, 3.0f);
+        r = Random.Range(0,3);
 
         stainToSpawn = stain[r];
     }
