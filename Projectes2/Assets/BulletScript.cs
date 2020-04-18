@@ -5,23 +5,29 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     public int BulletSpeed;
-    private Vector3 forward;
+    public Vector3 forward;
     public List<GameObject> stain;
     private GameObject stainToSpawn;
     int r ;
+    private Rigidbody2D rb2D;
+
     // Start is called before the first frame update
     void Start()
     {
         //Random.InitState(System.Environment.TickCount);
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
 
-        forward = new Vector3(0, -1, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        transform.Translate(forward * BulletSpeed * Time.deltaTime);
+       // transform.Translate(transform.up * BulletSpeed * Time.deltaTime);
+    }
+    private void FixedUpdate()
+    {
+        //   rb2D.transform.Translate(transform.right * 1 * Time.deltaTime) ;
+        rb2D.AddForce(transform.right * 1 * Time.deltaTime);
     }
     void OnCollisionEnter2D(Collision2D other)
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5151352415928106528}
   - component: {fileID: 5151352415928106529}
   m_Layer: 0
-  m_Name: DPSBullet
+  m_Name: TimeBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71027e8817bd56245a1285558b5a7bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 3
+  BulletSpeed: -10
+  forward: {x: 0, y: 0, z: 0}
   stain:
   - {fileID: 4000550871488678238, guid: b576ccbc41302154e8b1dc52bd96e817, type: 3}
   - {fileID: 8628389533742471645, guid: c1768de7d51afc048a00a7d29a491ce4, type: 3}

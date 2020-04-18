@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7293248838962404391}
   - component: {fileID: 7293248838962404390}
   - component: {fileID: 7293248838962404389}
+  - component: {fileID: 979303202081719857}
   - component: {fileID: 989343677}
   m_Layer: 0
   m_Name: Player
@@ -118,6 +119,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &979303202081719857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293248838962404388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8975172daa78b4d97085254ae8f559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintWheel: {fileID: 0}
+  Bala:
+  - {fileID: 5151352415928106540, guid: 58d5e9c22c328374cb2def2a5fd66006, type: 3}
+  - {fileID: 5151352415928106540, guid: 159c1cabdfa05644695986efe20afbbf, type: 3}
+  - {fileID: 5151352415928106540, guid: 359d34d79ef558f49857125fa6f51a1e, type: 3}
+  - {fileID: 5151352415928106540, guid: 7bf5364e86744e848b7ec569ed88cdeb, type: 3}
+  - {fileID: 5151352415928106540, guid: 4db691d29b99235418b96f6acbcfcaab, type: 3}
+  - {fileID: 5151352415928106540, guid: 1978a22eb0b807b42a016dcf1f5a2c74, type: 3}
+  leftGun: {fileID: 0}
+  rightGun: {fileID: 0}
 --- !u!61 &989343677
 BoxCollider2D:
   m_ObjectHideFlags: 0

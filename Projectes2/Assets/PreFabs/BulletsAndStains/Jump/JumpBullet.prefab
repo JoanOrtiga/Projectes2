@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71027e8817bd56245a1285558b5a7bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 3
+  BulletSpeed: -10
+  forward: {x: 0, y: 0, z: 0}
   stain:
   - {fileID: 4000550871488678238, guid: 94f96ff99d8f7154995604a3ad74144b, type: 3}
   - {fileID: 8628389533742471645, guid: 1dd12d1195785dd4fafc9cfa52b84efa, type: 3}

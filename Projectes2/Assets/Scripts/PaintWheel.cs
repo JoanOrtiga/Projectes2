@@ -13,7 +13,8 @@ public enum PaintColors
 public class PaintWheel : MonoBehaviour
 {
     public GameObject paintWheel;
-
+    
+    
     private int rightButtonSelected = 15;
     private int leftButtonSelected = 15 ;
 
