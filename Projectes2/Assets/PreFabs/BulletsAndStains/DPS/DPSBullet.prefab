@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5151352415928106542}
   - component: {fileID: 5151352415928106543}
   - component: {fileID: 5151352415928106528}
-  - component: {fileID: 5151352415928106529}
+  - component: {fileID: 2815457127076275051}
   m_Layer: 0
   m_Name: DPSBullet
   m_TagString: Untagged
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &5151352415928106529
+--- !u!50 &2815457127076275051
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0

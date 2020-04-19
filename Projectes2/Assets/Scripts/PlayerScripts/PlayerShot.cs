@@ -7,7 +7,6 @@ public class PlayerShot : MonoBehaviour
     public GameObject paintWheel;
     public List<GameObject> Bala;
     public Transform shotPoint;
-    public float offset;
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     private Transform myTransform;
@@ -91,10 +90,9 @@ public class PlayerShot : MonoBehaviour
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
         float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotz + offset);
+        transform.rotation = Quaternion.Euler(0f, 0f, rotz);
 
 
-        Debug.Log(difference + "         +        "+ shotPoint.rotation);
         
 
         //left mouse button
@@ -104,6 +102,8 @@ public class PlayerShot : MonoBehaviour
             //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
             GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
             bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * 15f;
+
+            bulletLeft.GetComponent<BulletScript>().direction = difference;
         }
 
 

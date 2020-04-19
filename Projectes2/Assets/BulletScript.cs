@@ -11,6 +11,8 @@ public class BulletScript : MonoBehaviour
     int r ;
     private Rigidbody2D rb2D;
 
+    [HideInInspector] public Vector2 direction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +24,12 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // transform.Translate(transform.up * BulletSpeed * Time.deltaTime);
+      // transform.Translate(transform.right * BulletSpeed * Time.deltaTime);
     }
     private void FixedUpdate()
     {
         //   rb2D.transform.Translate(transform.right * 1 * Time.deltaTime) ;
-        rb2D.AddForce(transform.right * 1 * Time.deltaTime);
+         rb2D.AddForce(direction * Time.deltaTime);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
