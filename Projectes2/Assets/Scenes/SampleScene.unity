@@ -320,7 +320,6 @@ MonoBehaviour:
   - {fileID: 5151352415928106540, guid: 4db691d29b99235418b96f6acbcfcaab, type: 3}
   - {fileID: 5151352415928106540, guid: 1978a22eb0b807b42a016dcf1f5a2c74, type: 3}
   shotPoint: {fileID: 517217677}
-  offset: -30
   leftGun: {fileID: 0}
   rightGun: {fileID: 0}
 --- !u!1001 &498584437
@@ -645,6 +644,24 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 979303202081719857, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+--- !u!1 &1609095118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7293248838962404388, guid: 76794f26e1d860d4faaef478850fb4b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 886823452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1609095123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609095118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ffcffdf302ab4443912b8941ab5b1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1774593802 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6057014917216556630, guid: 9ee0b692b1244184da721f385dc6a0aa,

@@ -93,24 +93,28 @@ public class PlayerShot : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotz);
 
 
-        
-
-        //left mouse button
-        if (Input.GetMouseButtonDown(0))
+        if (paintWheel.GetComponent<PaintWheel>().shootable)
         {
-            //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
-            //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
-            GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
-            bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * 15f;
+            //left mouse button
+            if (Input.GetMouseButtonDown(0))
+            {
+                //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
+                GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * 15f;
 
-            bulletLeft.GetComponent<BulletScript>().direction = difference;
-        }
+                bulletLeft.GetComponent<BulletScript>().direction = difference;
+            }
 
 
-        //right mouse button
-        if (Input.GetMouseButtonDown(1))
-        {
-            Instantiate(rightGun, shotPoint.position, myTransform.rotation);
+            //right mouse button
+            if (Input.GetMouseButtonDown(1))
+            {
+                GameObject bulletRight = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                bulletRight.GetComponent<Rigidbody2D>().velocity = difference * 15f;
+
+                bulletRight.GetComponent<BulletScript>().direction = difference;
+            }
         }
     }
 }
