@@ -5,18 +5,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Speed = 10f;
+    [SerializeField]
+    private int currentHP;
+    public int maxHP = 10;
 
+
+    public float Speed = 10f;
+    public float jumpForce = 10f;
     private SpriteRenderer thisSprite;
 
     private void Start()
     {
         thisSprite = this.GetComponent<SpriteRenderer>();
+
+        currentHP = maxHP;
     }
 
     private void Update()
     {
         Movment();
+       
 
     }
 
@@ -36,9 +44,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void JumpPlayer()
+    public void JumpPlayer(bool SaltoActivado)
     {
-
+        if (SaltoActivado && Input.GetKeyDown(KeyCode.Space))
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
+        }
+        
     }
 
 }

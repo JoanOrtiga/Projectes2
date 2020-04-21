@@ -20,7 +20,8 @@ public class Activator : MonoBehaviour
     {
         if (other.CompareTag("JumpActivator"))
         {
-           //this.gameObject.GetComponent<PlayerController>().Jumpable=true;
+            this.gameObject.GetComponent<PlayerController>().JumpPlayer(true);
+           
            
         }
         if (other.CompareTag("HealMe"))
@@ -32,7 +33,7 @@ public class Activator : MonoBehaviour
     {
         if (other.CompareTag("JumpActivator"))
         {
-            //this.gameObject.GetComponent<PlayerController>().Jumpable=false;
+            this.gameObject.GetComponent<PlayerController>().JumpPlayer(false);
 
         }
         if (other.CompareTag("HealMe"))
