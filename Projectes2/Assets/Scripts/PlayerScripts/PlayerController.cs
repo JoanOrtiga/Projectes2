@@ -16,11 +16,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Movment();
+
+    }
+
+
+    void Movment()
+    {
         float DirctionX = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
-
         transform.position = new Vector2(transform.position.x + DirctionX, transform.position.y);
-
-
 
         if (Input.GetAxis("Horizontal") < -0.1)
         {
@@ -32,5 +36,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void JumpPlayer()
+    {
+
+    }
 
 }
