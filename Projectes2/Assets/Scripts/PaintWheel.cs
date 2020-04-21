@@ -42,15 +42,15 @@ public class PaintWheel : MonoBehaviour
     //Function called from Button when clicked with left mouse button;
     public void LeftWheelClick(int button)
     {
-        if (leftButtonSelected != rightButtonSelected)
-        {
+       /* if (leftButtonSelected != rightButtonSelected)
+        {*/
             if (leftButtonSelected != 15)
             {
                 //resets color of the last button selected.
                 transform.GetChild(0).GetChild(leftButtonSelected).GetComponent<Image>().color = new Color(1f, 1f, 1f);
             }
-        }
-        
+     //   }
+
 
         //changes to the right color.
         transform.GetChild(0).GetChild(button).GetComponent<Image>().color = new Color(1f, 0.3764f, 0.3764f);
@@ -59,18 +59,21 @@ public class PaintWheel : MonoBehaviour
         leftPaint = ChoiceColor(button);
     }
 
+    //leftbuttonselected = 0 i rightbuttonselected = 0
+    //blau -> vermell
+
+
     //Function called from Button when clicked with right mouse button;
     public void RightWheelClick(int button)
     {
-        if(rightButtonSelected != leftButtonSelected)
-        {
+      /*  if(rightButtonSelected != leftButtonSelected)
+        {*/
             if (rightButtonSelected != 15)
             {
                 //resets color of the last button selected.
                 transform.GetChild(0).GetChild(rightButtonSelected).GetComponent<Image>().color = new Color(1f, 1f, 1f);
             }
-
-        }
+       // }
 
         //changes to the right color..
         transform.GetChild(0).GetChild(button).GetComponent<Image>().color = new Color(0.3764f, 0.4705f, 1);
