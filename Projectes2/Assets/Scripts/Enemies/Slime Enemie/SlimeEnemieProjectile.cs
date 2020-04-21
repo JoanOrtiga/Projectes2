@@ -7,7 +7,7 @@ public class SlimeEnemieProjectile : MonoBehaviour
     public Transform throwPoint;
     public Transform playerTarget;
     public GameObject projectile;
-    public float timeTilHit = 1f;
+    public float timeTilHit = 3f;
 
     public float xVelo, yVelo;
 
@@ -15,8 +15,25 @@ public class SlimeEnemieProjectile : MonoBehaviour
     void Start()
     {
         playerTarget = GameObject.Find("Player").transform;
-        Trow();
+        
     }
+
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            InvokeRepeating("Trow", 0.2f, timeTilHit);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        CancelInvoke();
+    }
+
 
     void Trow()
     {

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4800019927549011031}
   - component: {fileID: 8009683343671097097}
   - component: {fileID: 9016048834958348565}
+  - component: {fileID: 4240675930980862790}
   m_Layer: 0
   m_Name: Slime2
   m_TagString: Untagged
@@ -202,6 +203,22 @@ MonoBehaviour:
   timeTilHit: 1
   xVelo: 5
   yVelo: 3
+--- !u!58 &4240675930980862790
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009683343671097092}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6.08
 --- !u!1 &8009683343997410713
 GameObject:
   m_ObjectHideFlags: 0
