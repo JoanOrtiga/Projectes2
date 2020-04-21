@@ -20,7 +20,6 @@ public class NormalBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.up * BulletSpeed * Time.deltaTime);
 
     }
     private void FixedUpdate()
@@ -31,7 +30,8 @@ public class NormalBullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemie"))
         {
-           // other.gameObject.GetComponent<SlimeEnemieSystem>().health - Damage;
+            other.gameObject.GetComponent<SlimeEnemieSystem>().heath =  other.gameObject.GetComponent<SlimeEnemieSystem>().heath - Damage;
+
         }
         Destroy(this.gameObject);
       

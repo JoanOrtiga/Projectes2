@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4240675930980862790}
   m_Layer: 0
   m_Name: Slime2
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,6 +179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heath: 5
+  chaseDistance: 10
+  attackDistance: 7
+  chaseSpeed: 4
   spawnPoints:
   - {fileID: 8009683344079751529}
   - {fileID: 8009683343997410712}
