@@ -8,6 +8,7 @@ public class NormalBullet : MonoBehaviour
     private Rigidbody2D rb2D;
     [HideInInspector] public Vector2 direction;
     public int Damage;
+    public Vector3 forward;
 
 
     // Start is called before the first frame update
