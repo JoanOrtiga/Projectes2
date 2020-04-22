@@ -103,18 +103,33 @@ public class PlayerShot : MonoBehaviour
                 //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
                 GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                 bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * 15f;
-
-                bulletLeft.GetComponent<BulletScript>().direction = difference;
+                if (Bala[5])
+                {
+                    bulletLeft.GetComponent<NormalBullet>().direction = difference;
+                }
+                else
+                {
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                }
             }
 
 
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
-                GameObject bulletRight = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                 bulletRight.GetComponent<Rigidbody2D>().velocity = difference * 15f;
 
-                bulletRight.GetComponent<BulletScript>().direction = difference;
+                if (Bala[5])
+                {
+                    bulletRight.GetComponent<NormalBullet>().direction = difference;
+
+                }
+                else
+                {
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+
+                }
             }
         }
     }
