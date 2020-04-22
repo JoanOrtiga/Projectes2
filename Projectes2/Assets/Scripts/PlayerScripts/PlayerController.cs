@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private int currentHP;
+    [HideInInspector]
+    public int currentHP;
     public int maxHP = 10;
 
 
