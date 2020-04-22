@@ -26,7 +26,7 @@ public class BulletModifier : MonoBehaviour
         healingVelocity -= Time.deltaTime;
         if (other.CompareTag("JumpActivator"))
         {
-            this.gameObject.GetComponent<PlayerController>().JumpPlayer(true);
+            this.gameObject.GetComponent<PlayerController>().jumpPlayer=true;
            
            
         }
@@ -48,7 +48,7 @@ public class BulletModifier : MonoBehaviour
     {
         if (other.CompareTag("JumpActivator"))
         {
-            this.gameObject.GetComponent<PlayerController>().JumpPlayer(false);
+            this.gameObject.GetComponent<PlayerController>().jumpPlayer=false;
 
         }
         if (other.CompareTag("HealMe"))
