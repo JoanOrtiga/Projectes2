@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlimeEnemieProjectile : MonoBehaviour
 {
     public Transform throwPoint;
-    public Transform playerTarget;
+    private Transform playerTarget;
     public GameObject projectile;
     public float timeTilHit = 3f;
 
@@ -18,22 +18,22 @@ public class SlimeEnemieProjectile : MonoBehaviour
         
     }
 
-
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AttackState(bool state)
     {
-        if (collision.CompareTag("Player"))
+        if (state == true) //enter
         {
             InvokeRepeating("Trow", 0.2f, timeTilHit);
         }
+        else if (state == false) //exit
+        {
+            CancelInvoke();
+        }
+        
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        CancelInvoke();
-    }
 
+
+   
 
     void Trow()
     {
