@@ -175,9 +175,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7293248838962404384}
   - component: {fileID: 7293248838962404391}
-  - component: {fileID: 7293248838962404390}
   - component: {fileID: 7293248838962404389}
   - component: {fileID: 989343677}
+  - component: {fileID: 7293248838962404390}
   - component: {fileID: 1609095123}
   m_Layer: 0
   m_Name: Player
@@ -252,22 +252,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7293248838962404390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293248838962404388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b405cf63392352b409da78f52bb83f26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHP: 0
-  maxHP: 10
-  Speed: 10
-  jumpForce: 10
 --- !u!50 &7293248838962404389
 Rigidbody2D:
   serializedVersion: 4
@@ -315,6 +299,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7293248838962404390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293248838962404388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b405cf63392352b409da78f52bb83f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 0
+  maxHP: 10
+  jumpPlayer: 0
+  speed: 10
+  jumpForce: 10
+  groundCheck: {fileID: 0}
+  checkRedius: 0.1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1609095123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffcffdf302ab4443912b8941ab5b1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealAmmount: 0
+  healingVelocity: 0
 --- !u!1001 &1195196296697250234
 PrefabInstance:
   m_ObjectHideFlags: 0

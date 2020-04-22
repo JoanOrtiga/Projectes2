@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
 
-        if (jumpPlayer == true && Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        if (jumpPlayer == true && Input.GetButton("Jump") && isGrounded == true)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
         }
