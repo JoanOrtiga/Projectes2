@@ -20,6 +20,7 @@ public class PlayerShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         PaintColors rightColor = paintWheel.GetComponent<PaintWheel>().rightPaint;
 
       
@@ -94,7 +95,7 @@ public class PlayerShot : MonoBehaviour
 
 
         if (paintWheel.GetComponent<PaintWheel>().shootable)
-        {
+        {     
             //left mouse button
             if (Input.GetMouseButtonDown(0))
             {
