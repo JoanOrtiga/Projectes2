@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public int currentHP;
     public int maxHP = 10;
-
-
+    [HideInInspector]
+    public bool jumpPlayer;
     public float Speed = 10f;
     public float jumpForce = 10f;
     private SpriteRenderer thisSprite;
+    
 
     private void Start()
     {
@@ -24,7 +25,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Movment();
-       
+        Jump();
+        
 
     }
 
@@ -44,12 +46,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void JumpPlayer(bool SaltoActivado)
+    public void Jump()
     {
-        if (SaltoActivado && Input.GetKeyDown(KeyCode.Space))
+
+        if (jumpPlayer == true && Input.GetKeyDown(KeyCode.Space))
         {
-            this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
         }
+
+        
+        
         
     }
 
