@@ -13,6 +13,8 @@ public enum PaintColors
 public class PaintWheel : MonoBehaviour
 {
     public GameObject paintWheel;
+    public bool shootable;
+
 
     private int rightButtonSelected = 15;
     private int leftButtonSelected = 15 ;
@@ -25,11 +27,13 @@ public class PaintWheel : MonoBehaviour
     {
         if (Input.GetButtonDown("PaintWheel"))
         {
+            shootable = false;
             paintWheel.SetActive(true);
             Time.timeScale = 0.3f;
         }
         else if (Input.GetButtonUp("PaintWheel"))
         {
+            shootable = true;
             paintWheel.SetActive(false);
             Time.timeScale = 1f;
         }

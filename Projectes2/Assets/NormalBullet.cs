@@ -5,25 +5,35 @@ using UnityEngine;
 public class NormalBullet : MonoBehaviour
 {
     public int BulletSpeed;
-    private Vector3 forward;
+    private Rigidbody2D rb2D;
+    [HideInInspector] public Vector2 direction;
+    public int Damage;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        forward = new Vector3(-1, -1, 0);
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(forward * BulletSpeed * Time.deltaTime);
 
     }
-    void OnCollisionEnter2D(Collision2D other)
+    private void FixedUpdate()
     {
+        rb2D.AddForce(direction * Time.deltaTime);
+    }
+    void OnCollisionEnter2D(Collision2D other) {
 
-        if (other.gameObject.CompareTag("Hitable"))
+        if (other.gameObject.CompareTag("Enemie"))
         {
-                      Destroy(this.gameObject);
+            other.gameObject.GetComponent<SlimeEnemieSystem>().heath =  other.gameObject.GetComponent<SlimeEnemieSystem>().heath - Damage;
+
         }
+        Destroy(this.gameObject);
+      
     }
 }

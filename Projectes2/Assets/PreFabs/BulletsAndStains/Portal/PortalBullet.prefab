@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5151352415928106528}
   - component: {fileID: 5151352415928106529}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: PortalBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71027e8817bd56245a1285558b5a7bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 3
+  BulletSpeed: -10
+  forward: {x: 0, y: 0, z: 0}
   stain:
   - {fileID: 7860262042042363536, guid: b8f262b02d12b284e9a3ae12a1ba42aa, type: 3}
   - {fileID: 2129780053387717654, guid: d18bf12087daff244b4adcfe4f028b74, type: 3}

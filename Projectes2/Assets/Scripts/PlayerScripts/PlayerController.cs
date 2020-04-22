@@ -5,22 +5,36 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector]
+    public int currentHP;
+    public int maxHP = 10;
+    [HideInInspector]
+    public bool jumpPlayer;
     public float Speed = 10f;
-
+    public float jumpForce = 10f;
     private SpriteRenderer thisSprite;
+    
 
     private void Start()
     {
         thisSprite = this.GetComponent<SpriteRenderer>();
+
+        currentHP = maxHP;
     }
 
     private void Update()
     {
+        Movment();
+        Jump();
+        
+
+    }
+
+
+    void Movment()
+    {
         float DirctionX = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
-
         transform.position = new Vector2(transform.position.x + DirctionX, transform.position.y);
-
-
 
         if (Input.GetAxis("Horizontal") < -0.1)
         {
@@ -32,5 +46,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Jump()
+    {
+
+        if (jumpPlayer == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
+        }
+
+        
+        
+        
+    }
 
 }
