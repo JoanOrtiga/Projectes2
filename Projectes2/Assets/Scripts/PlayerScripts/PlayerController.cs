@@ -25,8 +25,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Movment();
-        Jump();
-        
+       if (jumpPlayer == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
 
     }
 
@@ -48,13 +50,8 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-
-        if (jumpPlayer == true && Input.GetKeyDown(KeyCode.Space))
-        {
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
-        }
-
-        
+       
+           gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
         
         
     }
