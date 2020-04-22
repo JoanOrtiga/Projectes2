@@ -8,6 +8,7 @@ TagManager:
   - JumpActivator
   - HealMe
   - Enemie
+  - CameraLimits
   layers:
   - Default
   - TransparentFX
