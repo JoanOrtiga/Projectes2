@@ -5,10 +5,14 @@ using UnityEngine.Events;
 
 public class CameraLimit : MonoBehaviour
 {
-    public UnityEvent cameraTouchedLimit;
+    public Transform limit1;
+    public Transform limit2;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        cameraTouchedLimit.Invoke();
+        if(collision.tag == "Player")
+        {
+            Camera.main.GetComponent<CameraController>().NewRoom(limit1.position, limit2.position);
+        }
     }
 }
