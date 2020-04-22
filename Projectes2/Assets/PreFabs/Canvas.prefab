@@ -894,9 +894,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paintWheel: {fileID: 6057014917914105046}
-  shootable: 0
-  rightPaint: 0
-  leftPaint: 0
 --- !u!1 &6057014917585174883
 GameObject:
   m_ObjectHideFlags: 0

@@ -316,11 +316,11 @@ MonoBehaviour:
   jumpPlayer: 0
   speed: 10
   jumpForce: 10
-  groundCheck: {fileID: 1383894733}
+  groundCheck: {fileID: 0}
   checkRedius: 0.1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!114 &1609095123
 MonoBehaviour:
   m_ObjectHideFlags: 0
