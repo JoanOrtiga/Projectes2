@@ -104,9 +104,10 @@ MonoBehaviour:
   BulletSpeed: -10
   forward: {x: 0, y: 0, z: 0}
   stain:
-  - {fileID: 4000550871488678238, guid: b576ccbc41302154e8b1dc52bd96e817, type: 3}
-  - {fileID: 8628389533742471645, guid: c1768de7d51afc048a00a7d29a491ce4, type: 3}
-  - {fileID: 7302851447172820498, guid: c713d718cfb65e54e9640df207e33792, type: 3}
+  - {fileID: 4000550871488678238, guid: 53a6acebfb1586e4885e4c179602e211, type: 3}
+  - {fileID: 8628389533742471645, guid: 5762ef821900d9c4294aa164bf744928, type: 3}
+  - {fileID: 7302851447172820498, guid: 8bf3e4c52ce09114d87c781e10d02076, type: 3}
+  direction: {x: 0, y: 0}
 --- !u!58 &5151352415928106528
 CircleCollider2D:
   m_ObjectHideFlags: 0
