@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     {
         Movment();
         Jump();
-        
-
     }
 
 
