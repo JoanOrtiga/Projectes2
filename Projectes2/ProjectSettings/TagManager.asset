@@ -8,12 +8,9 @@ TagManager:
   - JumpActivator
   - HealMe
   - Enemie
-<<<<<<< HEAD
   - CameraLimits
   - PlatformMoving
-=======
   - BulletManager
->>>>>>> Galdo
   layers:
   - Default
   - TransparentFX
