@@ -8,6 +8,7 @@ TagManager:
   - JumpActivator
   - HealMe
   - Enemie
+  - BulletManager
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour
     private GameObject stainToSpawn;
     int r ;
     private Rigidbody2D rb2D;
+    private GameObject manager;
 
     [HideInInspector] public Vector2 direction;
 
@@ -18,7 +19,7 @@ public class BulletScript : MonoBehaviour
     {
         //Random.InitState(System.Environment.TickCount);
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-
+        manager = GameObject.FindGameObjectWithTag("BulletManager");
     }
 
     // Update is called once per frame
@@ -37,7 +38,14 @@ public class BulletScript : MonoBehaviour
         if (other.gameObject.CompareTag("Hitable"))
         {
             StainSelector();
-            Instantiate(stainToSpawn, this.gameObject.transform.position,this.gameObject.transform.rotation);
+            GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position,this.gameObject.transform.rotation);
+            print(manager);
+            print(manager.GetComponent<StainManager>());
+            print(newstain);
+            print(newstain.GetComponent<StainColors>().stainColor);
+
+            manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
+           
             Destroy(this.gameObject);
         }
     }

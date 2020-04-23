@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3885213142402179764}
   - component: {fileID: 3108380015134801519}
   - component: {fileID: 9104919639527626680}
+  - component: {fileID: 4200071740760193646}
   m_Layer: 0
   m_Name: DPS2
   m_TagString: Untagged
@@ -108,3 +109,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 4.31}
   m_EdgeRadius: 0
+--- !u!114 &4200071740760193646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628389533742471645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbe2583fb549ef43b3642e60f0d5793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stainColor: 0

@@ -10,7 +10,6 @@ public class PlayerShot : MonoBehaviour
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     private Transform myTransform;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -106,6 +105,7 @@ public class PlayerShot : MonoBehaviour
                 if (leftGun == Bala[5])
                 {
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
+                   
                 }
                 else
                 {
@@ -123,7 +123,7 @@ public class PlayerShot : MonoBehaviour
                 if (rightGun == Bala[5])
                 {
                     bulletRight.GetComponent<NormalBullet>().direction = difference;
-
+                    
                 }
                 else
                 {
