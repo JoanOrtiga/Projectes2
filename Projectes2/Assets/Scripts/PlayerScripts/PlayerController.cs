@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour
     public float checkRedius = 0.1f;
     public LayerMask whatIsGround;
 
-    [HideInInspector] public float inputX;
-
 
     private void Start()
     {
@@ -36,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();
+        Movment();
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRedius, whatIsGround);
     }
 
@@ -44,20 +42,21 @@ public class PlayerController : MonoBehaviour
     {
 
         Jump();
+
     }
 
 
-    void Movement()
+    void Movment()
     {
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * speed, this.GetComponent<Rigidbody2D>().velocity.y);
 
-        inputX = Input.GetAxis("Horizontal");
 
-        if (inputX < -0.1)
+
+        if (Input.GetAxis("Horizontal") < -0.1)
         {
             thisSprite.flipX = true;
         }
-        else if (inputX > 0.1)
+        else if (Input.GetAxis("Horizontal") > 0.1)
         {
             thisSprite.flipX = false;
         }
