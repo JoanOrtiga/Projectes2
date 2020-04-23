@@ -4,38 +4,29 @@ using UnityEngine;
 
 public class StandardEnemieBullet : MonoBehaviour
 {
-    public float moveSpeed = 7f;
     public int DMG = 3;
+    public float speed = 3f;
+    private Transform player;
+    private Vector2 target;
 
-    Rigidbody2D rb;
-    private GameObject target;
-    public GameObject shootingPoint;
-
-    Vector2 moveDirection;
-    // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
-
-        
-        target = GameObject.FindGameObjectWithTag("Player");
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
-
-        Shoot();
-
+        target = new Vector2(player.position.x, player.position.y);
     }
 
-    void Shoot()
+    // Update is called once per frame
+    void Update()
     {
-        moveDirection = (target.transform.position - shootingPoint.transform.position).normalized * moveSpeed;
-        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 3f);
+        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        Destroy(this.gameObject, 2);
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerController>().currentHP -= DMG;
-        }
+        player.GetComponent<PlayerController>().currentHP -= DMG;
+        Destroy(this.gameObject);
     }
 }
