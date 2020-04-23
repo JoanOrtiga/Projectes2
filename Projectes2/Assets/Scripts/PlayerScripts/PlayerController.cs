@@ -24,11 +24,16 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public float inputX;
 
+    public float slopeForceRayLenght;
+    public float slopeForce;
+
+    private Collider2D lastStair;
+    private bool colliding;
+
+    private bool onLadder = false;
 
     private void Start()
     {
-
-        
         thisSprite = this.GetComponent<SpriteRenderer>();
 
         currentHP = maxHP;
@@ -38,12 +43,53 @@ public class PlayerController : MonoBehaviour
     {
         Movment();
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRedius, whatIsGround);
+
+        if (isGrounded && !colliding)
+        {
+            if(lastStair!= null)
+            {
+                
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lastStair, false);
+            }
+               
+        }
+
+        OnSlope();
+        HandStairs();
     }
 
     private void Update()
     {
-
         Jump();
+
+    }
+
+    private void HandStairs()
+    {
+        if (Input.GetKey(KeyCode.W) && onLadder)
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            GetComponent<Rigidbody2D>().position += new Vector2(0, 10) * Time.deltaTime;
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+    }
+
+    private void OnSlope()
+    {
+        float currentVerticalSpeed = GetComponent<Rigidbody2D>().velocity.y;
+
+        if(isGrounded && currentVerticalSpeed > 0)
+        {
+            speed = 30;
+            GetComponent<Rigidbody2D>().velocity += new Vector2(0, -currentVerticalSpeed);
+        }
+        else
+        {
+            speed = 10;
+        }
 
     }
 
@@ -75,4 +121,41 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("stairs"))
+        {
+            colliding = true;
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), collision.gameObject.GetComponent<Collider2D>(),true);
+                lastStair = collision.gameObject.GetComponent<Collider2D>();
+
+                StartCoroutine(collideAgain());
+            }
+        }
+    }
+
+    IEnumerator collideAgain()
+    {
+        yield return new WaitForSeconds(0.7f);
+        colliding = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            onLadder = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ladder"))
+        {
+            onLadder = false;
+        }
+    }
 }
