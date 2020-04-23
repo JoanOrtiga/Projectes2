@@ -8,6 +8,8 @@ TagManager:
   - JumpActivator
   - HealMe
   - Enemie
+  - CameraLimits
+  - PlatformMoving
   layers:
   - Default
   - TransparentFX
