@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();
+        Movment();
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRedius, whatIsGround);
     }
 
@@ -44,12 +44,14 @@ public class PlayerController : MonoBehaviour
     {
 
         Jump();
+
     }
 
 
-    void Movement()
+    void Movment()
     {
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * speed, this.GetComponent<Rigidbody2D>().velocity.y);
+
 
         inputX = Input.GetAxis("Horizontal");
 
