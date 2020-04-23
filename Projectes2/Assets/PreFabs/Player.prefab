@@ -160,7 +160,7 @@ MonoBehaviour:
   - {fileID: 5151352415928106540, guid: 159c1cabdfa05644695986efe20afbbf, type: 3}
   - {fileID: 5151352415928106540, guid: 359d34d79ef558f49857125fa6f51a1e, type: 3}
   - {fileID: 5151352415928106540, guid: 7bf5364e86744e848b7ec569ed88cdeb, type: 3}
-  - {fileID: 5151352415928106540, guid: 4db691d29b99235418b96f6acbcfcaab, type: 3}
+  - {fileID: 7878296910746337581, guid: a36f7972267832f4f88b0c19e514bd78, type: 3}
   - {fileID: 5151352415928106540, guid: 1978a22eb0b807b42a016dcf1f5a2c74, type: 3}
   shotPoint: {fileID: 517217677}
   leftGun: {fileID: 0}
@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 989343677}
   - component: {fileID: 7293248838962404390}
   - component: {fileID: 1609095123}
+  - component: {fileID: 241641697}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -321,6 +322,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  inputX: 0
 --- !u!114 &1609095123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +337,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealAmmount: 0
   healingVelocity: 0
+--- !u!114 &241641697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293248838962404388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 444ae10455132974d95521bbd7e96e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1195196296697250234
 PrefabInstance:
   m_ObjectHideFlags: 0

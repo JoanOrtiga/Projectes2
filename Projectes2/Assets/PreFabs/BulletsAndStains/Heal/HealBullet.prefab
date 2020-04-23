@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5151352415928106543}
   - component: {fileID: 5151352415928106528}
   - component: {fileID: 5151352415928106529}
+  - component: {fileID: 1337725422440162422}
   m_Layer: 0
   m_Name: HealBullet
   m_TagString: Untagged
@@ -107,7 +108,6 @@ MonoBehaviour:
   - {fileID: 4000550871488678238, guid: 950e1856da4e62340bc0cac9bd5fd187, type: 3}
   - {fileID: 8628389533742471645, guid: b895a9c89dcf22c428ad8c6a4094653d, type: 3}
   - {fileID: 7302851447172820498, guid: e9d428d8279cb2d4aab9750c0318f559, type: 3}
-  manager: {fileID: 0}
   direction: {x: 0, y: 0}
 --- !u!58 &5151352415928106528
 CircleCollider2D:
@@ -146,3 +146,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1337725422440162422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151352415928106540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbe2583fb549ef43b3642e60f0d5793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stainColor: 1

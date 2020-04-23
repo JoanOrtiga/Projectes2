@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5151352415928106543}
   - component: {fileID: 5151352415928106528}
   - component: {fileID: 5151352415928106529}
+  - component: {fileID: 2323839611703280769}
   m_Layer: 0
   m_Name: PortalBullet
   m_TagString: Untagged
@@ -107,7 +108,6 @@ MonoBehaviour:
   - {fileID: 7860262042042363536, guid: b8f262b02d12b284e9a3ae12a1ba42aa, type: 3}
   - {fileID: 2129780053387717654, guid: d18bf12087daff244b4adcfe4f028b74, type: 3}
   - {fileID: 7444150544156189055, guid: c5b948b86795fcb45a44a9473b3257b4, type: 3}
-  manager: {fileID: 0}
   direction: {x: 0, y: 0}
 --- !u!58 &5151352415928106528
 CircleCollider2D:
@@ -146,3 +146,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2323839611703280769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151352415928106540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbe2583fb549ef43b3642e60f0d5793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stainColor: 2

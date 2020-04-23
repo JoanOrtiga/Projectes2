@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5151352415928106543}
   - component: {fileID: 5151352415928106528}
   - component: {fileID: 5151352415928106529}
+  - component: {fileID: 5948146508184737521}
   m_Layer: 0
   m_Name: JumpBullet
   m_TagString: Untagged
@@ -107,7 +108,6 @@ MonoBehaviour:
   - {fileID: 4000550871488678238, guid: 94f96ff99d8f7154995604a3ad74144b, type: 3}
   - {fileID: 8628389533742471645, guid: 1dd12d1195785dd4fafc9cfa52b84efa, type: 3}
   - {fileID: 7302851447172820498, guid: 8f4715a04d26f244e89e2b2602bd77e8, type: 3}
-  manager: {fileID: 8080449386752123506, guid: 2dce40d7469606444be6ae975e9a7af1, type: 3}
   direction: {x: 0, y: 0}
 --- !u!58 &5151352415928106528
 CircleCollider2D:
@@ -146,3 +146,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5948146508184737521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151352415928106540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbe2583fb549ef43b3642e60f0d5793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stainColor: 3
