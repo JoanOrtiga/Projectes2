@@ -9,6 +9,7 @@ TagManager:
   - HealMe
   - Enemie
   - CameraLimits
+  - PlatformMoving
   layers:
   - Default
   - TransparentFX
