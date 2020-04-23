@@ -61,25 +61,27 @@ public class SlimeEnemieSystem : MonoBehaviour
         distance = (target.transform.position.x - transform.position.x);
 
 
+        distance = Mathf.Abs(distance);
+
         //chase
-        if (distance <= chaseDistance && distance > attackDistance) 
+        if ((distance <= chaseDistance && distance > attackDistance))
         {
-            this.gameObject.GetComponent<SlimeEnemieProjectile>().AttackState(false);
+           
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.deltaTime);
         }
 
-        //patrol
-        else if (distance > chaseDistance)
-        {
-            print("Patrol");
-        }
+        ////patrol
+        //else if (distance > chaseDistance)
+        //{
+        //    print("Patrol");
+        //}
 
-        //shoot
-        else if (distance <= attackDistance)
-        {
-            print("Attack");
-            this.gameObject.GetComponent<SlimeEnemieProjectile>().AttackState(true);
-        }
+        ////shoot
+        //else if (distance <= attackDistance)
+        //{
+        //    print("Attack");
+            
+        //}
 
        
     }

@@ -18,22 +18,21 @@ public class SlimeEnemieProjectile : MonoBehaviour
         
     }
 
-    public void AttackState(bool state)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (state == true) //enter
+        if (collision.CompareTag("Player"))
         {
             InvokeRepeating("Trow", 0.2f, timeTilHit);
         }
-        else if (state == false) //exit
-        {
-            CancelInvoke();
-        }
-        
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        CancelInvoke();
+    }
 
-
-   
 
     void Trow()
     {
