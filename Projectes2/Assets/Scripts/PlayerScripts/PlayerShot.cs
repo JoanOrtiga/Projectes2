@@ -105,7 +105,6 @@ public class PlayerShot : MonoBehaviour
                 if (Bala[5])
                 {
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
-                   
                 }
                 else
                 {

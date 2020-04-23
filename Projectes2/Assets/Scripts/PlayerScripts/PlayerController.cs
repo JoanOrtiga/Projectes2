@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public float checkRedius = 0.1f;
     public LayerMask whatIsGround;
 
+    [HideInInspector] public float inputX;
+
 
     private void Start()
     {
@@ -51,12 +53,13 @@ public class PlayerController : MonoBehaviour
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * speed, this.GetComponent<Rigidbody2D>().velocity.y);
 
 
+        inputX = Input.GetAxis("Horizontal");
 
-        if (Input.GetAxis("Horizontal") < -0.1)
+        if (inputX < -0.1)
         {
             thisSprite.flipX = true;
         }
-        else if (Input.GetAxis("Horizontal") > 0.1)
+        else if (inputX > 0.1)
         {
             thisSprite.flipX = false;
         }
