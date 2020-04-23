@@ -10,6 +10,9 @@ TagManager:
   - Enemie
   - CameraLimits
   - PlatformMoving
+  - stairs
+  - Ladder
+  - GetPaintGun
   layers:
   - Default
   - TransparentFX
