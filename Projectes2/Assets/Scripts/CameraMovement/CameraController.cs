@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    CameraDeathZone deathZoneGeneral;
+    private void Start()
     {
-        
+        deathZoneGeneral = GetComponent<CameraDeathZone>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NewRoom(Vector2 pos1, Vector2 pos2)
     {
-        
+        deathZoneGeneral.limitPos1 = pos1;
+        deathZoneGeneral.limitPos2 = pos2;
+
+        deathZoneGeneral.clamped = true;
     }
 }
