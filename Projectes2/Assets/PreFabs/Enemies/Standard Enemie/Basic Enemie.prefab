@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6358268094402581951, guid: 95e971bb3abaeb0419ab6192022c9bfe,
     type: 3}
-  speed: 5
-  timeToShoot: 3
+  speed: 3
+  timeToShoot: 4
   shootingPoint: {fileID: 6837895623294859980}
-  chaseDistance: 10
+  chaseDistance: 15
