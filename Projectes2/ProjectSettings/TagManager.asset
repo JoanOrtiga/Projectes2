@@ -11,6 +11,9 @@ TagManager:
   - CameraLimits
   - PlatformMoving
   - BulletManager
+  - stairs
+  - Ladder
+  - GetPaintGun
   layers:
   - Default
   - TransparentFX
