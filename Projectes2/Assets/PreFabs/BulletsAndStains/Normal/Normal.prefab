@@ -140,5 +140,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpeed: 500
   direction: {x: 0, y: 0}
-  Damage: 0
+  Damage: 3
   forward: {x: 0, y: 0, z: 0}

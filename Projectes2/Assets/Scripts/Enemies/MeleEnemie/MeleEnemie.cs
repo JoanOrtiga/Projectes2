@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MeleEnemie : MonoBehaviour
 {
+    public int health = 5;
     public int DMG = 2;
     public float patrolSpeed = 3f;
     public Transform[] patrolPoints = new Transform[2];
@@ -42,7 +43,11 @@ public class MeleEnemie : MonoBehaviour
         {
             Chase();
         }
-        
+
+        if (health <=0)
+        {
+            Destroy(this.gameObject);
+        }
 
 
         distance = (player.transform.position.x - transform.position.x);

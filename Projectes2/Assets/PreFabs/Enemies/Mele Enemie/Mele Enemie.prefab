@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 332185869816714518}
   m_Layer: 0
   m_Name: Mele Enemie
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,11 +299,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b3d50ab2bb77040b6ac43c52be9126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
+  DMG: 2
   patrolSpeed: 3
   patrolPoints:
   - {fileID: 7530547387675903826}
   - {fileID: 3143978202558785885}
-  distance: 4
+  attackDistance: 3
 --- !u!61 &8653902084363072753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -350,7 +352,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &8653902084363072755
 CircleCollider2D:
   m_ObjectHideFlags: 0
