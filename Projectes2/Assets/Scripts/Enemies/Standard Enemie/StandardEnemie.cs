@@ -6,7 +6,7 @@ public class StandardEnemie : MonoBehaviour
 {
    
 
-    public int HP = 5;
+    public int health = 5;
     public GameObject projectile;
     public float speed;
     public float timeToShoot = 3f;
@@ -37,6 +37,11 @@ public class StandardEnemie : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
 
+
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 

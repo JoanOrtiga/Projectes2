@@ -29,7 +29,7 @@ public class StandardEnemieBullet : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             player.GetComponent<PlayerController>().currentHP -= DMG;
-            print("player Hit");
+
             Destroy(this.gameObject);
         }
         

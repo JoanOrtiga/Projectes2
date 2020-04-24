@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SlimeEnemieSystem : MonoBehaviour
 {
-    public int heath = 10;
+    public int health = 10;
 
     public float chaseDistance = 10;
     public float attackDistance = 7;
@@ -44,11 +44,11 @@ public class SlimeEnemieSystem : MonoBehaviour
 
     void EnemieReproduction()
     {
-        if (enemie.Length == 0 && heath <= 0)
+        if (enemie.Length == 0 && health <= 0)
         {
             Destroy(this.gameObject);
         }
-        else if (heath <= 0 && enemie.Length > 0)
+        else if (health <= 0 && enemie.Length > 0)
         {
             Instantiate(enemie[0], spawnPoints[0].position, Quaternion.identity);
             Instantiate(enemie[0], spawnPoints[1].position, Quaternion.identity);
