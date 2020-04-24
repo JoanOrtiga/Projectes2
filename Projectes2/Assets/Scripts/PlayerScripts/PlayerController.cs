@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private Collider2D lastStair;
     private bool colliding;
+    private bool sPressed;
 
     private bool onLadder = false;
 
@@ -44,11 +45,10 @@ public class PlayerController : MonoBehaviour
         Movment();
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRedius, whatIsGround);
 
-        if (isGrounded && !colliding)
+        if (isGrounded && !colliding && !sPressed)
         {
             if(lastStair!= null)
             {
-                
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lastStair, false);
             }
                
@@ -81,7 +81,8 @@ public class PlayerController : MonoBehaviour
     {
         float currentVerticalSpeed = GetComponent<Rigidbody2D>().velocity.y;
 
-        if(isGrounded && currentVerticalSpeed > 0)
+        print(colliding);
+        if(isGrounded && currentVerticalSpeed > 0 && colliding)
         {
             speed = 30;
             GetComponent<Rigidbody2D>().velocity += new Vector2(0, -currentVerticalSpeed);
@@ -129,11 +130,16 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.S))
             {
+                sPressed = true;
+                
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), collision.gameObject.GetComponent<Collider2D>(),true);
                 lastStair = collision.gameObject.GetComponent<Collider2D>();
 
-                StartCoroutine(collideAgain());
+                
+                StartCoroutine(downAgain());
             }
+
+            StartCoroutine(collideAgain());
         }
     }
 
@@ -142,6 +148,14 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         colliding = false;
     }
+
+    IEnumerator downAgain()
+    {
+        yield return new WaitForSeconds(0.7f);
+        sPressed = false;
+        colliding = false;
+    }
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
