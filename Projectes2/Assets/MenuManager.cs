@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject SoundMenu;
+    private bool SMisActive;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SMisActive = false;
     }
 
     // Update is called once per frame
@@ -24,5 +26,18 @@ public class MenuManager : MonoBehaviour
     public void start()
     {
         SceneManager.LoadScene("Level1");
+    }
+    public void Sound()
+    {
+        if (SMisActive)
+        {
+            SoundMenu.SetActive(false);
+            SMisActive = false;
+        }
+        else if (SMisActive==false)
+        {
+            SoundMenu.SetActive(true);
+            SMisActive = true;
+        }
     }
 }
