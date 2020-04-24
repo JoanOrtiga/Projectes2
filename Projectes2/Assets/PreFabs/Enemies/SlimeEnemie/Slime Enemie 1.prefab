@@ -200,6 +200,7 @@ MonoBehaviour:
   - {fileID: 6680099999602669423}
   enemie:
   - {fileID: 8009683343671097092, guid: 32af5466bd17abe46ab20e37984426db, type: 3}
+  rb2d: {fileID: 0}
 --- !u!114 &1969228927274797589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
   throwPoint: {fileID: 1739611176}
   projectile: {fileID: 428337008800882215, guid: 6192d583acf85e44ba6f958446b9fdc7,
     type: 3}
-  timeTilHit: 2
+  timeTilHit: 0.5
   xVelo: 7
   yVelo: 3
 --- !u!50 &737251064

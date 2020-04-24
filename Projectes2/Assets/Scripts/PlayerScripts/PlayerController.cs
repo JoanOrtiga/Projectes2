@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
-    public int currentHP;
+    public float currentHP;
     public int maxHP = 10;
     [HideInInspector]
     public bool jumpPlayer;
@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Jump();
+
+        print(currentHP);
 
     }
 

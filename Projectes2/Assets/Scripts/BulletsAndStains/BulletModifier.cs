@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class BulletModifier : MonoBehaviour
 {
-    public int HealAmmount;
+    public float HealAmmount;
     private int hp;
-    public float  healingVelocity;
     private float healingVelocitySaved;
     // Start is called before the first frame update
     
     void Start()
     {
-        healingVelocitySaved = healingVelocity;
-        hp = gameObject.GetComponent<PlayerController>().currentHP;
     }
 
     // Update is called once per frame
@@ -23,24 +20,23 @@ public class BulletModifier : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        healingVelocity -= Time.deltaTime;
+        
+
         if (other.CompareTag("JumpActivator"))
         {
             this.gameObject.GetComponent<PlayerController>().jumpPlayer=true;
            
            
         }
+
         if (other.CompareTag("HealMe"))
         {
-            if (hp != gameObject.GetComponent<PlayerController>().maxHP)
+            if (gameObject.GetComponent<PlayerController>().currentHP < gameObject.GetComponent<PlayerController>().maxHP)
             {
-                if (healingVelocity > 0)
-                {
-                    hp += HealAmmount;
-                    healingVelocity = healingVelocitySaved;
-                }
 
-
+                print(HealAmmount * Time.deltaTime);
+                
+                gameObject.GetComponent<PlayerController>().currentHP += (HealAmmount * Time.deltaTime);
             }
         }
     }

@@ -17,8 +17,13 @@ public class SlimeProyectile : MonoBehaviour
         {
             collision.GetComponent<PlayerController>().currentHP -= 3;
             print(collision.GetComponent<PlayerController>().currentHP);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 
 }

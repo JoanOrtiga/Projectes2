@@ -8,12 +8,29 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public Transform startPos;
 
+    private bool notFreezed = true;
+
+
     Vector3 nextPos;
 
     // Start is called before the first frame update
     void Start()
     {
         nextPos = startPos.position;
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < transform.GetChild(0).childCount; i++)
+        {
+            if (transform.GetChild(0).GetChild(i).transform.CompareTag("TimeStop"))
+            {
+                transform.GetChild(0).GetChild(i).GetComponent<TimeStopPlatform>().reactivateTime.AddListener(Defreeze);
+                notFreezed = false;
+            }
+            
+        }
+
     }
 
     // Update is called once per frame
@@ -28,11 +45,23 @@ public class MovingPlatform : MonoBehaviour
             nextPos = pos1.position;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+
+        if(notFreezed)
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        
+    }
+
+    public void Defreeze()
+    {
+        notFreezed = true;
     }
 }

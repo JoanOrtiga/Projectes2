@@ -16,10 +16,13 @@ public class SlimeEnemieSystem : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] enemie;
 
+    public Rigidbody2D rb2d;
 
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+
+        rb2d = GetComponent<Rigidbody2D>();
 
 
         if (transform.childCount > 1)
@@ -40,6 +43,11 @@ public class SlimeEnemieSystem : MonoBehaviour
         StateMachineEnemie();
     }
 
+    private void FixedUpdate()
+    {
+        StateMachineEnemie();
+    }
+
     void EnemieReproduction()
     {
         if (enemie.Length == 0 && health <= 0)
@@ -56,7 +64,7 @@ public class SlimeEnemieSystem : MonoBehaviour
 
     void StateMachineEnemie()
     {
-        distance = (target.transform.position.x - transform.position.x);
+        distance = (target.transform.position.x - rb2d.position.x);
 
 
         distance = Mathf.Abs(distance);
@@ -64,8 +72,7 @@ public class SlimeEnemieSystem : MonoBehaviour
         //chase
         if ((distance <= chaseDistance && distance > attackDistance))
         {
-           
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.deltaTime);
+            rb2d.position = Vector2.MoveTowards(rb2d.position, new Vector2(target.transform.position.x, 0), chaseSpeed * Time.deltaTime);
         }
 
         ////patrol
