@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class MeleEnemie : MonoBehaviour
 {
+    public int DMG = 2;
     public float patrolSpeed = 3f;
     public Transform[] patrolPoints = new Transform[2];
-    public float distance = 10f;
+    public float attackDistance = 3;
 
     private Transform enemiePosition;
     private int pointDirection = 1;
     private GameObject player;
+    private float distance;
+
 
     private bool isPatrol = true;
     private bool isChase = false;
+    private bool isAttack = false;
     
     void Start()
     {
@@ -30,11 +34,19 @@ public class MeleEnemie : MonoBehaviour
         {
             patrol();
         }
+        else if (distance < attackDistance)
+        {
+            Attack();
+        }
         else if (isChase)
         {
             Chase();
         }
         
+
+
+        distance = (player.transform.position.x - transform.position.x);
+
 
 
     }
@@ -56,6 +68,11 @@ public class MeleEnemie : MonoBehaviour
 
     }
 
+
+    void Attack()
+    {
+        print("ATTACK");
+    }
     void patrol()
     {
         
