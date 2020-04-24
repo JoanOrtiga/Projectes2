@@ -4,37 +4,79 @@ using UnityEngine;
 
 public class MeleEnemie : MonoBehaviour
 {
-    public float speed = 3f;
-    private Vector2[] patrolPoints;
+    public float patrolSpeed = 3f;
+    public Transform[] patrolPoints = new Transform[2];
     public float distance = 10f;
 
-    private Vector2 enemiePosition;
+    private Transform enemiePosition;
+    private int pointDirection = 1;
+    private GameObject player;
+
+    private bool isPatrol = true;
+    private bool isChase = false;
     
     void Start()
     {
-        patrolPoints[0] = new Vector2(this.transform.position.x + distance , this.transform.position.y);
-        patrolPoints[1] = new Vector2(this.transform.position.x - distance , this.transform.position.y);
+        player = GameObject.FindGameObjectWithTag("Player");
 
-        enemiePosition = new Vector2(this.transform.position.x, this.transform.position.y);
-
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0], speed * Time.deltaTime);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(patrolPoints[0]);
-        print(patrolPoints[1]);
-        print(enemiePosition);
 
-        if (enemiePosition.x > patrolPoints[0].x)
+        if (isPatrol)
         {
-            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1], speed * Time.deltaTime);
+            patrol();
         }
-        else if (enemiePosition.x < patrolPoints[0].x)
+        else if (isChase)
         {
-            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0], speed * Time.deltaTime);
+            Chase();
+        }
+        
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isPatrol = false;
+            isChase = true;
+        }
+        
+
+    }
+
+    void Chase()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, patrolSpeed * Time.deltaTime);
+
+    }
+
+    void patrol()
+    {
+        
+
+        if (this.transform.position == patrolPoints[0].transform.position)
+        {
+            pointDirection = 2;
+        }
+        else if (this.transform.position == patrolPoints[1].transform.position)
+        {
+            pointDirection = 1;
+        }
+
+        if (pointDirection == 1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].transform.position, patrolSpeed * Time.deltaTime);
+        }
+        else if (pointDirection == 2)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1].transform.position, patrolSpeed * Time.deltaTime);
+
         }
     }
 }
