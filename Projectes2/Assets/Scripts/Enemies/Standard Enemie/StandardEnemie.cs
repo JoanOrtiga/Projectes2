@@ -4,56 +4,64 @@ using UnityEngine;
 
 public class StandardEnemie : MonoBehaviour
 {
+   
 
-    public int health = 5;
-    public float timeTilHit = 3f;
-    public float chaseDistance = 10;
-    public float chaseSpeed = 5f;
+    public int HP = 5;
+    public GameObject projectile;
+    public float speed;
+    public float timeToShoot = 3f;
+    public GameObject shootingPoint;
 
-    public GameObject bullet;
+    public float chaseDistance = 10f;
 
-
-    private float distance;
     private GameObject target;
+    private float attackDistance;
 
 
-    private void Start()
+
+    void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        attackDistance = (this.gameObject.GetComponent<CircleCollider2D>().radius * 2) - 0.5f;
     }
 
-    private void Update()
+    void Update()
     {
-        distance = (target.transform.position.x - transform.position.x);
+        if (Vector2.Distance(transform.position, target.transform.position) < attackDistance)
+        {
+            
+        }
+        else if (Vector2.Distance(transform.position, target.transform.position) < chaseDistance)
+        {
+            
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        }
 
-        
-        Chase();
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.CompareTag("Player"))
         {
-            InvokeRepeating("Attack", 0.2f, timeTilHit);
-        }
+            InvokeRepeating("Shoot", 0.2f, timeToShoot);
 
+        }
     }
 
-    void Chase()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (distance < chaseDistance && distance > this.gameObject.GetComponent<CircleCollider2D>().radius)
+        if (collision.CompareTag("Player"))
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.deltaTime);
+
+            CancelInvoke();
+
         }
+       
     }
 
-    void Attack()
+    void Shoot()
     {
-        Instantiate(bullet, transform.position, Quaternion.identity);
-        print("SHoot");
-        //shoot
+        Instantiate(projectile, shootingPoint.transform.position, Quaternion.identity);
     }
-
-
 }
