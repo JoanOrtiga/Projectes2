@@ -10,6 +10,8 @@ public class PlayerShot : MonoBehaviour
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     private Transform myTransform;
+
+    public float bulletStrenght = 50f;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +94,6 @@ public class PlayerShot : MonoBehaviour
         float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotz);
 
-       // print(Mathf.Abs(transform.rotation.z));
         if(Mathf.Abs(transform.rotation.z) > 0.7f)
         {
             GetComponentInChildren<SpriteRenderer>().flipY = true;
@@ -112,7 +113,7 @@ public class PlayerShot : MonoBehaviour
                 //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                 //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
                 GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
-                bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * 15f;
+                bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                 if (leftGun == Bala[5])
                 {
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
@@ -128,7 +129,7 @@ public class PlayerShot : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
-                bulletRight.GetComponent<Rigidbody2D>().velocity = difference * 15f;
+                bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                 print(Bala);
 
                 if (rightGun== Bala[5])
