@@ -52,7 +52,7 @@ public class CameraDeathZone : MonoBehaviour
             {
                 newPos = new Vector3(Mathf.Clamp(newPos.x, limitPos1.x + cameraWidth, limitPos2.x - cameraWidth), Mathf.Clamp(newPos.y, limitPos1.y + cameraHeight, limitPos2.y - cameraHeight), -10);
             }
-
+            print(Vector3.Lerp(transform.position, newPos, smoothFactor));
             transform.position = Vector3.Lerp(transform.position, newPos, smoothFactor);
         }
     }

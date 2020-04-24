@@ -47,7 +47,7 @@ public class StainManager : MonoBehaviour
     }
     public void newStain(GameObject stain,PaintColors color)
     {
-        stain.transform.parent = transform;
+        
         switch (color)
         {
             case PaintColors.red:

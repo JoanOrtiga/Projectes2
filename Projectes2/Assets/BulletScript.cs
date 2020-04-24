@@ -44,9 +44,18 @@ public class BulletScript : MonoBehaviour
             
             GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
-
-
+            newstain.transform.parent = manager.transform;
         }
+        else if (other.gameObject.CompareTag("HittablePlatform"))
+        {
+            StainSelector();
+
+            GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
+            manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
+            newstain.transform.parent = other.transform;
+        }
+
+
 
         if (!other.gameObject.CompareTag("stairs"))
             Destroy(this.gameObject);
