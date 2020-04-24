@@ -34,22 +34,26 @@ public class BulletScript : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        
+        if (other.gameObject.CompareTag("stairs"))
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
+
+        print("hola");
         if (other.gameObject.CompareTag("Hitable"))
         {
             StainSelector();
-            GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position,this.gameObject.transform.rotation);
-            print(manager);
-            print(manager.GetComponent<StainManager>());
-            print(newstain);
-            print(newstain.GetComponent<StainColors>().stainColor);
-
+            
+            GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
-           
-            Destroy(this.gameObject);
-        }
-    }
 
+
+        }
+
+        if (!other.gameObject.CompareTag("stairs"))
+            Destroy(this.gameObject);
+        else
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
+
+    }
     void StainSelector()
     {
         r = Random.Range(0,3);
