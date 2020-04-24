@@ -92,7 +92,7 @@ public class PlayerShot : MonoBehaviour
         float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotz);
 
-        print(Mathf.Abs(transform.rotation.z));
+       // print(Mathf.Abs(transform.rotation.z));
         if(Mathf.Abs(transform.rotation.z) > 0.7f)
         {
             GetComponentInChildren<SpriteRenderer>().flipY = true;

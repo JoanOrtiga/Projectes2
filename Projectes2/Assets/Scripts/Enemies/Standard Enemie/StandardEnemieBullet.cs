@@ -26,7 +26,12 @@ public class StandardEnemieBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.GetComponent<PlayerController>().currentHP -= DMG;
-        Destroy(this.gameObject);
+        if (collision.CompareTag("Player"))
+        {
+            player.GetComponent<PlayerController>().currentHP -= DMG;
+            print("player Hit");
+            Destroy(this.gameObject);
+        }
+        
     }
 }

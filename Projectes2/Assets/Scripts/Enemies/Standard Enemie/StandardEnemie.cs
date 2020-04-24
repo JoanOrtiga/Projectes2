@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StandardEnemie : MonoBehaviour
 {
-    private GameObject target;
-    private float attackDistance;
+   
 
+    public int HP = 5;
     public GameObject projectile;
     public float speed;
     public float timeToShoot = 3f;
@@ -14,7 +14,10 @@ public class StandardEnemie : MonoBehaviour
 
     public float chaseDistance = 10f;
 
-    
+    private GameObject target;
+    private float attackDistance;
+
+
 
     void Start()
     {
@@ -26,11 +29,11 @@ public class StandardEnemie : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, target.transform.position) < attackDistance)
         {
-            print("Attak");
+            
         }
         else if (Vector2.Distance(transform.position, target.transform.position) < chaseDistance)
         {
-            print("Chase");
+            
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
 
@@ -42,12 +45,19 @@ public class StandardEnemie : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             InvokeRepeating("Shoot", 0.2f, timeToShoot);
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CancelInvoke();
+        if (collision.CompareTag("Player"))
+        {
+
+            CancelInvoke();
+
+        }
+       
     }
 
     void Shoot()

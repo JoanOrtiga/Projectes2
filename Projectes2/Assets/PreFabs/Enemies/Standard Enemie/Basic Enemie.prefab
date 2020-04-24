@@ -191,9 +191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11ec7b814715704cacf78d969e3b9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 5
   projectile: {fileID: 6358268094402581951, guid: 95e971bb3abaeb0419ab6192022c9bfe,
     type: 3}
   speed: 3
-  timeToShoot: 4
+  timeToShoot: 2
   shootingPoint: {fileID: 6837895623294859980}
   chaseDistance: 15
