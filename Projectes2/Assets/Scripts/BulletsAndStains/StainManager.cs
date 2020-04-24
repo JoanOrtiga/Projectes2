@@ -15,12 +15,7 @@ public class StainManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> TimeList = new List<GameObject>();
     public int JumpLimiter, DpsLimiter, HealLimiter, PortalLimiter, TimeLimiter;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-    // Update is called once per frame
     void Update()
     {
         if (JumpList.Count >= JumpLimiter+1)

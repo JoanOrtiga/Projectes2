@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 9016048834958348565}
   - component: {fileID: 4240675930980862790}
   m_Layer: 0
-  m_Name: Slime2
+  m_Name: Slime Enemie 2
   m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 500
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8009683343671097097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f666ea3f556faeb4ba7e5f0495de29f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heath: 5
+  health: 10
   chaseDistance: 10
   attackDistance: 7
   chaseSpeed: 4
@@ -200,7 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwPoint: {fileID: 3415987717470889659}
-  playerTarget: {fileID: 0}
   projectile: {fileID: 428337008800882215, guid: 6192d583acf85e44ba6f958446b9fdc7,
     type: 3}
   timeTilHit: 1

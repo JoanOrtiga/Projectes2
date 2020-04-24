@@ -36,8 +36,6 @@ public class SlimeEnemieSystem : MonoBehaviour
 
     void Update()
     {
-        print(distance);
-
         EnemieReproduction();
         StateMachineEnemie();
     }

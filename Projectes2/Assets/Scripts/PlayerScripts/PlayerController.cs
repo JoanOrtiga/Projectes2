@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
     {
         float currentVerticalSpeed = GetComponent<Rigidbody2D>().velocity.y;
 
-        print(colliding);
         if(isGrounded && currentVerticalSpeed > 0 && colliding)
         {
             speed = 30;
