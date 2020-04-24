@@ -135,10 +135,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5151352415928106540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 683a32ca35486334fa89afd24dfab475, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dcf9baa23dae7143a9af550a9093001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 500
   direction: {x: 0, y: 0}
-  Damage: 3
+  Damage: 5
   forward: {x: 0, y: 0, z: 0}
