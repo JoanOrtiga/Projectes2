@@ -27,9 +27,9 @@ TagManager:
   - 
   - Ground
   - Enemie
-  - 
-  - 
-  - 
+  - Obstacle
+  - Player
+  - Camera
   - 
   - 
   - 

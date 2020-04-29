@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SlimeEnemieSystem : MonoBehaviour
 {
+
+
+ 
     public int health = 10;
 
     public float chaseDistance = 10;
@@ -41,6 +44,8 @@ public class SlimeEnemieSystem : MonoBehaviour
     {
         EnemieReproduction();
         StateMachineEnemie();
+
+        
     }
 
     private void FixedUpdate()
