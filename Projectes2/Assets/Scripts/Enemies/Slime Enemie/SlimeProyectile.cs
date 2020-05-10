@@ -15,8 +15,8 @@ public class SlimeProyectile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerController>().currentHP -= 3;
-            print(collision.GetComponent<PlayerController>().currentHP);
+           // collision.GetComponent<PlayerController>().currentHP -= 3;
+           // print(collision.GetComponent<PlayerController>().currentHP);
             Destroy(gameObject);
         }
     }
