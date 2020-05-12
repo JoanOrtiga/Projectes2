@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardEnemie : MonoBehaviour
+public class StandardEnemie : EnemieManager
 {
-   
 
-    public int health = 5;
+
     public GameObject projectile;
     public float speed;
     public float timeToShoot = 3f;
@@ -14,53 +13,62 @@ public class StandardEnemie : MonoBehaviour
 
     private GameObject target;
 
-
+    private float actualTime;
+    
 
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
-        //attackDistance = (this.gameObject.GetComponent<CircleCollider2D>().radius * 2) - 0.5f;
+        target = GameObject.FindGameObjectWithTag("Player");  
     }
 
     void Update()
     {
-      
-        if (health <= 0)
+        Death();
+        
+
+        actualTime += Time.deltaTime;
+    }
+
+
+    public void Attack(bool activado)
+    {
+        Flip();
+        if (activado)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        }  
+    }
+
+    void Death()
+    {
+
+        if (HP <= 0)
         {
             Destroy(this.gameObject);
         }
     }
 
-
-    public void chasePlayer()
+    public void Shoot()
     {
-        print("HOLA");
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        Flip();
+        if (actualTime >= timeToShoot)
         {
-            InvokeRepeating("Shoot", 0.2f, timeToShoot);
-
+            actualTime = 0;
+            Instantiate(projectile, shootingPoint.transform.position, Quaternion.identity);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void Flip()
     {
-        if (collision.CompareTag("Player"))
+        if (target.transform.position.x > this.transform.position.x)
         {
-
-            CancelInvoke();
-
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-       
+        else if (target.transform.position.x < this.transform.position.x)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
     }
-
-    void Shoot()
-    {
-        Instantiate(projectile, shootingPoint.transform.position, Quaternion.identity);
-    }
+        
 }

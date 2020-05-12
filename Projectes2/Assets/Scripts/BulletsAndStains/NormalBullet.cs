@@ -43,11 +43,11 @@ public class NormalBullet : MonoBehaviour
                 this.gameObject.transform.GetChild(0).GetComponent<MeleEnemie>().health = other.gameObject.GetComponent<MeleEnemie>().health - Damage;
 
             }
-            else if (other.gameObject.name == "Basic Enemie")
+            else if (other.gameObject.name == "Standar Enemie")
             {
                 print("HIT BASIC ENEMIE");
 
-                other.gameObject.GetComponent<StandardEnemie>().health = other.gameObject.GetComponent<StandardEnemie>().health - Damage;
+                other.gameObject.GetComponent<StandardEnemie>().HP = other.gameObject.GetComponent<StandardEnemie>().HP - Damage;
 
             }
 

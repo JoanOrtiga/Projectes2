@@ -20,6 +20,7 @@ public class StandardEnemieBullet : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
         Destroy(this.gameObject, 2);
     }
 

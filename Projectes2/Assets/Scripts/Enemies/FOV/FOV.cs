@@ -47,8 +47,7 @@ public class FOV : MonoBehaviour
             {
                 target = player.transform.position;
 
-                print("FOUND THE PLAYER");
-                this.gameObject.GetComponent<StandardEnemie>().chasePlayer();
+                
             }
         }
 
@@ -56,6 +55,21 @@ public class FOV : MonoBehaviour
         Vector3 dir = (target - transform.position).normalized;
 
         Debug.DrawLine(transform.position, target, Color.green);
+
+
+        if (target != initalPosition && distace < attackRadius)
+        {
+            print("shoot");
+            this.gameObject.GetComponent<StandardEnemie>().Shoot();
+
+        }
+
+        if (target != initalPosition && distace < visionRadius && distace > attackRadius)
+        {
+            print("Chase");
+            this.gameObject.GetComponent<StandardEnemie>().Attack(true);
+
+        }
     }
 
     private void OnDrawGizmosSelected()
