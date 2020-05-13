@@ -123,31 +123,42 @@ public class PlayerShot : MonoBehaviour
             {
                 //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                 //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
-                GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
-                bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                //bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                 if (leftGun == Bala[5])
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
+
                 }
                 else if(leftGun ==Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, DPSMana);
 
                 }
                 else if (leftGun == Bala[1] && manaManager.GetComponent<StainManager>().manaMana >= HealMana)
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, HealMana);
                 }
                 else if (leftGun == Bala[2] && manaManager.GetComponent<StainManager>().manaMana >= PortalMana)
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, PortalMana);
 
                 }
                 else if (leftGun == Bala[3] && manaManager.GetComponent<StainManager>().manaMana >= JumpBullet)
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, JumpBullet);
 
@@ -165,41 +176,51 @@ public class PlayerShot : MonoBehaviour
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
-                GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
-                bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
-                print(Bala);
+                //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 
                 if (rightGun== Bala[5])
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<NormalBullet>().direction = difference;
                     
                 }
                 else if (rightGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
-                    Debug.Log("ps" + manaManager.GetComponent<StainManager>().manaMana);
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, DPSMana);
 
                 }
                 else if (rightGun == Bala[1] && manaManager.GetComponent<StainManager>().manaMana >= HealMana)
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, HealMana);
                 }
                 else if (rightGun == Bala[2] && manaManager.GetComponent<StainManager>().manaMana >= PortalMana)
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, PortalMana);
 
                 }
                 else if (rightGun == Bala[3] && manaManager.GetComponent<StainManager>().manaMana >= JumpBullet)
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, JumpBullet);
 
                 }
                 else if (rightGun == Bala[4] && manaManager.GetComponent<StainManager>().manaMana >= TimeBullet)
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, TimeBullet);
 
