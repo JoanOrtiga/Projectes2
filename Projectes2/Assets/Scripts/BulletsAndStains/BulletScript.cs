@@ -41,6 +41,7 @@ public class BulletScript : MonoBehaviour
         if (other.gameObject.CompareTag("Hitable"))
         {
             StainSelector();
+
             
             GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
