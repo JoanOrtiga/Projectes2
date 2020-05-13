@@ -46,7 +46,7 @@ public class StainManager : MonoBehaviour
             Destroy(TimeList[0]);
             TimeList.RemoveAt(0);
         }
-        Debug.Log(manaMana);
+
     }
     public void newStain(GameObject stain,PaintColors color)
     {
