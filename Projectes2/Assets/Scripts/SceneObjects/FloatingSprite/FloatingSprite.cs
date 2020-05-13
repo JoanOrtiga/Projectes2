@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FloatingSprite : MonoBehaviour
 {
-    public Sprite handSprite;
-    public GameObject hand;
 
     public float floatSpan = 2.0f;
     public float speed = 1.0f;
@@ -16,7 +14,7 @@ public class FloatingSprite : MonoBehaviour
     void Start()
     {
         startY = transform.position.y;
-        originalHand = hand.GetComponent<SpriteRenderer>().sprite;
+        
 
     }
 
@@ -29,7 +27,7 @@ public class FloatingSprite : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            originalHand = handSprite;
+            
             collision.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject);
         }
