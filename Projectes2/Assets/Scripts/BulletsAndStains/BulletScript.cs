@@ -37,7 +37,6 @@ public class BulletScript : MonoBehaviour
         if (other.gameObject.CompareTag("stairs"))
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
 
-        print("hola");
         if (other.gameObject.CompareTag("Hitable"))
         {
             StainSelector();

@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
+    public GameObject manaManager;
+
     public GameObject paintWheel;
     public List<GameObject> Bala;
     public Transform shotPoint;
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     private Transform myTransform;
+    
+
+    public int DPSMana;
+    public int HealMana;
+    public int PortalMana;
+    public int JumpBullet;
+    public int TimeBullet;
+
 
     public float bulletStrenght = 50f;
     // Start is called before the first frame update
     void Start()
     {
         myTransform = this.gameObject.transform;
+        
     }
 
     // Update is called once per frame
@@ -112,34 +123,108 @@ public class PlayerShot : MonoBehaviour
             {
                 //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                 //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
-                GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
-                bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                //bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                 if (leftGun == Bala[5])
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
+
                 }
-                else
+                else if(leftGun ==Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, DPSMana);
+
                 }
+                else if (leftGun == Bala[1] && manaManager.GetComponent<StainManager>().manaMana >= HealMana)
+                {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, HealMana);
+                }
+                else if (leftGun == Bala[2] && manaManager.GetComponent<StainManager>().manaMana >= PortalMana)
+                {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, PortalMana);
+
+                }
+                else if (leftGun == Bala[3] && manaManager.GetComponent<StainManager>().manaMana >= JumpBullet)
+                {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, JumpBullet);
+
+                }
+                else if (leftGun == Bala[4] && manaManager.GetComponent<StainManager>().manaMana >= TimeBullet)
+                {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, TimeBullet);
+
+                }
+
             }
 
 
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
-                GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
-                bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
-                print(Bala);
+                //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 
                 if (rightGun== Bala[5])
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<NormalBullet>().direction = difference;
                     
                 }
-                else
+                else if (rightGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, DPSMana);
+
+                }
+                else if (rightGun == Bala[1] && manaManager.GetComponent<StainManager>().manaMana >= HealMana)
+                {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, HealMana);
+                }
+                else if (rightGun == Bala[2] && manaManager.GetComponent<StainManager>().manaMana >= PortalMana)
+                {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, PortalMana);
+
+                }
+                else if (rightGun == Bala[3] && manaManager.GetComponent<StainManager>().manaMana >= JumpBullet)
+                {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, JumpBullet);
+
+                }
+                else if (rightGun == Bala[4] && manaManager.GetComponent<StainManager>().manaMana >= TimeBullet)
+                {
+                    GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
+                    bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, TimeBullet);
 
                 }
             }
