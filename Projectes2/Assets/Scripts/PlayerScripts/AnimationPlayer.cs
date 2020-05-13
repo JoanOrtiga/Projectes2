@@ -23,7 +23,7 @@ public class AnimationPlayer : MonoBehaviour
 
     void Walk()
     {
-        if (player.GetComponent<Rigidbody2D>().velocity.x > 0 || player.GetComponent<Rigidbody2D>().velocity.x < 0)
+        if (GetComponent<PlayerController>().inputX != 0)
         {
             animator.SetBool("Moving", true);
         }
