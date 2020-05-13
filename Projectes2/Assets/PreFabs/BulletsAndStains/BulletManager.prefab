@@ -43,13 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd73ae072c5c324f9e00f4024574602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaMax: 100
+  manaMana: 100
   JumpList: []
   DPSList: []
   HealList: []
   PortalList: []
   TimeList: []
-  JumpLimiter: 0
-  DpsLimiter: 0
-  HealLimiter: 0
-  PortalLimiter: 0
-  TimeLimiter: 0
+  JumpLimiter: 15
+  DpsLimiter: 15
+  HealLimiter: 2
+  PortalLimiter: 15
+  TimeLimiter: 15

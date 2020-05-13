@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class FloatingSprite : MonoBehaviour
 {
+
     public float floatSpan = 2.0f;
     public float speed = 1.0f;
 
     private float startY;
+    private Sprite originalHand;
  
     void Start()
     {
         startY = transform.position.y;
+        
 
     }
 
@@ -24,6 +27,7 @@ public class FloatingSprite : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            
             collision.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject);
         }

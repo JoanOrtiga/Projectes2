@@ -12,13 +12,16 @@ public class PlayerShot : MonoBehaviour
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     private Transform myTransform;
-    
+    private Vector3 mausePosition;
+
 
     public int DPSMana;
     public int HealMana;
     public int PortalMana;
     public int JumpBullet;
     public int TimeBullet;
+
+    public GameObject GunLimb;
 
 
     public float bulletStrenght = 50f;
@@ -99,21 +102,28 @@ public class PlayerShot : MonoBehaviour
                 break;
         }
 
-        
+
+
+        mausePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mausePosition.z = 0;
+
+        GunLimb.GetComponent<Transform>().position = mausePosition;
+
+
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
         float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotz);
+        //transform.rotation = Quaternion.Euler(0f, 0f, rotz);
 
-        if(Mathf.Abs(transform.rotation.z) > 0.7f)
-        {
-            GetComponentInChildren<SpriteRenderer>().flipY = true;
-        }
-        else
-        {
-            GetComponentInChildren<SpriteRenderer>().flipY = false;
+        //if(Mathf.Abs(transform.rotation.z) > 0.7f)
+        //{
+        //   GetComponentInChildren<SpriteRenderer>().flipY = true;
+        //}
+        //else
+        //{
+        //   GetComponentInChildren<SpriteRenderer>().flipY = false;
 
-        }
+        //}
 
 
         if (paintWheel.GetComponent<PaintWheel>().shootable)
