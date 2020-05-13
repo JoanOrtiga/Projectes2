@@ -105,11 +105,11 @@ public class PlayerController : MonoBehaviour
 
         if (inputX < -0.1)
         {
-            thisSprite.flipX = true;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         else if (inputX > 0.1)
         {
-            thisSprite.flipX = false;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
     }
 
