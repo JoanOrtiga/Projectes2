@@ -71,3 +71,6 @@ TagManager:
   - name: Gun
     uniqueID: 1735199455
     locked: 0
+  - name: Paint
+    uniqueID: 1450986343
+    locked: 0
