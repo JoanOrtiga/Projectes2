@@ -165,6 +165,8 @@ public class PlayerShot : MonoBehaviour
                 }
                 else if (leftGun == Bala[4] && manaManager.GetComponent<StainManager>().manaMana >= TimeBullet)
                 {
+                    GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
+                    bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
                     manaManager.GetComponent<StainManager>().manaCalculator(false, TimeBullet);
 
