@@ -6,9 +6,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
-    public float currentHP;
-    public int maxHP = 10;
-    [HideInInspector]
     public bool jumpPlayer;
     public float speed = 10f;
     public float jumpForce = 10f;
@@ -36,8 +33,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         thisSprite = this.GetComponent<SpriteRenderer>();
-
-        currentHP = maxHP;
     }
 
     private void FixedUpdate()

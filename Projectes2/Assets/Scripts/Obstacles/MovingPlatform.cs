@@ -52,7 +52,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(pos1.position, pos2.position);
+       // Gizmos.DrawLine(pos1.position, pos2.position);
     }
 
     private void OnCollisionStay(Collision collision)
