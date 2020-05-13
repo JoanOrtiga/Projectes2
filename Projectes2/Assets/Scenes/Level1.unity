@@ -3752,6 +3752,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1489721934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8080449386752123506, guid: 2dce40d7469606444be6ae975e9a7af1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1883041974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1613713824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,6 +4389,16 @@ PrefabInstance:
       propertyPath: TimeLimiter
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1483197006759272067, guid: 2dce40d7469606444be6ae975e9a7af1,
+        type: 3}
+      propertyPath: manaMana
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483197006759272067, guid: 2dce40d7469606444be6ae975e9a7af1,
+        type: 3}
+      propertyPath: manaMax
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2593017802536644997, guid: 2dce40d7469606444be6ae975e9a7af1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4801,6 +4817,34 @@ PrefabInstance:
       propertyPath: paintWheel
       value: 
       objectReference: {fileID: 970575632}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: HealMana
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: DPSMana
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: PortalMana
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: JumpBullet
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: TimeBullet
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 364173039, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
+      propertyPath: manaManager
+      value: 
+      objectReference: {fileID: 1489721934}
     - target: {fileID: 517217676, guid: 76794f26e1d860d4faaef478850fb4b3, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -4844,7 +4888,7 @@ PrefabInstance:
     - target: {fileID: 2468545282289889392, guid: 76794f26e1d860d4faaef478850fb4b3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2468545282289889392, guid: 76794f26e1d860d4faaef478850fb4b3,
         type: 3}

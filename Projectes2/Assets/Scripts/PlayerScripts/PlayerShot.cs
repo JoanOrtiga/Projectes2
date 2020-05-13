@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
+    public GameObject manaManager;
+
     public GameObject paintWheel;
     public List<GameObject> Bala;
     public Transform shotPoint;
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     private Transform myTransform;
+    
+
+    public int DPSMana;
+    public int HealMana;
+    public int PortalMana;
+    public int JumpBullet;
+    public int TimeBullet;
+
 
     public float bulletStrenght = 50f;
     // Start is called before the first frame update
     void Start()
     {
         myTransform = this.gameObject.transform;
+        
     }
 
     // Update is called once per frame
@@ -118,10 +129,36 @@ public class PlayerShot : MonoBehaviour
                 {
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
                 }
-                else
+                else if(leftGun ==Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
                     bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, DPSMana);
+
                 }
+                else if (leftGun == Bala[1] && manaManager.GetComponent<StainManager>().manaMana >= HealMana)
+                {
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, HealMana);
+                }
+                else if (leftGun == Bala[2] && manaManager.GetComponent<StainManager>().manaMana >= PortalMana)
+                {
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, PortalMana);
+
+                }
+                else if (leftGun == Bala[3] && manaManager.GetComponent<StainManager>().manaMana >= JumpBullet)
+                {
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, JumpBullet);
+
+                }
+                else if (leftGun == Bala[4] && manaManager.GetComponent<StainManager>().manaMana >= TimeBullet)
+                {
+                    bulletLeft.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, TimeBullet);
+
+                }
+
             }
 
 
@@ -137,9 +174,34 @@ public class PlayerShot : MonoBehaviour
                     bulletRight.GetComponent<NormalBullet>().direction = difference;
                     
                 }
-                else
+                else if (rightGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
+                {
+                    Debug.Log("ps" + manaManager.GetComponent<StainManager>().manaMana);
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, DPSMana);
+
+                }
+                else if (rightGun == Bala[1] && manaManager.GetComponent<StainManager>().manaMana >= HealMana)
                 {
                     bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, HealMana);
+                }
+                else if (rightGun == Bala[2] && manaManager.GetComponent<StainManager>().manaMana >= PortalMana)
+                {
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, PortalMana);
+
+                }
+                else if (rightGun == Bala[3] && manaManager.GetComponent<StainManager>().manaMana >= JumpBullet)
+                {
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, JumpBullet);
+
+                }
+                else if (rightGun == Bala[4] && manaManager.GetComponent<StainManager>().manaMana >= TimeBullet)
+                {
+                    bulletRight.GetComponent<BulletScript>().direction = difference;
+                    manaManager.GetComponent<StainManager>().manaCalculator(false, TimeBullet);
 
                 }
             }
