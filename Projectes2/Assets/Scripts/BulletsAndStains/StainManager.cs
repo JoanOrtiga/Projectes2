@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StainManager : MonoBehaviour
 {
+    public int manaMax;
+ [HideInInspector]
+    public int manaMana;
     [SerializeField]
     private List<GameObject> JumpList= new List<GameObject>();
     [SerializeField]
@@ -16,6 +19,11 @@ public class StainManager : MonoBehaviour
     private List<GameObject> TimeList = new List<GameObject>();
     public int JumpLimiter, DpsLimiter, HealLimiter, PortalLimiter, TimeLimiter;
 
+    
+    private void Start()
+    {
+        manaMana = manaMax;
+    }
     void Update()
     {
         if (JumpList.Count >= JumpLimiter+1)
@@ -38,7 +46,7 @@ public class StainManager : MonoBehaviour
             Destroy(TimeList[0]);
             TimeList.RemoveAt(0);
         }
-
+        Debug.Log(manaMana);
     }
     public void newStain(GameObject stain,PaintColors color)
     {
@@ -67,6 +75,17 @@ public class StainManager : MonoBehaviour
            
             default:
                 break;
+        }
+    }
+    public void manaCalculator(bool sum, int amount)
+    {
+        if (sum)
+        {
+            manaMana += amount;
+        }
+        else
+        {
+            manaMana -= amount;
         }
     }
 }
