@@ -105,7 +105,30 @@ public class PlayerShot : MonoBehaviour
 
 
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
-        difference.Normalize();
+        print(difference);
+        if(difference.x < 0f)
+        {
+            difference.x--;
+        }
+        else if(difference.x > 0f)
+        {
+            difference.x++;
+        }
+
+        if (difference.y < 0f)
+        {
+            difference.y--;
+        }
+        else if (difference.y> 0f)
+        {
+            difference.y++;
+        }
+
+        print(difference);
+
+        difference = difference.normalized;
+
+        print(difference);
 
 
         if (GetComponentInParent<PlayerMovement>().facingDirection == -1)
@@ -132,7 +155,6 @@ public class PlayerShot : MonoBehaviour
                     GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                     bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
-                    print(difference * bulletStrenght);
 
                 }
                 else if (leftGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
