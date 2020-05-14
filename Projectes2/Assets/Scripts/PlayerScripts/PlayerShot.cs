@@ -111,28 +111,10 @@ public class PlayerShot : MonoBehaviour
         if (GetComponentInParent<PlayerMovement>().facingDirection == -1)
         {
             GetComponentInChildren<SpriteRenderer>().flipY = true;
-            /*  if (Mathf.Abs(transform.GetChild(0).transform.rotation.z) > 0.7f)
-              {
-
-                  GetComponentInChildren<SpriteRenderer>().flipY = true;
-              }
-              else
-              {
-                  GetComponentInChildren<SpriteRenderer>().flipY = false;
-              }*/
         }
         else if (GetComponentInParent<PlayerMovement>().facingDirection == 1)
         {
             GetComponentInChildren<SpriteRenderer>().flipY = false;
-            /*  if (Mathf.Abs(transform.GetChild(0).transform.rotation.z) > 0.7f)
-              {
-
-                  GetComponentInChildren<SpriteRenderer>().flipY = false;
-              }
-              else
-              {
-                  GetComponentInChildren<SpriteRenderer>().flipY = true;
-              }*/
         }
 
 
@@ -150,7 +132,7 @@ public class PlayerShot : MonoBehaviour
                     GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                     bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
-                    print(bulletLeft.GetComponent<NormalBullet>().direction);
+                    print(difference * bulletStrenght);
 
                 }
                 else if (leftGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
