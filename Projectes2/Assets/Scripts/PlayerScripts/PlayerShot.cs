@@ -11,8 +11,7 @@ public class PlayerShot : MonoBehaviour
     public Transform shotPoint;
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
-    private Transform myTransform;
-    private Vector3 mausePosition;
+    
 
 
     public int DPSMana;
@@ -21,6 +20,7 @@ public class PlayerShot : MonoBehaviour
     public int JumpBullet;
     public int TimeBullet;
 
+
     public GameObject GunLimb;
 
 
@@ -28,7 +28,7 @@ public class PlayerShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myTransform = this.gameObject.transform;
+     
         
     }
 
@@ -104,27 +104,8 @@ public class PlayerShot : MonoBehaviour
 
 
 
-        mausePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mausePosition.z = 0;
-
-        GunLimb.GetComponent<Transform>().position = mausePosition;
-
-
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
-        float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(0f, 0f, rotz);
-
-        //if(Mathf.Abs(transform.rotation.z) > 0.7f)
-        //{
-        //   GetComponentInChildren<SpriteRenderer>().flipY = true;
-        //}
-        //else
-        //{
-        //   GetComponentInChildren<SpriteRenderer>().flipY = false;
-
-        //}
-
 
         if (paintWheel.GetComponent<PaintWheel>().shootable)
         {     

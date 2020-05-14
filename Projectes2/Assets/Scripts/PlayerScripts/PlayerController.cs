@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Jump Check
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform groundCheck;
     public float checkRedius = 0.1f;
     public LayerMask whatIsGround;
