@@ -19,12 +19,12 @@ public class AnimationPlayer : MonoBehaviour
     private void Update()
     {
         Walk();
-        Jump();
+       // Jump();
     }
 
     void Walk()
     {
-        if (GetComponent<PlayerMovement>().xInput != 0)
+        if (this.GetComponent<PlayerController>().inputX != 0)
         {
             animator.SetBool("Moving", true);
         }
@@ -34,15 +34,15 @@ public class AnimationPlayer : MonoBehaviour
         }
     }
 
-    void Jump()
-    {
-        if (!player.GetComponent<PlayerController>().isGrounded)
-        {
-            animator.SetBool("Jump", true);
-        }
-        else
-        {
-            animator.SetBool("Jump", false);
-        }
-    }
+    //void Jump()
+    //{
+    //    if (!player.GetComponent<PlayerController>().isGrounded)
+    //    {
+    //        animator.SetBool("Jump", true);
+    //    }
+    //    else
+    //    {
+    //        animator.SetBool("Jump", false);
+    //    }
+    //}
 }
