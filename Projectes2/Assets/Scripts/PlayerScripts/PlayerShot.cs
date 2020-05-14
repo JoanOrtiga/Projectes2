@@ -11,8 +11,7 @@ public class PlayerShot : MonoBehaviour
     public Transform shotPoint;
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
-    private Transform myTransform;
-    private Vector3 mausePosition;
+
 
 
     public int DPSMana;
@@ -21,6 +20,7 @@ public class PlayerShot : MonoBehaviour
     public int JumpBullet;
     public int TimeBullet;
 
+
     public GameObject GunLimb;
 
 
@@ -28,17 +28,17 @@ public class PlayerShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myTransform = this.gameObject.transform;
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
         PaintColors rightColor = paintWheel.GetComponent<PaintWheel>().rightPaint;
 
-      
+
         PaintColors leftColor = paintWheel.GetComponent<PaintWheel>().leftPaint;
 
         switch (rightColor)
@@ -104,30 +104,45 @@ public class PlayerShot : MonoBehaviour
 
 
 
-        mausePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mausePosition.z = 0;
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
+        print(difference);
+        if(difference.x < 0f)
+        {
+            difference.x--;
+        }
+        else if(difference.x > 0f)
+        {
+            difference.x++;
+        }
 
-        GunLimb.GetComponent<Transform>().position = mausePosition;
+        if (difference.y < 0f)
+        {
+            difference.y--;
+        }
+        else if (difference.y> 0f)
+        {
+            difference.y++;
+        }
+
+        print(difference);
+
+        difference = difference.normalized;
+
+        print(difference);
 
 
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();
-        float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(0f, 0f, rotz);
-
-        //if(Mathf.Abs(transform.rotation.z) > 0.7f)
-        //{
-        //   GetComponentInChildren<SpriteRenderer>().flipY = true;
-        //}
-        //else
-        //{
-        //   GetComponentInChildren<SpriteRenderer>().flipY = false;
-
-        //}
+        if (GetComponentInParent<PlayerMovement>().facingDirection == -1)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipY = true;
+        }
+        else if (GetComponentInParent<PlayerMovement>().facingDirection == 1)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipY = false;
+        }
 
 
         if (paintWheel.GetComponent<PaintWheel>().shootable)
-        {     
+        {
             //left mouse button
             if (Input.GetMouseButtonDown(0))
             {
@@ -142,7 +157,7 @@ public class PlayerShot : MonoBehaviour
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
 
                 }
-                else if(leftGun ==Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
+                else if (leftGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
                     GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                     bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
@@ -191,12 +206,12 @@ public class PlayerShot : MonoBehaviour
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                 //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 
-                if (rightGun== Bala[5])
+                if (rightGun == Bala[5])
                 {
                     GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                     bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<NormalBullet>().direction = difference;
-                    
+
                 }
                 else if (rightGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {

@@ -11,10 +11,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     private SpriteRenderer thisSprite;
 
-
-
     //Jump Check
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform groundCheck;
     public float checkRedius = 0.1f;
     public LayerMask whatIsGround;
@@ -56,9 +54,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Jump();
-
-       
-
     }
 
     private void HandStairs()

@@ -10,8 +10,6 @@ public class AnimationPlayer : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
-
         animator = player.GetComponent<Animator>();
     }
 
@@ -19,11 +17,12 @@ public class AnimationPlayer : MonoBehaviour
     private void Update()
     {
         Walk();
+       // Jump();
     }
 
     void Walk()
     {
-        if (player.GetComponent<Rigidbody2D>().velocity.x > 0 || player.GetComponent<Rigidbody2D>().velocity.x < 0)
+        if (this.GetComponent<PlayerMovement>().xInput != 0)
         {
             animator.SetBool("Moving", true);
         }
@@ -32,4 +31,16 @@ public class AnimationPlayer : MonoBehaviour
             animator.SetBool("Moving", false);
         }
     }
+
+    //void Jump()
+    //{
+    //    if (!player.GetComponent<PlayerController>().isGrounded)
+    //    {
+    //        animator.SetBool("Jump", true);
+    //    }
+    //    else
+    //    {
+    //        animator.SetBool("Jump", false);
+    //    }
+    //}
 }

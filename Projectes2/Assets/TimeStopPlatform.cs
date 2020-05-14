@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class TimeStopPlatform : MonoBehaviour
 {
+    public float TimeToReactivate = 5f;
+
     public UnityEvent reactivateTime;
 
     private void Start()
@@ -15,7 +17,7 @@ public class TimeStopPlatform : MonoBehaviour
 
     IEnumerator destroy()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(TimeToReactivate);
 
         reactivateTime.Invoke();
         Destroy(this.gameObject);

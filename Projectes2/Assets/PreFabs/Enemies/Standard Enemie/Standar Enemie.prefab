@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1691540137663342624}
   m_Layer: 9
   m_Name: shootingPoint
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 1691540138964178265}
   - component: {fileID: 1691540138964178270}
   - component: {fileID: 8162239344284176539}
-  - component: {fileID: 1691540138964178269}
   - component: {fileID: 1691540138964178264}
-  m_Layer: 0
+  - component: {fileID: 5967145215730504295}
+  m_Layer: 9
   m_Name: Standar Enemie
   m_TagString: Enemie
   m_Icon: {fileID: 0}
@@ -190,21 +190,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9798393}
   m_EdgeRadius: 0
---- !u!114 &1691540138964178269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691540138964178258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff24b4dfa1520e74ead44af8006a6dc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visionRadius: 14.47
-  attackRadius: 11.17
-  speed: 3
 --- !u!114 &1691540138964178264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +209,17 @@ MonoBehaviour:
   speed: 3
   timeToShoot: 1
   shootingPoint: {fileID: 1691540137663342625}
+--- !u!114 &5967145215730504295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691540138964178258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff24b4dfa1520e74ead44af8006a6dc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionRadius: 10
+  attackRadius: 5

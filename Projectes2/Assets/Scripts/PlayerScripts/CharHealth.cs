@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CharHealth : MonoBehaviour
 {
-    [HideInInspector]
+   // [HideInInspector]
     public float currentHP;
 
     public float maxHP;
-
 }
