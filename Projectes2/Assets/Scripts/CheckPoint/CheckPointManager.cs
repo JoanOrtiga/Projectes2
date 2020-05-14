@@ -10,9 +10,12 @@ public class CheckPointManager : MonoBehaviour
     public UnityEvent RespawnEnemies;
     Vector2 StartingPosition;
 
+
     public void Restart()
     {
+       
         player.transform.position = StartingPosition;
+        print(player.transform.position + " " + StartingPosition);
         RespawnEnemies.Invoke();
     }
 

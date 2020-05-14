@@ -5,12 +5,16 @@ using UnityEngine.Events;
 
 public class CheckPoint : MonoBehaviour
 {
-
+    GameObject manager;
+    private void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("CheckManager");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            transform.GetComponentInParent<CheckPointManager>().GetCheckPoint(transform.position);
+            manager.GetComponent<CheckPointManager>().GetCheckPoint(transform.position);
             gameObject.SetActive(false);
         }
         

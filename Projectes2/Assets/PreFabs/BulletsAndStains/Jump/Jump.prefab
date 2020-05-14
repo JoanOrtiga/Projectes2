@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1120116853065478209}
   - component: {fileID: -3271624245652665455}
   - component: {fileID: -6452815485591657176}
+  - component: {fileID: -7985344730875746594}
   m_Layer: 0
   m_Name: Jump
   m_TagString: JumpActivator
@@ -69,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 1450986343
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1e81afd9d8e394845ae301c27e34ae23, type: 3}
   m_Color: {r: 0.9843138, g: 1, b: 0.4666667, a: 1}
   m_FlipX: 0
@@ -122,18 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stainColor: 3
-  onCreate:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1483197006759272067, guid: 2dce40d7469606444be6ae975e9a7af1,
-          type: 3}
-        m_MethodName: newStain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+--- !u!114 &-7985344730875746594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000550871488678238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79692cc960ccd29459f27703e794800b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,8 +14,6 @@ public class FloatingSprite : MonoBehaviour
     void Start()
     {
         startY = transform.position.y;
-        
-
     }
 
     void Update()
