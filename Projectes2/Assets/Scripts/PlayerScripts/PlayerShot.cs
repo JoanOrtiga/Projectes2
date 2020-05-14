@@ -11,7 +11,7 @@ public class PlayerShot : MonoBehaviour
     public Transform shotPoint;
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
-    
+
 
 
     public int DPSMana;
@@ -28,17 +28,17 @@ public class PlayerShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
         PaintColors rightColor = paintWheel.GetComponent<PaintWheel>().rightPaint;
 
-      
+
         PaintColors leftColor = paintWheel.GetComponent<PaintWheel>().leftPaint;
 
         switch (rightColor)
@@ -104,11 +104,40 @@ public class PlayerShot : MonoBehaviour
 
 
 
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
         difference.Normalize();
 
+
+        if (GetComponentInParent<PlayerMovement>().facingDirection == -1)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipY = true;
+            /*  if (Mathf.Abs(transform.GetChild(0).transform.rotation.z) > 0.7f)
+              {
+
+                  GetComponentInChildren<SpriteRenderer>().flipY = true;
+              }
+              else
+              {
+                  GetComponentInChildren<SpriteRenderer>().flipY = false;
+              }*/
+        }
+        else if (GetComponentInParent<PlayerMovement>().facingDirection == 1)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipY = false;
+            /*  if (Mathf.Abs(transform.GetChild(0).transform.rotation.z) > 0.7f)
+              {
+
+                  GetComponentInChildren<SpriteRenderer>().flipY = false;
+              }
+              else
+              {
+                  GetComponentInChildren<SpriteRenderer>().flipY = true;
+              }*/
+        }
+
+
         if (paintWheel.GetComponent<PaintWheel>().shootable)
-        {     
+        {
             //left mouse button
             if (Input.GetMouseButtonDown(0))
             {
@@ -121,9 +150,10 @@ public class PlayerShot : MonoBehaviour
                     GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                     bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletLeft.GetComponent<NormalBullet>().direction = difference;
+                    print(bulletLeft.GetComponent<NormalBullet>().direction);
 
                 }
-                else if(leftGun ==Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
+                else if (leftGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {
                     GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                     bulletLeft.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
@@ -172,12 +202,12 @@ public class PlayerShot : MonoBehaviour
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                 //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 
-                if (rightGun== Bala[5])
+                if (rightGun == Bala[5])
                 {
                     GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                     bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
                     bulletRight.GetComponent<NormalBullet>().direction = difference;
-                    
+
                 }
                 else if (rightGun == Bala[0] && manaManager.GetComponent<StainManager>().manaMana >= DPSMana)
                 {

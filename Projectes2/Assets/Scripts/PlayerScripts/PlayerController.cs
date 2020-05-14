@@ -54,9 +54,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Jump();
-
-       
-
     }
 
     private void HandStairs()
