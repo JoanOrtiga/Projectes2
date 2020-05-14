@@ -6,7 +6,7 @@ public class FOV : MonoBehaviour
 {
     public float visionRadius;
     public float attackRadius;
-    public float speed;
+
 
     GameObject player;
     GameObject enemie;
@@ -29,32 +29,31 @@ public class FOV : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         Vector3 target = initalPosition;
+
         RaycastHit2D hit = Physics2D.Raycast( // comproba entre el enemigo, y el player
-            transform.position,
-            player.transform.position - transform.position,
-            visionRadius,
+            transform.position, //posicion enemigo
+            player.transform.position - transform.position, //vector mirando el jugador
+            visionRadius, //vision 
             1 << LayerMask.NameToLayer("Ground"));
 
         Vector3 forward = transform.TransformDirection(player.transform.position - transform.position);
-        Debug.DrawRay(transform.position, forward, Color.red);
+        //Debug.DrawRay(transform.position, forward, Color.red);
 
         if (hit.collider != null)
         {
             if (hit.collider.tag == "Player")
             {
                 target = player.transform.position;
+                Debug.DrawLine(transform.position, target, Color.green);
 
-                
             }
         }
 
         float distace = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
 
-        Debug.DrawLine(transform.position, target, Color.green);
+        
 
 
         if (target != initalPosition && distace < attackRadius)
