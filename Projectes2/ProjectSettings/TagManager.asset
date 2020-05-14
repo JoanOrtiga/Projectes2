@@ -16,6 +16,7 @@ TagManager:
   - GetPaintGun
   - HittablePlatform
   - TimeStop
+  - CheckManager
   layers:
   - Default
   - TransparentFX
@@ -61,6 +62,9 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 2915910943
+    locked: 0
+  - name: Ground
+    uniqueID: 2007125327
     locked: 0
   - name: Details+
     uniqueID: 3419103735

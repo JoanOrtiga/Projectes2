@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     private SpriteRenderer thisSprite;
 
-
-
     //Jump Check
     private bool isGrounded;
     public Transform groundCheck;

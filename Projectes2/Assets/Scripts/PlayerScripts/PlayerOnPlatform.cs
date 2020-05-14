@@ -16,7 +16,6 @@ public class PlayerOnPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlatformMoving"))
         {
-            print("hola");
             transform.parent = null;
         }
     }
