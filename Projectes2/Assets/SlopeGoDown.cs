@@ -21,8 +21,6 @@ public class SlopeGoDown : MonoBehaviour
         effector = GetComponent<PlatformEffector2D>();
         timer = time2;
         fliper = false;
-
-        print(fliper + " " + waitTime + " " + timer);
     }
 
     // Update is called once per frame
