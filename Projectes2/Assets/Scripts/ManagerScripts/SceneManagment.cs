@@ -37,7 +37,7 @@ public class SceneManagment : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("MenuSong");
             isPlaying = true;
         }
-        else if (currentScene == "Level1" && !isPlaying && !menu)
+        else if (currentScene == "Level_1" && !isPlaying && !menu)
         {
             FindObjectOfType<AudioManager>().Play("InGameSong");
             isPlaying = true;
