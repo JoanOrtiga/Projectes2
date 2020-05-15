@@ -44,36 +44,43 @@ public class FlyingAlienFOV : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
+               
+                this.gameObject.GetComponent<FlyingEnemie>().isPatroling = false;
                 target = player.transform.position;
+                this.gameObject.GetComponent<FlyingEnemie>().attack();
                 Debug.DrawLine(transform.position, target, Color.green);
 
             }
-        }
-
-        float distace = Vector3.Distance(target, transform.position);
-        Vector3 dir = (target - transform.position).normalized;
-
-
-        print(distace);
-        print(attackRadius);
-
-        if ( distace < attackRadius)
-        {
-            print("shoot");
-            //this.gameObject.GetComponent<FlyingEnemie>().Shoot();
-
+            
         }
         else
         {
             
+            this.gameObject.GetComponent<FlyingEnemie>().isPatroling = true;
         }
+        float distace = Vector3.Distance(target, transform.position);
+        Vector3 dir = (target - transform.position).normalized;
 
-        if (distace < visionRadius && distace > attackRadius)
-        {
-            print("Chase");
-           // this.gameObject.GetComponent<FlyingEnemie>().Attack(true);
 
-        }
+
+
+        //if (target != initalPosition && distace < attackRadius)
+        //{
+        //    print("shoot");
+            
+
+
+        //}
+       
+
+        //if (target != initalPosition && distace < visionRadius && distace > attackRadius)
+        //{
+        //    print("Chase");
+        //    this.gameObject.GetComponent<FlyingEnemie>().attack();
+
+        //    //this.gameObject.GetComponent<StandardEnemie>().Attack(true);
+
+        //}
     }
 
     private void OnDrawGizmosSelected()
