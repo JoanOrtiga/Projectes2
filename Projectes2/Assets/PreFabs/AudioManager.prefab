@@ -48,139 +48,160 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 49a74d41860a50648916c4c7cc0185a0, type: 3}
     loop: 1
     isSFX: 0
-    volume: 0.345
-    pitch: 0
+    volume: 1
+    pitch: 1.08
     source: {fileID: 0}
-  - name: 
+  - name: InGameSong
+    clip: {fileID: 8300000, guid: 6823a61d439598b42a61a2d0d73e27f3, type: 3}
+    loop: 1
+    isSFX: 0
+    volume: 1
+    pitch: 1.12
+    source: {fileID: 0}
+  - name: ButtonClickSound
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ButtonOverSound
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerAtack
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerHeal
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerReceiveDMG
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerFootsteps
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerJump
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: PlayerTakeGun
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: EnemyShoot
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: EnemyDie
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: EnemyKamikaze
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: EnemyReceiveDMG
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: EnemyMeleAtack
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: BossAtack
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: BossReceiveDMG
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: BossDie
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: BossMove
+    clip: {fileID: 0}
+    loop: 0
+    isSFX: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RadioAmbient
     clip: {fileID: 0}
     loop: 0
     isSFX: 0
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
-  - name: 
+  - name: OuterHouse
     clip: {fileID: 0}
     loop: 0
     isSFX: 0
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
-  - name: 
+  - name: Blank
     clip: {fileID: 0}
     loop: 0
     isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     source: {fileID: 0}

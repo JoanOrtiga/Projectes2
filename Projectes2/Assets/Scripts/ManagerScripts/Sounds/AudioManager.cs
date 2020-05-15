@@ -55,8 +55,8 @@ public class AudioManager : MonoBehaviour
     }
     public void MainVolume(float value)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == "Menu");
-        Sound ss = Array.Find(sounds, sound => sound.name == "ScenarioMusic");
+        Sound s = Array.Find(sounds, sound => sound.name == "MenuSong");
+        Sound ss = Array.Find(sounds, sound => sound.name == "InGameSong");
         s.volume = value;
         ss.volume = value;
 

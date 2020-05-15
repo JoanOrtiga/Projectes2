@@ -29,16 +29,17 @@ public class MenuSonido : MonoBehaviour
 
     public void Mute()
     {
+
         if (isMuted)
         {
             isMuted = false;
-            FindObjectOfType<AudioManager>().Resume("Menu");
+            FindObjectOfType<AudioManager>().Resume("MenuSong");
 
         }
         else
         {
             isMuted = true;
-            FindObjectOfType<AudioManager>().Mute("Menu");
+            FindObjectOfType<AudioManager>().Mute("MenuSong");
 
         }
     }
