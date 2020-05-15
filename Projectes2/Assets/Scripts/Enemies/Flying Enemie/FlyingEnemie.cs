@@ -1,45 +1,146 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class FlyingEnemie : MonoBehaviour
+public class FlyingEnemie : EnemieManager
 {
-    public int hp = 10;
-    public int DMG = 3;
-    public float attackTime = 2;
-
-    public float speed = 4f;
+    public float timeAttacking = 1f;
+    public float patrolSpeed;
+    public float goingBackSpeed = 1f;
+    public float attackSpeed;
+    public Transform[] patrolSpots;
+    
 
     private GameObject target;
+    private bool patrolPoint = true;
+    private Vector2 spot;
 
 
-    private float yValue;
+    private float startY;
+    private float lastX;
+    private float floatSpan = 1.0f;
+    private float upDownSpeed = 2;
     private float actualTime;
+    private bool scriptActivate = true;
+    private bool isGoingBack = false;
 
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private bool isPatroling = true;
+
     void Start()
     {
-        yValue = this.transform.position.y;
         target = GameObject.FindGameObjectWithTag("Player");
+        startY = transform.position.y;
+
+
+        transform.localRotation = Quaternion.Euler(0, 180, 0);
+        spot = patrolSpots[0].position;
+       
     }
 
-    // Update is called once per frame
     void Update()
     {
-        actualTime += Time.deltaTime;
+        if (isGoingBack)
+        {
+            goingBack();
+        }
         
-        attack();
+       
     }
-
 
 
     public void attack()
     {
-        if (actualTime < attackTime)
+        lastX = transform.position.x;
+        transform.position = Vector2.MoveTowards(transform.position, target.GetComponent<Transform>().position, attackSpeed * Time.deltaTime);
+        if (transform.position.x < lastX)
         {
-            
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        print("ATTACK");
     }
+
+    public void patrol()
+    {
+
+
+        transform.position = new Vector2(transform.position.x, (float)(startY + Mathf.Sin(Time.time * upDownSpeed) * floatSpan / 2.0)); //moving up and down
+
+        transform.position = Vector2.MoveTowards(transform.position, spot, patrolSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, spot) < 0.2f)
+        {
+            patrolPoint = !patrolPoint;
+
+        }
+        if (patrolPoint)
+        {
+            spot = patrolSpots[1].position;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (patrolPoint == false)
+        {
+            spot = patrolSpots[0].position;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
+
+
+    }
+
+    void activateScript(bool activate)
+    {
+        if (activate)
+        {
+            this.GetComponent<FlyingAlienFOV>().enabled = true;
+        }
+        else
+        {
+            this.GetComponent<FlyingAlienFOV>().enabled = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            print("HIT");
+            isGoingBack = true;
+            isPatroling = false;
+            actualTime = 100;
+        }
+    }
+
+    void goingBack()
+    {
+        lastX = transform.position.x;
+        activateScript(false);
+        transform.position = Vector2.MoveTowards(transform.position, spot, goingBackSpeed * Time.deltaTime);
+        print("GOING BACK");
+
+
+        if (transform.position.x < lastX)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        if (Vector2.Distance(transform.position, spot) < 0.2f)
+        {
+            activateScript(true);
+            isGoingBack = false;
+        }
+
+    }
+
+
 }
