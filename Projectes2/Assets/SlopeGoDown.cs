@@ -6,8 +6,8 @@ public class SlopeGoDown : MonoBehaviour
 {
     private PlatformEffector2D effector;
 
-    public float time1 = 0.15f;
-    public float time2 = 0.6f;
+    public float time1;
+    public float time2;
     
     private float waitTime;
     private float timer;
@@ -58,12 +58,12 @@ public class SlopeGoDown : MonoBehaviour
                 fliper = false;
                 timer = time2;
 
-                print(fliper + " " + waitTime + " " + timer);
             }
             else
             {
                 timer -= Time.deltaTime;
             }
         }
+        print(waitTime);
     }
 }
