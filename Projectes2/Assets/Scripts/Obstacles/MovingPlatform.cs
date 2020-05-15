@@ -28,7 +28,6 @@ public class MovingPlatform : MonoBehaviour
                 transform.GetChild(0).GetChild(i).GetComponent<TimeStopPlatform>().reactivateTime.AddListener(Defreeze);
                 notFreezed = false;
             }
-            
         }
 
     }
@@ -52,14 +51,8 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-       // Gizmos.DrawLine(pos1.position, pos2.position);
+       Gizmos.DrawLine(pos1.position, pos2.position);
     }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        
-    }
-
     public void Defreeze()
     {
         notFreezed = true;

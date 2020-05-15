@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class RotatingPlatform : MonoBehaviour
 {
-    
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool notFreezed = true;
 
     // Update is called once per frame
     void Update()
     {
-       
+        for (int i = 0; i < transform.GetChild(0).childCount; i++)
+        {
+            print(transform.GetChild(0).GetChild(i).name);
+            if (transform.GetChild(0).GetChild(i).transform.CompareTag("TimeStop"))
+            {
+                transform.GetChild(0).GetChild(i).GetComponent<TimeStopPlatform>().reactivateTime.AddListener(Defreeze);
+                notFreezed = false;
+            }
+
+        }
+
+        if (notFreezed)
+            transform.Rotate(new Vector3(0, 0, 5));
+    }
+
+    public void Defreeze()
+    {
+        notFreezed = true;
     }
 }

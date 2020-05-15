@@ -150,6 +150,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        print(collision.tag);
+
         if (collision.CompareTag("Ladder"))
         {
             onLadder = true;

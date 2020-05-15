@@ -55,7 +55,7 @@ public class SceneManagment : MonoBehaviour
     public void NextScene()
     {
         FindObjectOfType<AudioManager>().Stop("MenuSong");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(1);
         menu = false;
         isPlaying = false;
     }
