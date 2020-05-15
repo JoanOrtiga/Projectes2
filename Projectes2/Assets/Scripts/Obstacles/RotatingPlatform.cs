@@ -16,10 +16,6 @@ public class RotatingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (gameObject.GetComponent<Collider2D>().isTrigger )
-        {
-            gameObject.transform.rotation = Quaternion.EulerRotation(0, 0, 1);
-
-        }
+       
     }
 }
