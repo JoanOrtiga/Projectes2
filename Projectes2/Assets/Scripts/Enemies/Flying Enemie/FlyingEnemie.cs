@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 public class FlyingEnemie : MonoBehaviour
 {
     public float timeAttacking = 1f;
-    public float patrolSpeed1;
-    public float patrolSpeed2;
+    public float patrolSpeed;
+    public float goingBackSpeed = 1f;
     public float attackSpeed;
     public Transform[] patrolSpots;
     
@@ -18,10 +18,13 @@ public class FlyingEnemie : MonoBehaviour
 
 
     private float startY;
+    private float lastX;
     private float floatSpan = 1.0f;
     private float upDownSpeed = 2;
     private float actualTime;
     private bool scriptActivate = true;
+    private bool isGoingBack = false;
+
     
 
     public bool isPatroling = true;
@@ -39,8 +42,11 @@ public class FlyingEnemie : MonoBehaviour
 
     void Update()
     {
-
-        patrol();
+        if (isGoingBack)
+        {
+            goingBack();
+        }
+        
        
     }
 
@@ -48,81 +54,48 @@ public class FlyingEnemie : MonoBehaviour
     public void attack()
     {
         
-        if (!(actualTime > timeAttacking))
-        {
-            actualTime += Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target.GetComponent<Transform>().position, attackSpeed * Time.deltaTime);
-            print("ATTACKING");
-        }
-        else
-        {
-            //patrol();
-            //isPatroling = true;
-            //actualTime = 0;
-        }
+        transform.position = Vector2.MoveTowards(transform.position, target.GetComponent<Transform>().position, attackSpeed * Time.deltaTime);
+        print("ATTACK");
     }
 
     public void patrol()
     {
-        if (scriptActivate)
+
+
+        transform.position = new Vector2(transform.position.x, (float)(startY + Mathf.Sin(Time.time * upDownSpeed) * floatSpan / 2.0)); //moving up and down
+
+        transform.position = Vector2.MoveTowards(transform.position, spot, patrolSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, spot) < 0.2f)
         {
-            if (isPatroling)
-            {
+            patrolPoint = !patrolPoint;
 
-                transform.position = new Vector2(transform.position.x, (float)(startY + Mathf.Sin(Time.time * upDownSpeed) * floatSpan / 2.0)); //moving up and down
-
-                transform.position = Vector2.MoveTowards(transform.position, spot, patrolSpeed1 * Time.deltaTime);
-
-                if (Vector2.Distance(transform.position, spot) < 0.2f)
-                {
-                    patrolPoint = !patrolPoint;
-
-                }
-
-
-                if (patrolPoint)
-                {
-                    spot = patrolSpots[1].position;
-                    transform.localRotation = Quaternion.Euler(0, 180, 0);
-                }
-                else if (patrolPoint == false)
-                {
-                    spot = patrolSpots[0].position;
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);
-                }
-            }
-            else
-            {
-                transform.position = new Vector2(transform.position.x, (float)(startY + Mathf.Sin(Time.time * upDownSpeed) * floatSpan / 2.0)); //moving up and down
-
-                transform.position = Vector2.MoveTowards(transform.position, spot, patrolSpeed2 * Time.deltaTime);
-
-                if (Vector2.Distance(transform.position, spot) < 0.2f)
-                {
-                    patrolPoint = !patrolPoint;
-
-                }
-
-
-                if (patrolPoint)
-                {
-                    spot = patrolSpots[1].position;
-                    transform.localRotation = Quaternion.Euler(0, 180, 0);
-                }
-                else if (patrolPoint == false)
-                {
-                    spot = patrolSpots[0].position;
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);
-                }
-            }
         }
-        
-        
+        if (patrolPoint)
+        {
+            spot = patrolSpots[1].position;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (patrolPoint == false)
+        {
+            spot = patrolSpots[0].position;
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
+
+
     }
 
-    void activateScript()
+    void activateScript(bool activate)
     {
-        this.GetComponent<FlyingAlienFOV>().enabled = false;
+        if (activate)
+        {
+            this.GetComponent<FlyingAlienFOV>().enabled = true;
+        }
+        else
+        {
+            this.GetComponent<FlyingAlienFOV>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -130,9 +103,23 @@ public class FlyingEnemie : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             print("HIT");
-            patrol();
-            isPatroling = true;
+            isGoingBack = true;
+            isPatroling = false;
             actualTime = 100;
         }
+    }
+
+    void goingBack()
+    {
+        activateScript(false);
+        transform.position = Vector2.MoveTowards(transform.position, spot, goingBackSpeed * Time.deltaTime);
+        print("GOING BACK");
+
+        if (Vector2.Distance(transform.position, spot) < 0.2f)
+        {
+            activateScript(true);
+            isGoingBack = false;
+        }
+
     }
 }

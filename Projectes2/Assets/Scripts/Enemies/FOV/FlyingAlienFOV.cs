@@ -45,18 +45,19 @@ public class FlyingAlienFOV : MonoBehaviour
             if (hit.collider.tag == "Player")
             {
                
-                this.gameObject.GetComponent<FlyingEnemie>().isPatroling = false;
+                //this.gameObject.GetComponent<FlyingEnemie>().isPatroling = false;
                 target = player.transform.position;
                 this.gameObject.GetComponent<FlyingEnemie>().attack();
                 Debug.DrawLine(transform.position, target, Color.green);
+                print("Attack");
 
             }
             
         }
         else
         {
-            
-            this.gameObject.GetComponent<FlyingEnemie>().isPatroling = true;
+            print("Patrol");
+            this.gameObject.GetComponent<FlyingEnemie>().patrol();
         }
         float distace = Vector3.Distance(target, transform.position);
         Vector3 dir = (target - transform.position).normalized;
