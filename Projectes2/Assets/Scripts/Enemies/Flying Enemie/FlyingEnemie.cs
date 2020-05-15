@@ -46,8 +46,9 @@ public class FlyingEnemie : EnemieManager
         {
             goingBack();
         }
-        
-       
+        death();
+
+
     }
 
 
@@ -63,7 +64,6 @@ public class FlyingEnemie : EnemieManager
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        print("ATTACK");
     }
 
     public void patrol()
@@ -110,7 +110,8 @@ public class FlyingEnemie : EnemieManager
     {
         if (collision.CompareTag("Player"))
         {
-            print("HIT");
+            print("HIT PLAYER");
+            collision.GetComponent<PlayerHealth>().currentHP -= DMG;
             isGoingBack = true;
             isPatroling = false;
             actualTime = 100;
@@ -122,7 +123,7 @@ public class FlyingEnemie : EnemieManager
         lastX = transform.position.x;
         activateScript(false);
         transform.position = Vector2.MoveTowards(transform.position, spot, goingBackSpeed * Time.deltaTime);
-        print("GOING BACK");
+
 
 
         if (transform.position.x < lastX)
@@ -142,5 +143,12 @@ public class FlyingEnemie : EnemieManager
 
     }
 
+    void death()
+    {
+        if (HP <= 0)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+    }
 
 }

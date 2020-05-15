@@ -64,6 +64,6 @@ public class SlopeGoDown : MonoBehaviour
                 timer -= Time.deltaTime;
             }
         }
-        print(waitTime);
+
     }
 }

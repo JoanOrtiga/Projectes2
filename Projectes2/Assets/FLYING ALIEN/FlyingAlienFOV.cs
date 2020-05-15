@@ -49,14 +49,14 @@ public class FlyingAlienFOV : MonoBehaviour
                 target = player.transform.position;
                 this.gameObject.GetComponent<FlyingEnemie>().attack();
                 Debug.DrawLine(transform.position, target, Color.green);
-                print("Attack");
+
 
             }
             
         }
         else
         {
-            print("Patrol");
+
             this.gameObject.GetComponent<FlyingEnemie>().patrol();
         }
         float distace = Vector3.Distance(target, transform.position);
