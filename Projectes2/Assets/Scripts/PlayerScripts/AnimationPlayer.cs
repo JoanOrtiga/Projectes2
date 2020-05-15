@@ -10,8 +10,6 @@ public class AnimationPlayer : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
-
         animator = player.GetComponent<Animator>();
     }
 
@@ -24,7 +22,7 @@ public class AnimationPlayer : MonoBehaviour
 
     void Walk()
     {
-        if (this.GetComponent<PlayerController>().inputX != 0)
+        if (this.GetComponent<PlayerMovement>().xInput != 0)
         {
             animator.SetBool("Moving", true);
         }
