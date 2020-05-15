@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class CheckPointManager : MonoBehaviour
 {
     public GameObject player;
-    public GameObject bulletManager;
 
     public UnityEvent RespawnEnemies;
     Vector2 StartingPosition;
@@ -14,23 +13,14 @@ public class CheckPointManager : MonoBehaviour
 
     public void Restart()
     {
+       
         player.transform.position = StartingPosition;
-        player.GetComponent<PlayerHealth>().currentHP = player.GetComponent<PlayerHealth>().maxHP;
-        bulletManager.GetComponent<StainManager>().manaMana = bulletManager.GetComponent<StainManager>().manaMax;
-
+        print(player.transform.position + " " + StartingPosition);
         RespawnEnemies.Invoke();
     }
 
     public void GetCheckPoint(Vector2 pos)
     {
         StartingPosition = pos;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.U))
-        {
-            Restart();
-        }
     }
 }

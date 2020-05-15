@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5151352415928106543}
   - component: {fileID: 5151352415928106528}
   - component: {fileID: 5151352415928106529}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: PortalBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

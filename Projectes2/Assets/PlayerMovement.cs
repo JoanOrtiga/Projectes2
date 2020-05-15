@@ -30,8 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float lastSlopeAngle;
     public float ladderSpeed = 300;
 
-    [HideInInspector]
-    public int facingDirection = 1;
+    private int facingDirection = 1;
 
     private bool isGrounded;
     private bool isOnSlope;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 268643307390754563}
   - component: {fileID: 144246073840362683}
   - component: {fileID: 7446751220116308200}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: TimeBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

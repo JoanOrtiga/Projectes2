@@ -5,22 +5,13 @@ using UnityEngine;
 public class SlopeGoDown : MonoBehaviour
 {
     private PlatformEffector2D effector;
-
-    public float time1;
-    public float time2;
-    
-    private float waitTime;
-    private float timer;
-
-    private bool fliper; //como el delfin
+    public float waitTime;
 
 
     // Start is called before the first frame update
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
-        timer = time2;
-        fliper = false;
     }
 
     // Update is called once per frame
@@ -28,16 +19,16 @@ public class SlopeGoDown : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.S))
         {
-            waitTime = time1;
+            waitTime = 0.15f;
         }
-
         if (Input.GetKey(KeyCode.S))
         {
+            Debug.Log("hola");
             if (waitTime <= 0)
             {
                 effector.rotationalOffset = 180f;
-                waitTime = time1;
-                fliper = true;
+                waitTime = 0.5f;
+
             }
             else
             {
@@ -49,21 +40,5 @@ public class SlopeGoDown : MonoBehaviour
             effector.rotationalOffset = 0f;
 
         }
-
-        if (fliper)
-        {
-            if (timer <= 0)
-            {
-                effector.rotationalOffset = 0f;
-                fliper = false;
-                timer = time2;
-
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-            }
-        }
-        print(waitTime);
     }
 }
