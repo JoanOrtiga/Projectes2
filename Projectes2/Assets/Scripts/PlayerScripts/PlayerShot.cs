@@ -11,6 +11,10 @@ public class PlayerShot : MonoBehaviour
     public Transform shotPoint;
     public Transform shotPoint1;
     public Transform shotPoint2;
+
+    public GameObject light1;
+    public GameObject light2;
+
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
 
@@ -114,11 +118,16 @@ public class PlayerShot : MonoBehaviour
         {
             GetComponentInChildren<SpriteRenderer>().flipY = true;
             shotPoint = shotPoint2;
+            light1.SetActive(false);
+            light2.SetActive(true);
+            
         }
         else if (GetComponentInParent<PlayerMovement>().facingDirection == 1)
         {
             GetComponentInChildren<SpriteRenderer>().flipY = false;
             shotPoint = shotPoint1;
+            light1.SetActive(true);
+            light2.SetActive(false);
         }
 
         if (paintWheel.GetComponent<PaintWheel>().shootable)
