@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StandardEnemie : EnemieManager
 {
 
+    public float shootDistance;
+    public float chaseDistance;
 
     public GameObject projectile;
     public float speed;
@@ -14,6 +17,7 @@ public class StandardEnemie : EnemieManager
     private GameObject target;
 
     private float actualTime;
+    private float distance;
     
 
 
@@ -25,19 +29,46 @@ public class StandardEnemie : EnemieManager
     void Update()
     {
         Death();
-        
-
         actualTime += Time.deltaTime;
+        
     }
 
 
-    public void Attack(bool activado)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Flip();
-        if (activado)
+        if (collision.CompareTag("Player"))
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        }  
+            Flip();
+            checkDistance();
+        }
+       
+    }
+    
+
+    void checkDistance()
+    {
+        
+        distance = (target.transform.position.x - transform.position.x);
+        distance =  Mathf.Abs(distance);
+        print((distance < chaseDistance && distance > shootDistance)+ " distance " + (distance) + " chase distance " + (chaseDistance) + " Shoot distance " + (shootDistance));
+
+        if (distance < chaseDistance && distance > shootDistance)
+        {
+            print("Chase");
+            Chase();
+        }
+        else if(distance <= shootDistance)
+        {
+            print("shoot");
+            Shoot();
+        }
+    }
+
+
+    public void Chase()
+    {
+        
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     void Death()
@@ -51,7 +82,7 @@ public class StandardEnemie : EnemieManager
 
     public void Shoot()
     {
-        Flip();
+        
         if (actualTime >= timeToShoot)
         {
             actualTime = 0;
