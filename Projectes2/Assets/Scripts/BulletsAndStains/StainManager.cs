@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StainManager : MonoBehaviour
 {
-    public int manaMax;
- [HideInInspector]
-    public int manaMana;
+    public float manaMax;
+    [HideInInspector]
+    public float manaMana; //Variable recieves this name because https://www.youtube.com/watch?v=9ytei6bu7kQ
     [SerializeField]
     private List<GameObject> JumpList= new List<GameObject>();
     [SerializeField]
@@ -24,6 +24,7 @@ public class StainManager : MonoBehaviour
     {
         manaMana = manaMax;
     }
+
     void Update()
     {
         if (JumpList.Count >= JumpLimiter+1)

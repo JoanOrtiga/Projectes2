@@ -88,28 +88,16 @@ public class PaintWheel : MonoBehaviour
         {
             case 0:
                 return PaintColors.red;
-                
             case 1:
                 return PaintColors.cyan;
-                
             case 2:
-                return PaintColors.blue;
-            case 3:
                 return PaintColors.yellow;
-            case 4:
+            case 3:
                 return PaintColors.orange;
-            case 5:
+            case 4:
                 return PaintColors.pink;
-            case 6:
-                return PaintColors.darkBlue;
-                
-            case 7:
-                return PaintColors.green;
-
             default:
                 return PaintColors.red;
-                
-
         }
     }
 }
