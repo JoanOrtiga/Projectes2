@@ -40,5 +40,21 @@ public class SlopeGoDown : MonoBehaviour
             effector.rotationalOffset = 0f;
 
         }
+
+        if (fliper)
+        {
+            if (timer <= 0)
+            {
+                effector.rotationalOffset = 0f;
+                fliper = false;
+                timer = time2;
+
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+            }
+        }
+
     }
 }

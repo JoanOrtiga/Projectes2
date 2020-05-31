@@ -31,10 +31,11 @@ public class NormalBullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemie"))
         {
-            if (other.gameObject.name == "Slime Enemie 1" || other.gameObject.name == "Slime Enemie 2(Clone)" || other.gameObject.name == "Slime Enemie 3(Clone)")
+            print("HIT ENEMIE");
+            if (other.gameObject.name == "Alien")
             {
-                print("HIT SLIME");
-                other.gameObject.GetComponent<SlimeEnemieSystem>().health = other.gameObject.GetComponent<SlimeEnemieSystem>().health - Damage;
+                print("HIT FLYING ALEIN");
+                other.gameObject.GetComponent<FlyingEnemie>().HP = other.gameObject.GetComponent<FlyingEnemie>().HP - Damage;
             }
             else if(other.gameObject.name == "Mele Enemie")
             {

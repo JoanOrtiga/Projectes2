@@ -78,3 +78,6 @@ TagManager:
   - name: Paint
     uniqueID: 1450986343
     locked: 0
+  - name: Player
+    uniqueID: 3253148463
+    locked: 0

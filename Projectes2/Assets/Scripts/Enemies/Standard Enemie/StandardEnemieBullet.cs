@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StandardEnemieBullet : MonoBehaviour
 {
-    public int DMG = 3;
+    public float DMG = 4;
     public float speed = 3f;
     private Transform player;
     private Vector2 target;
@@ -30,7 +30,10 @@ public class StandardEnemieBullet : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
+
+            collision.GetComponent<PlayerHealth>().currentHP -= DMG;
             //player.GetComponent<PlayerController>().currentHP -= DMG;
+
 
             Destroy(this.gameObject);
         }

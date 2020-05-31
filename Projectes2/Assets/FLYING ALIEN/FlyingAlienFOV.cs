@@ -35,7 +35,7 @@ public class FlyingAlienFOV : MonoBehaviour
             transform.position, //posicion enemigo
             player.transform.position - transform.position, //vector mirando el jugador
             visionRadius, //vision 
-            1 << LayerMask.NameToLayer("Ground"));
+            1 << LayerMask.NameToLayer("Player"));
 
         Vector3 forward = transform.TransformDirection(player.transform.position - transform.position);
         //Debug.DrawRay(transform.position, forward, Color.red);
@@ -49,14 +49,14 @@ public class FlyingAlienFOV : MonoBehaviour
                 target = player.transform.position;
                 this.gameObject.GetComponent<FlyingEnemie>().attack();
                 Debug.DrawLine(transform.position, target, Color.green);
-                print("Attack");
+
 
             }
             
         }
         else
         {
-            print("Patrol");
+
             this.gameObject.GetComponent<FlyingEnemie>().patrol();
         }
         float distace = Vector3.Distance(target, transform.position);

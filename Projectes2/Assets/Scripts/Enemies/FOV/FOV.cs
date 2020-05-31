@@ -35,7 +35,7 @@ public class FOV : MonoBehaviour
             transform.position, //posicion enemigo
             player.transform.position - transform.position, //vector mirando el jugador
             visionRadius, //vision 
-            1 << LayerMask.NameToLayer("Ground"));
+            1 << LayerMask.NameToLayer("Player") | LayerMask.NameToLayer("Ground"));
 
         Vector3 forward = transform.TransformDirection(player.transform.position - transform.position);
         //Debug.DrawRay(transform.position, forward, Color.red);
