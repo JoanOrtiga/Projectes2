@@ -15,6 +15,7 @@ public class StandardEnemie : EnemieManager
     public GameObject shootingPoint;
 
     private GameObject target;
+    private Animator animator;
 
     private float actualTime;
     private float distance;
@@ -23,14 +24,21 @@ public class StandardEnemie : EnemieManager
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");  
+        target = GameObject.FindGameObjectWithTag("Player");
+        animator = this.GetComponent<Animator>();
     }
 
     void Update()
     {
         Death();
         actualTime += Time.deltaTime;
-        
+
+        distance = (target.transform.position.x - transform.position.x);
+        distance = Mathf.Abs(distance);
+        if (distance > chaseDistance)
+        {
+            animator.SetBool("Moving", false);
+        }
     }
 
 
@@ -48,13 +56,13 @@ public class StandardEnemie : EnemieManager
     void checkDistance()
     {
         
-        distance = (target.transform.position.x - transform.position.x);
-        distance =  Mathf.Abs(distance);
-        print((distance < chaseDistance && distance > shootDistance)+ " distance " + (distance) + " chase distance " + (chaseDistance) + " Shoot distance " + (shootDistance));
+        
+        //print((distance < chaseDistance && distance > shootDistance)+ " distance " + (distance) + " chase distance " + (chaseDistance) + " Shoot distance " + (shootDistance));
 
         if (distance < chaseDistance && distance > shootDistance)
         {
             print("Chase");
+            
             Chase();
         }
         else if(distance <= shootDistance)
@@ -62,17 +70,23 @@ public class StandardEnemie : EnemieManager
             print("shoot");
             Shoot();
         }
+
+        
+        
     }
 
 
     public void Chase()
     {
-        
+
+        animator.SetBool("Moving", true);
+        animator.SetBool("Shooting", false);
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     void Death()
     {
+       
 
         if (HP <= 0)
         {
@@ -82,7 +96,9 @@ public class StandardEnemie : EnemieManager
 
     public void Shoot()
     {
-        
+        animator.SetBool("Moving", false);
+        animator.SetBool("Shooting", true);
+
         if (actualTime >= timeToShoot)
         {
             actualTime = 0;
@@ -92,6 +108,8 @@ public class StandardEnemie : EnemieManager
 
     void Flip()
     {
+
+
         if (target.transform.position.x > this.transform.position.x)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
