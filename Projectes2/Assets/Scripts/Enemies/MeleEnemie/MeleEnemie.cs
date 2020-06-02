@@ -21,13 +21,14 @@ public class MeleEnemie : MonoBehaviour
     private bool isPatroling = true;
     private Animator animator;
 
-
-
-
+    Vector3 lastPos;
+    Vector3 currentPos;
+    private bool checkDirectionBool = true;
 
 
     void Start()
     {
+        lastPos = this.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         spot = patrolPoints[0].position;
         animator = this.GetComponent<Animator>();
@@ -47,7 +48,7 @@ public class MeleEnemie : MonoBehaviour
         }
 
 
-
+        checkDirection();
         patrol();
 
 
@@ -61,6 +62,7 @@ public class MeleEnemie : MonoBehaviour
         {
             Chase();
             Attack();
+
         }
 
 
@@ -68,12 +70,14 @@ public class MeleEnemie : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isPatroling = true;
+        checkDirectionBool = true;
     }
 
     void Chase()
     {
         isPatroling = false;
-      //  print((distance < chaseDistance && distance > attackDistance) + " Chase " + chaseDistance + " attack " + attackDistance + "distace" + distance);
+        checkDirectionBool = false;
+        //  print((distance < chaseDistance && distance > attackDistance) + " Chase " + chaseDistance + " attack " + attackDistance + "distace" + distance);
         if (distance < chaseDistance && distance > attackDistance)
         {
             print("CHASE");
@@ -89,6 +93,7 @@ public class MeleEnemie : MonoBehaviour
     void Attack()
     {
         isPatroling = false;
+        checkDirectionBool = false;
         if (distance < attackDistance)
         {
             animator.SetBool("Attacking", true);
@@ -113,20 +118,37 @@ public class MeleEnemie : MonoBehaviour
             if (patrolPoint)
             {
                 spot = patrolPoints[1].position;
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                
 
             }
             else if (patrolPoint == false)
             {
                 spot = patrolPoints[0].position;
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
+               
 
             }
         }
-
-
-
     }
+
+    void checkDirection()
+    {
+        if (checkDirectionBool)
+        {
+            currentPos = this.transform.position;
+            //print("Last Pos:" + lastPos.x + "Current Pos" + currentPos.x);
+            if (currentPos.x < lastPos.x)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+            }
+            lastPos = currentPos;
+        }
+        
+    }
+
 
 
 
