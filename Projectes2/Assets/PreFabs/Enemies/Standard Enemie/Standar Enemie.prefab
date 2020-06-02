@@ -221,5 +221,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff24b4dfa1520e74ead44af8006a6dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRadius: 18.41
-  attackRadius: 13.75
+  visionRadius: 10
+  attackRadius: 5

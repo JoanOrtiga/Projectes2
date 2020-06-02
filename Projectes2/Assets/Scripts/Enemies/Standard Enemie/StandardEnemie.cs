@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StandardEnemie : EnemieManager
 {
 
+    public float shootDistance;
+    public float chaseDistance;
 
     public GameObject projectile;
     public float speed;
@@ -12,36 +15,78 @@ public class StandardEnemie : EnemieManager
     public GameObject shootingPoint;
 
     private GameObject target;
+    private Animator animator;
 
     private float actualTime;
+    private float distance;
     
 
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");  
+        target = GameObject.FindGameObjectWithTag("Player");
+        animator = this.GetComponent<Animator>();
     }
 
     void Update()
     {
         Death();
-        
-
         actualTime += Time.deltaTime;
+
+        distance = (target.transform.position.x - transform.position.x);
+        distance = Mathf.Abs(distance);
+        if (distance > chaseDistance)
+        {
+            animator.SetBool("Moving", false);
+        }
     }
 
 
-    public void Attack(bool activado)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Flip();
-        if (activado)
+        if (collision.CompareTag("Player"))
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        }  
+            Flip();
+            checkDistance();
+        }
+       
+    }
+    
+
+    void checkDistance()
+    {
+        
+        
+        //print((distance < chaseDistance && distance > shootDistance)+ " distance " + (distance) + " chase distance " + (chaseDistance) + " Shoot distance " + (shootDistance));
+
+        if (distance < chaseDistance && distance > shootDistance)
+        {
+            print("Chase");
+            
+            Chase();
+        }
+        else if(distance <= shootDistance)
+        {
+            print("shoot");
+            Shoot();
+        }
+
+        
+        
+    }
+
+
+    public void Chase()
+    {
+
+        animator.SetBool("Moving", true);
+        animator.SetBool("Shooting", false);
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     void Death()
     {
+       
 
         if (HP <= 0)
         {
@@ -51,7 +96,9 @@ public class StandardEnemie : EnemieManager
 
     public void Shoot()
     {
-        Flip();
+        animator.SetBool("Moving", false);
+        animator.SetBool("Shooting", true);
+
         if (actualTime >= timeToShoot)
         {
             actualTime = 0;
@@ -61,6 +108,8 @@ public class StandardEnemie : EnemieManager
 
     void Flip()
     {
+
+
         if (target.transform.position.x > this.transform.position.x)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);

@@ -66,7 +66,7 @@ public class FOV : MonoBehaviour
         if (target != initalPosition && distace < visionRadius && distace > attackRadius)
         {
             print("Chase");
-            this.gameObject.GetComponent<StandardEnemie>().Attack(true);
+            this.gameObject.GetComponent<StandardEnemie>().Chase();
 
         }
     }
