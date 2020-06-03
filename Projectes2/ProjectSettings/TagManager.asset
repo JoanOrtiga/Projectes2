@@ -18,6 +18,7 @@ TagManager:
   - TimeStop
   - CheckManager
   - Boss
+  - WindowLimit
   layers:
   - Default
   - TransparentFX

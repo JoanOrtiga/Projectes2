@@ -13,47 +13,34 @@ public class FollowPlayer : BossController
     public float followPlayerSpeed;
     public bool canMove;
     // Use this for initialization
+
+    public float maxSec = 8, minSec = 4;
+
+    float secondsToChange;
+
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        canMove = true;
+       // canMove = true;
     }
 
-   
+    private void OnEnable()
+    {
+        secondsToChange = Random.Range(minSec, maxSec);
+    }
 
     private void FixedUpdate()
     {
-        if (canMove)
-        {
+        secondsToChange -= Time.deltaTime;
+
+      //  if (canMove)
+    //    {
             transform.position = Vector2.MoveTowards(transform.position, new Vector3(playerPos.position.x, transform.position.y, 0), followPlayerSpeed * Time.deltaTime);
-        }
-    }
+        //}
 
-    protected override void changeMov()
-    {
-        switch (base.switchMov())
+        if(secondsToChange <= 0)
         {
-            case BossStates.AtakBarrido:
-                GetComponent<AtakBarrido>().enabled = true;
-                canMove = false;
-                this.enabled = false;
-                break;
-            case BossStates.AtakBomb:
-                GetComponent<AtakBomb>().enabled = true;
-                canMove = false;
-                this.enabled = false;
-                break;
-            case BossStates.AtakOrbitalStrike:
-                GetComponent<AtakOrbitalStrike>().enabled = true;
-                canMove = false;
-                this.enabled = false;
-                break;
-            case BossStates.KamikazePlayer:
-                GetComponent<KamikazePlayer>().enabled = true;
-                canMove = false;
-                this.enabled = false;
-                break;
-
+            base.changeMov(BossStates.FollowPlayer);
         }
     }
 }
