@@ -65,6 +65,10 @@ public class MeleEnemie : MonoBehaviour
 
         }
 
+        if (player.transform.position.x < this.transform.position.x)
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
 
     }
     private void OnTriggerExit2D(Collider2D collision)

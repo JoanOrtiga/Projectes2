@@ -74,7 +74,7 @@ public class FlyingEnemie : EnemieManager
 
         transform.position = Vector2.MoveTowards(transform.position, spot, patrolSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, spot) < 0.2f)
+        if (Vector2.Distance(transform.position, spot) < 2f)
         {
             patrolPoint = !patrolPoint;
 
