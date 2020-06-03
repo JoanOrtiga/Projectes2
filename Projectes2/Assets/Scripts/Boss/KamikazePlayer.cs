@@ -7,12 +7,16 @@ public class KamikazePlayer : BossController
 {
     Transform playerPos;
     public float followPlayerSpeed;
-    public int KamiKazeDamage;
-
+    public int KamikazeDamage;
+    private bool active;
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+    }
+    private void OnEnable()
+    {
+        active = true;
     }
 
     void FixedUpdate()
@@ -25,9 +29,15 @@ public class KamikazePlayer : BossController
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHealth>().currentHP -= KamiKazeDamage;
+            if (active) { 
+            other.gameObject.GetComponent<PlayerHealth>().currentHP -= KamikazeDamage;
             changeMov(BossStates.KamikazePlayer);
+            }
         }
     }
-     
+    private void OnDisable()
+    {
+        active = false;
+    }
+
 }

@@ -4,33 +4,68 @@ using UnityEngine;
 
 public class AtakOrbitalStrike : BossController
 {
-
+    [SerializeField]
+    private List<GameObject> Points;
     public GameObject OrbitalP1, OrbitalP2, OrbitalP3;
     public GameObject OrbitalAtack;
-
-
-    private bool canShoot;
+    private bool orbitalPointReached;
+    private GameObject OrbitalPChoosed;
+    int index;
+    public int movementSpeed;
+    public GameObject shootPoint;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        Points.Add(OrbitalP1);
+        Points.Add(OrbitalP2);
+        Points.Add(OrbitalP3);
+    }
+    private void OnEnable()
+    {
+        orbitalPointReached = false;
         
+        OrbitalPChoosed = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(FireRate());
+        if (orbitalPointReached)
+        {
+            
+        }
+        else
+        {
+            if (OrbitalPChoosed == null)
+            {
+                index = Random.Range(0, Points.Count);
+                OrbitalPChoosed = Points[index];
+            }
+
+
+            if ((OrbitalPChoosed.transform.position - transform.position).magnitude <= 0.8f)
+            {
+                InstaniateProjectile();
+                orbitalPointReached = true;
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, OrbitalPChoosed.transform.position, movementSpeed * Time.deltaTime);
+
+            }
+        }
     }
-    IEnumerator FireRate()
-    {
-        canShoot = false;
-        InstaniateProjectile();
-        yield return new WaitForSeconds(5f);
-        canShoot = true;
-    }
+   
     void InstaniateProjectile()
     {
-        Instantiate(OrbitalAtack, transform.position, transform.rotation);
+        Instantiate(OrbitalAtack, shootPoint.transform.position, shootPoint.transform.rotation);
 
     }
+    
+    public void ChangeState()
+    {
+        changeMov(BossStates.AtakOrbitalStrike);
+
+    }
+
 }

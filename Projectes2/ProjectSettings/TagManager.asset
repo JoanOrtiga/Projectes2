@@ -19,6 +19,7 @@ TagManager:
   - CheckManager
   - Boss
   - WindowLimit
+  - OrbitalPoint
   layers:
   - Default
   - TransparentFX

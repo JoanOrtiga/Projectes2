@@ -13,11 +13,13 @@ public class AtakBarrido : BossController
     public int ataquesBarridos;
     private bool canStart;
     private bool izq;
+    private bool active;
 
     private int numeroAtaques = 0;
 
     private void OnEnable()
     {
+        active = true;
         numeroAtaques = 0;
         canStart = false;
         inpath = false;
@@ -52,11 +54,14 @@ public class AtakBarrido : BossController
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("WindowLimit"))
+        if (active)
         {
-            onMyWay = false;
-            inpath = false;
-            PathSelector();
+            if (other.CompareTag("WindowLimit"))
+            {
+                onMyWay = false;
+                inpath = false;
+                PathSelector();
+            }
         }
     }
 
@@ -127,5 +132,9 @@ public class AtakBarrido : BossController
         {
             transform.position = new Vector2(transform.position.x + 1 * moveSpeed * Time.deltaTime, transform.position.y);
         }
+    }
+    private void OnDisable()
+    {
+        active = false;
     }
 }

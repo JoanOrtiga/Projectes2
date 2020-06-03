@@ -15,19 +15,21 @@ public class BossController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
 
         // GetComponent<FollowPlayer>().enabled = true;
-        GetComponent<AtakBarrido>().enabled = true;
-        
+        //GetComponent<AtakBarrido>().enabled = true;
+        //GetComponent<KamikazePlayer>().enabled = true;
+        GetComponent<AtakOrbitalStrike>().enabled = true;
+
     }
 
     protected void changeMov(BossStates state)
     {
         BossStates next = state;
-
+        print("state" + state);
         while (next == state)
         {
             next = (BossStates)Random.Range(0, 5);
         }
-
+        print("next:" + next);
         GetComponent<AtakBarrido>().enabled = false;
         GetComponent<AtakBomb>().enabled = false;
         GetComponent<AtakOrbitalStrike>().enabled = false;
