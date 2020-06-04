@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class TimeStopPlatform : MonoBehaviour
 {
-    public float TimeToReactivate = 5f;
+    public float TimeToReactivate = 8f;
 
     public UnityEvent reactivateTime;
 
