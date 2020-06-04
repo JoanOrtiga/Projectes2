@@ -9,6 +9,7 @@ public class MovingPlatform : MonoBehaviour
     public Transform startPos;
 
     private bool notFreezed = true;
+    public bool moveable = true;
 
 
     Vector3 nextPos;
@@ -32,6 +33,14 @@ public class MovingPlatform : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            moveable = true;
+        }
+    }
+
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -45,7 +54,7 @@ public class MovingPlatform : MonoBehaviour
         }
 
 
-        if(notFreezed)
+        if(notFreezed && moveable)
             transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
 
