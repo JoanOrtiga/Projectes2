@@ -35,13 +35,13 @@ public class NormalBullet : MonoBehaviour
             if (other.gameObject.name == "FlyingEnemie")
             {
                 print("HIT FLYING ALEIN");
-                other.gameObject.GetComponent<FlyingEnemie>().HP = other.gameObject.GetComponent<FlyingEnemie>().HP - Damage;
+                other.gameObject.GetComponentInChildren<FlyingEnemie>().HP = other.gameObject.GetComponentInChildren<FlyingEnemie>().HP - Damage;
             }
             else if(other.gameObject.name == "meleEnemie")
             {
                 print("HIT MELE ENEMIE");
 
-                this.gameObject.transform.GetChild(0).GetComponent<MeleEnemie>().health = other.gameObject.GetComponentInChildren<MeleEnemie>().health - Damage;
+                other.gameObject.transform.GetComponentInChildren<MeleEnemie>().HP = other.gameObject.GetComponentInChildren<MeleEnemie>().HP - Damage;
 
             }
             else if (other.gameObject.name == "shootingAlien")

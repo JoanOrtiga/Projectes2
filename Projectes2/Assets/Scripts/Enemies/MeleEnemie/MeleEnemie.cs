@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleEnemie : MonoBehaviour
+public class MeleEnemie : EnemieManager
 {
-    public int health = 5;
-    public int DMG = 2;
+    
+    
     public float patrolSpeed = 3f;
     public float ChaseSpeed = 8f;
     public Transform[] patrolPoints;
@@ -42,7 +42,7 @@ public class MeleEnemie : MonoBehaviour
 
 
 
-        if (health <= 0)
+        if (HP <= 0)
         {
             Destroy(this.gameObject);
         }
