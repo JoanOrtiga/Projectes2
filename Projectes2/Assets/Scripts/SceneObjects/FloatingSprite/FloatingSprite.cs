@@ -25,7 +25,6 @@ public class FloatingSprite : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            
             collision.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject);
         }

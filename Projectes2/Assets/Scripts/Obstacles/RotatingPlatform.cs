@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotatingPlatform : MonoBehaviour
 {
     private bool notFreezed = true;
+    public float speed = 5f;
 
     // Update is called once per frame
     void Update()
@@ -21,7 +22,7 @@ public class RotatingPlatform : MonoBehaviour
         }
 
         if (notFreezed)
-            transform.Rotate(new Vector3(0, 0, 5));
+            transform.Rotate(new Vector3(0, 0, speed));
     }
 
     public void Defreeze()
