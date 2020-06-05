@@ -57,8 +57,12 @@ public class NormalBullet : MonoBehaviour
         if (other.gameObject.CompareTag("Boss"))
         {
             other.gameObject.GetComponent<BossController>().HP -= Damage;
-            other.gameObject.GetComponent<KamikazePlayer>().ChangeState();
 
+            if (other.gameObject.GetComponent<KamikazePlayer>().enabled)
+            {
+                other.gameObject.GetComponent<KamikazePlayer>().ChangeState();
+
+            }
         }
         Destroy(this.gameObject);
       

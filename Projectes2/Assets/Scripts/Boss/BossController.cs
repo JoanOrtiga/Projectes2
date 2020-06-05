@@ -23,6 +23,20 @@ public class BossController : MonoBehaviour
         GetComponent<AtakBomb>().enabled = true;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            GetComponent<AtakBarrido>().enabled = false;
+            GetComponent<AtakBomb>().enabled = false;
+            GetComponent<AtakOrbitalStrike>().enabled = false;
+            GetComponent<FollowPlayer>().enabled = false;
+            GetComponent<KamikazePlayer>().enabled = false;
+
+            GetComponent<AtakOrbitalStrike>().enabled = true;
+        }
+    }
+
     protected void changeMov(BossStates state)
     {
         BossStates next = state;
