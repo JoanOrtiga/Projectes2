@@ -13,6 +13,8 @@ public class AtakOrbitalStrike : BossController
     int index;
     public int movementSpeed;
     public GameObject shootPoint;
+    private float time;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -30,9 +32,15 @@ public class AtakOrbitalStrike : BossController
     // Update is called once per frame
     void Update()
     {
+        
         if (orbitalPointReached)
         {
-            
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                ChangeState();
+
+            }
         }
         else
         {
@@ -59,6 +67,7 @@ public class AtakOrbitalStrike : BossController
     void InstaniateProjectile()
     {
         Instantiate(OrbitalAtack, shootPoint.transform.position, shootPoint.transform.rotation);
+        time = 2;
 
     }
     
