@@ -103,6 +103,7 @@ public class StandardEnemie : EnemieManager
         {
             actualTime = 0;
             Instantiate(projectile, shootingPoint.transform.position, Quaternion.identity);
+           // projectile.GetComponent<Rigidbody2D>().velocity = (target.transform.position - projectile.GetComponent<Transform>().position).normalized * 5;
         }
     }
 

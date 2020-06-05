@@ -54,7 +54,13 @@ public class NormalBullet : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            other.gameObject.GetComponent<KamikazePlayer>().ChangeState();
+
+        }
         Destroy(this.gameObject);
       
     }
+    
 }

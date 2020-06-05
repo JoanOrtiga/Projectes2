@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3aeafd67241dc247a46c04e4f13a76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 15
 --- !u!60 &2802567714555408466
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -106,7 +107,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -121,10 +122,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -4.0642867, y: -13.88518}
-      - {x: -4.0642867, y: -13.857491}
-      - {x: -3.1920464, y: -13.871336}
-      - {x: -3.1920464, y: -13.843646}
+    - - {x: -1.0396868, y: -0.09656358}
+      - {x: -6.3772154, y: -13.813011}
+      - {x: 7.216132, y: -13.737898}
+      - {x: 0.7666198, y: 0.12288833}
 --- !u!95 &618887553
 Animator:
   serializedVersion: 3
