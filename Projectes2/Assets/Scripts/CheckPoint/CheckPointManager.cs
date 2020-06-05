@@ -16,7 +16,7 @@ public class CheckPointManager : MonoBehaviour
     {
         print(StartingPosition);
         player.transform.position = StartingPosition;
-        player.GetComponent<PlayerHealth>().  = player.GetComponent<PlayerHealth>().maxHP;
+        player.GetComponent<PlayerHealth>().currentHP  = player.GetComponent<PlayerHealth>().maxHP;
         bulletManager.GetComponent<StainManager>().manaMana = bulletManager.GetComponent<StainManager>().manaMax;
 
         RespawnEnemies.Invoke();

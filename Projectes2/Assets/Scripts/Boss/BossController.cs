@@ -38,10 +38,10 @@ public class BossController : MonoBehaviour
         }
 
 
-       /* if(HP <= 0)
+       if(HP <= 0)
         {  
             Destroy(gameObject); 
-        }*/
+        }
     }
 
     protected void changeMov(BossStates state)
