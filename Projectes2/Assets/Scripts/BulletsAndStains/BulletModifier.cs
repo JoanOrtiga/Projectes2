@@ -11,15 +11,7 @@ public class BulletModifier : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        
-
-        if (other.CompareTag("JumpActivator"))
-        {
-            this.gameObject.GetComponent<PlayerController>().jumpPlayer=true;
-           
-           
-        }
-
+  
         if (other.CompareTag("HealMe"))
         {
             if (gameObject.GetComponent<PlayerHealth>().currentHP < gameObject.GetComponent<PlayerHealth>().maxHP)
@@ -33,14 +25,6 @@ public class BulletModifier : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("JumpActivator"))
-        {
-            this.gameObject.GetComponent<PlayerController>().jumpPlayer=false;
 
-        }
-        if (other.CompareTag("HealMe"))
-        {
-
-        }
     }
 }
