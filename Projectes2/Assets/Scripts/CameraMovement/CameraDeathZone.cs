@@ -32,7 +32,6 @@ public class CameraDeathZone : MonoBehaviour
         deathZoneWidth = Camera.main.aspect * deathZoneHeight;
 
 
-
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Camera.main.aspect;
     }
