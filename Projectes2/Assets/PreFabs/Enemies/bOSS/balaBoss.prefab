@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7492519526049770454}
   - component: {fileID: 2979308927582843826}
   - component: {fileID: 4089182770047810906}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: balaBoss
   m_TagString: EnemieBullet
   m_Icon: {fileID: 0}
