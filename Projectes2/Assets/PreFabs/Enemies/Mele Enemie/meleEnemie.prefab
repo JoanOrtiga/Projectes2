@@ -3152,7 +3152,7 @@ GameObject:
   - component: {fileID: 7101895115802509348}
   m_Layer: 0
   m_Name: meleEnemie
-  m_TagString: Enemie
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
