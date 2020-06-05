@@ -61,6 +61,11 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         CheckInput();
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GetComponent<PlayerHealth>().RecieveDmg(100000);
+        }
     }
 
     private void FixedUpdate()

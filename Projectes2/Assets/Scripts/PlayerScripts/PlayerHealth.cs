@@ -9,7 +9,7 @@ public class PlayerHealth : CharHealth
     public int damage;
     public override void RecieveDmg(float dmg)
     {
-        base.RecieveDmg(dmg);
+        currentHP -= dmg;
 
         IsDead();
     }
@@ -28,5 +28,10 @@ public class PlayerHealth : CharHealth
         {
             other.GetComponent<PlayerHealth>().currentHP -= damage*Time.deltaTime;
         }
+    }
+
+    private void Update()
+    {
+        IsDead();
     }
 }

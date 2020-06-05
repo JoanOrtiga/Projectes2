@@ -22,6 +22,8 @@ public class BulletBoss : MonoBehaviour
         {
             other.GetComponent<PlayerHealth>().currentHP -= damage;
         }
+
+        Destroy(gameObject);
     }
     
 }
