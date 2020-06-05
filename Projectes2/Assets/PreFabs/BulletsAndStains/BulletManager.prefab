@@ -50,8 +50,8 @@ MonoBehaviour:
   HealList: []
   PortalList: []
   TimeList: []
-  JumpLimiter: 5
-  DpsLimiter: 5
-  HealLimiter: 5
+  JumpLimiter: 10
+  DpsLimiter: 3
+  HealLimiter: 2
   PortalLimiter: 5
   TimeLimiter: 5

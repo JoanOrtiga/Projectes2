@@ -6,6 +6,4 @@ using UnityEngine.Events;
 public class StainColors : MonoBehaviour
 {
     public PaintColors stainColor;
-    
-  
 }

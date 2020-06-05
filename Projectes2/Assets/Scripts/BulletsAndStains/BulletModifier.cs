@@ -22,13 +22,13 @@ public class BulletModifier : MonoBehaviour
 
         if (other.CompareTag("HealMe"))
         {
-          /*  if (gameObject.GetComponent<PlayerController>().currentHP < gameObject.GetComponent<PlayerController>().maxHP)
+            if (gameObject.GetComponent<PlayerHealth>().currentHP < gameObject.GetComponent<PlayerHealth>().maxHP)
             {
 
                 print(HealAmmount * Time.deltaTime);
                 
-                //gameObject.GetComponent<PlayerController>().currentHP += (HealAmmount * Time.deltaTime);
-            }*/
+                gameObject.GetComponent<PlayerHealth>().currentHP += (HealAmmount * Time.deltaTime);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D other)
