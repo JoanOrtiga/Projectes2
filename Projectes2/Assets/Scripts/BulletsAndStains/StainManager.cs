@@ -27,6 +27,11 @@ public class StainManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            manaMana += 100;
+        }
+
         if (JumpList.Count >= JumpLimiter+1)
         {
             Destroy(JumpList[0]);

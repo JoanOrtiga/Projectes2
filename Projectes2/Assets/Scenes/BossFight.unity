@@ -1322,6 +1322,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 237043395, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 310694921, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 538180930, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 559655552, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076488398, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431813800, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984326275, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 285300023713902009, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,6 +1405,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 984998820281988869, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1100692339165668786, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
       propertyPath: m_Name
@@ -1395,7 +1428,12 @@ PrefabInstance:
     - target: {fileID: 5619325120886869097, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
       propertyPath: HP
-      value: 100
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619325120886869099, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5619325120886869101, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}

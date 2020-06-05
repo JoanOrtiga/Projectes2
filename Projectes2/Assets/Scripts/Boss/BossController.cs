@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public enum BossStates
 {
     FollowPlayer, AtakBarrido, AtakBomb, AtakOrbitalStrike, KamikazePlayer
@@ -35,6 +36,14 @@ public class BossController : MonoBehaviour
 
             GetComponent<AtakOrbitalStrike>().enabled = true;
         }
+
+
+        /*if(HP <= 0)
+        {
+            
+            Destroy(gameObject);
+           
+        }*/
     }
 
     protected void changeMov(BossStates state)
