@@ -12,6 +12,8 @@ public class FollowPlayer : BossController
     public float PlayerFollowTime;
     public float followPlayerSpeed;
     public bool canMove;
+    public BossTurret turret1;
+    public BossTurret turret2;
     // Use this for initialization
 
     public float maxSec = 8, minSec = 4;
@@ -27,6 +29,8 @@ public class FollowPlayer : BossController
     private void OnEnable()
     {
         secondsToChange = Random.Range(minSec, maxSec);
+        turret1.awake = true;
+        turret2.awake = true;
     }
 
     private void FixedUpdate()
@@ -42,5 +46,10 @@ public class FollowPlayer : BossController
         {
             base.changeMov(BossStates.FollowPlayer);
         }
+    }
+    private void OnDisable()
+    {
+        turret1.awake = false;
+        turret2.awake = false;
     }
 }
