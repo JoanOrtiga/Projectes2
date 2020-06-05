@@ -31,9 +31,6 @@ public class CameraDeathZone : MonoBehaviour
         deathZoneHeight = Camera.main.orthographicSize * deathZone;
         deathZoneWidth = Camera.main.aspect * deathZoneHeight;
 
-        spr = target.gameObject.GetComponent<SpriteRenderer>();
-
-        halfSizeTarget = spr.bounds.size.x * 0.5f;
 
 
         cameraHeight = Camera.main.orthographicSize;
