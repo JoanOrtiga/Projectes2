@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrbitalAtackManager : MonoBehaviour
+public class DestroyExplosion : MonoBehaviour
 {
     private float time;
-    public float damage;
     private void Start()
     {
         time = 2;
@@ -19,12 +18,5 @@ public class OrbitalAtackManager : MonoBehaviour
         }
 
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerHealth>().currentHP -= damage * Time.deltaTime;
-        }
-    }
-
+   
 }
