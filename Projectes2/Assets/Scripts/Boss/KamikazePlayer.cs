@@ -31,13 +31,18 @@ public class KamikazePlayer : BossController
         {
             if (active) { 
             other.gameObject.GetComponent<PlayerHealth>().currentHP -= KamikazeDamage;
-            changeMov(BossStates.KamikazePlayer);
+                ChangeState();
             }
         }
     }
     private void OnDisable()
     {
         active = false;
+    }
+    public void ChangeState()
+    {
+        changeMov(BossStates.KamikazePlayer);
+
     }
 
 }

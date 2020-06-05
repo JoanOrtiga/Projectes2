@@ -25,7 +25,7 @@ public class AtakOrbitalStrike : BossController
     private void OnEnable()
     {
         orbitalPointReached = false;
-        
+        time = 600;
         OrbitalPChoosed = null;
     }
 

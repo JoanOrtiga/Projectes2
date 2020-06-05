@@ -17,8 +17,8 @@ public class BossController : MonoBehaviour
         // GetComponent<FollowPlayer>().enabled = true;
         //GetComponent<AtakBarrido>().enabled = true;
         //GetComponent<KamikazePlayer>().enabled = true;
-        GetComponent<AtakOrbitalStrike>().enabled = true;
-
+        //GetComponent<AtakOrbitalStrike>().enabled = true;
+        GetComponent<AtakBomb>().enabled = true;
     }
 
     protected void changeMov(BossStates state)
