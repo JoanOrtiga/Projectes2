@@ -2258,7 +2258,7 @@ Animator:
   m_GameObject: {fileID: 903301201}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b02d3b4cdc05e84a9f8cafd7061a92d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 88e973c52e3580b42abe611bb63d70ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3686,7 +3686,6 @@ GameObject:
   - component: {fileID: 1592910242}
   - component: {fileID: 1592910244}
   - component: {fileID: 1592910243}
-  - component: {fileID: 1592910245}
   m_Layer: 5
   m_Name: Light01
   m_TagString: Untagged
@@ -3749,18 +3748,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592910241}
   m_CullTransparentMesh: 0
---- !u!114 &1592910245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592910241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7bb8c98025e74e45ba39a4134a3703e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1595815547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,6 +4976,7 @@ GameObject:
   - component: {fileID: 2055816349}
   - component: {fileID: 2055816351}
   - component: {fileID: 2055816350}
+  - component: {fileID: 2055816352}
   m_Layer: 5
   m_Name: Ovni
   m_TagString: Untagged
@@ -5051,6 +5039,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055816348}
   m_CullTransparentMesh: 0
+--- !u!95 &2055816352
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055816348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f913a591bcc83748b91a036c4b8a10d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2057383732
 GameObject:
   m_ObjectHideFlags: 0
