@@ -38,11 +38,9 @@ public class BossController : MonoBehaviour
         }
 
 
-        /*if(HP <= 0)
-        {
-            
-            Destroy(gameObject);
-           
+       /* if(HP <= 0)
+        {  
+            Destroy(gameObject); 
         }*/
     }
 
