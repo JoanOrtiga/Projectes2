@@ -9,6 +9,8 @@ public class BossController : MonoBehaviour
 {
     Rigidbody2D rb2d;
 
+    public float HP;
+
     // Use this for initialization
     void Start()
     {
