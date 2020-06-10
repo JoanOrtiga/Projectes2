@@ -84,7 +84,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionRadius: 6
   attackRadius: 1
-  speed: 3
 --- !u!114 &632105374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e74e14be5ca35479868060da3376c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  HP: 0
   DMG: 3
-  attackTime: 2
-  speed: 4
+  timeAttacking: 1
+  patrolSpeed: 0
+  goingBackSpeed: 1
+  attackSpeed: 0
+  patrolSpots: []
+  isPatroling: 1

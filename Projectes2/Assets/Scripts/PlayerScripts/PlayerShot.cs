@@ -31,6 +31,10 @@ public class PlayerShot : MonoBehaviour
 
 
     public float bulletStrenght = 50f;
+
+    public GameObject PewParticle;
+    public Transform PewPivot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,11 +134,14 @@ public class PlayerShot : MonoBehaviour
             light2.SetActive(false);
         }
 
+
+        PewPivot.position = shotPoint.transform.position;
         if (paintWheel.GetComponent<PaintWheel>().shootable)
         {
             //left mouse button
             if (Input.GetMouseButtonDown(0))
             {
+                Instantiate(PewParticle, PewPivot.position, shotPoint.rotation);
                 FindObjectOfType<AudioManager>().Play("PlayerAtack");
                 //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                 //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
@@ -186,6 +193,7 @@ public class PlayerShot : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 FindObjectOfType<AudioManager>().Play("PlayerAtack");
+                Instantiate(PewParticle, PewPivot.position, shotPoint.rotation);
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                 //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 

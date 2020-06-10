@@ -143,7 +143,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -255,7 +255,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,13 +299,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b3d50ab2bb77040b6ac43c52be9126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  HP: 0
   DMG: 2
   patrolSpeed: 3
+  ChaseSpeed: 8
   patrolPoints:
   - {fileID: 7530547387675903826}
   - {fileID: 3143978202558785885}
   attackDistance: 3
+  chaseDistance: 6
 --- !u!61 &8653902084363072753
 BoxCollider2D:
   m_ObjectHideFlags: 0

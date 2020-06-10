@@ -91,3 +91,6 @@ TagManager:
   - name: Laser
     uniqueID: 2935356785
     locked: 0
+  - name: Particles
+    uniqueID: 2537300307
+    locked: 0

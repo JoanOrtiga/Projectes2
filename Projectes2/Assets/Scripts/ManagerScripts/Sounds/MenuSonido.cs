@@ -49,6 +49,7 @@ public class MenuSonido : MonoBehaviour
         botonPlay.SetActive(true);
         botonSonido.SetActive(true);
         botonIdioma.SetActive(true);
+        botonExit.SetActive(true);
 
     }
 }
