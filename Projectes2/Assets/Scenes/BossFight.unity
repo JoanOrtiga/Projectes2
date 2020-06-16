@@ -1322,6 +1322,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 237043395, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
       propertyPath: m_Layer
       value: 14
@@ -1349,6 +1350,23 @@ PrefabInstance:
     - target: {fileID: 1984326275, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
       propertyPath: m_Layer
       value: 14
+=======
+    - target: {fileID: 538180932, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 538180932, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: shootIntervall
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044136242, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044136242, guid: 4f7f86a6926d7534c8ca83e50e706f7d, type: 3}
+      propertyPath: shootIntervall
+      value: 1.2
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 285300023713902009, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
@@ -1414,6 +1432,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619325120886869075, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619325120886869075, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
+        type: 3}
+      propertyPath: atackSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5619325120886869096, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
