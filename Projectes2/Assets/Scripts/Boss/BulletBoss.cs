@@ -21,14 +21,9 @@ public class BulletBoss : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerHealth>().currentHP -= damage;
-            Destroy(gameObject);
-
-        }
-        if (other.CompareTag("Hitable"))
-        {
-            Destroy(gameObject);
         }
 
+        Destroy(gameObject);
     }
     
 }

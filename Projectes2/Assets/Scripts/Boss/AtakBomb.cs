@@ -12,7 +12,6 @@ public class AtakBomb : BossController
     public GameObject SpawnPoint2;
     public GameObject SpawnPoint3;
 
-    private bool canMove;
 
     private GameObject bombShooter;
     public GameObject bomb;
@@ -30,41 +29,26 @@ public class AtakBomb : BossController
     }
     private void OnEnable()
     {
-        canMove = true;
         currentBomb = 0;
     }
     private void Update()
     {
-        if (!canMove)
+        fireDelaySeconds -= Time.deltaTime;
+        if (currentBomb == maxBombs)
         {
-            fireDelaySeconds -= Time.deltaTime;
-            if (currentBomb == maxBombs)
-            {
-                ChangeState();
-            }
-            if (fireDelaySeconds <= 0)
-            {
-                index = Random.Range(0, Points.Count);
-                bombShooter = Points[index];
-                fire();
-                fireDelaySeconds = fireDelay;
-
-            }
+            ChangeState();
+        }
+        if (fireDelaySeconds <= 0)
+        {
+            index = Random.Range(0, Points.Count);
+            bombShooter = Points[index];
+            fire();
+            fireDelaySeconds = fireDelay;
+        
         }
         
+        
        
-    }
-
-    private void FixedUpdate()
-    {
-        if (transform.position.y == StartY)
-        {
-            canMove = false;
-        }
-        else
-        {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector3(transform.position.x, StartY, transform.position.z), bSpeed * Time.deltaTime);
-        }
     }
 
 
