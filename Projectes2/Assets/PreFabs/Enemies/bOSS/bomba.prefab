@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc48a6367b9f2764e85d4bcee75d2fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velY: 10
+  velY: 25
   explosion: {fileID: 8992293295579973536, guid: 88823f6ba26fb21448d8f0d8b0583150,
     type: 3}
   damage: 10
