@@ -30,15 +30,13 @@ public class BossTurret : MonoBehaviour
     }
     void LateUpdate()
     {
-        if (awake)
-        {
-            targetPos = player.position;
-            thisPos = transform.position;
-            targetPos.x = targetPos.x - thisPos.x;
-            targetPos.y = targetPos.y - thisPos.y;
-            angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
-        }
+        targetPos = player.position;
+        thisPos = transform.position;
+        targetPos.x = targetPos.x - thisPos.x;
+        targetPos.y = targetPos.y - thisPos.y;
+        angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
+       
     }
     private void Update()
     {

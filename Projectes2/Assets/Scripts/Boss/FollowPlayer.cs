@@ -23,6 +23,7 @@ public class FollowPlayer : BossController
     void Start()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+       // canMove = true;
     }
 
     private void OnEnable()
@@ -30,33 +31,21 @@ public class FollowPlayer : BossController
         secondsToChange = Random.Range(minSec, maxSec);
         turret1.awake = true;
         turret2.awake = true;
-        canMove = true;
     }
 
     private void FixedUpdate()
     {
-        
-            if (transform.position.y == StartY)
-            {
-                canMove = false;
-            }
-            if (!canMove)
-            {
-                secondsToChange -= Time.deltaTime;
+        secondsToChange -= Time.deltaTime;
 
+      //  if (canMove)
+    //    {
+            transform.position = Vector2.MoveTowards(transform.position, new Vector3(playerPos.position.x, transform.position.y, 0), followPlayerSpeed * Time.deltaTime);
+        //}
 
-                transform.position = Vector2.MoveTowards(transform.position, new Vector3(playerPos.position.x, transform.position.y, 0), followPlayerSpeed * Time.deltaTime);
-
-                if (secondsToChange <= 0)
-                {
-                    base.changeMov(BossStates.FollowPlayer);
-                }
-            }
-            else
-            {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector3(transform.position.x, StartY, transform.position.z), bSpeed * Time.deltaTime);
-            }
-        
+        if(secondsToChange <= 0)
+        {
+            base.changeMov(BossStates.FollowPlayer);
+        }
     }
     private void OnDisable()
     {
