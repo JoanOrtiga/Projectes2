@@ -10,10 +10,8 @@ public class BossController : MonoBehaviour
 {
     Rigidbody2D rb2d;
 
-    protected float StartY= 6.04f;
     public float HP;
-    protected float bSpeed=10f;
-    
+
     // Use this for initialization
     void Start()
     {
@@ -21,9 +19,9 @@ public class BossController : MonoBehaviour
 
         // GetComponent<FollowPlayer>().enabled = true;
         //GetComponent<AtakBarrido>().enabled = true;
-        GetComponent<KamikazePlayer>().enabled = true;
+        //GetComponent<KamikazePlayer>().enabled = true;
         //GetComponent<AtakOrbitalStrike>().enabled = true;
-        //GetComponent<AtakBomb>().enabled = true;
+        GetComponent<AtakBomb>().enabled = true;
     }
 
     private void Update()
