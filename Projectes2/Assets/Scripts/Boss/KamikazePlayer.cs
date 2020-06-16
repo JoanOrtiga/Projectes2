@@ -31,8 +31,6 @@ public class KamikazePlayer : BossController
         {
             if (active) { 
             other.gameObject.GetComponent<PlayerHealth>().currentHP -= KamikazeDamage;
-                print("meh");
-
                 ChangeState();
             }
         }

@@ -8,8 +8,8 @@ public class AtakBarrido : BossController
     public float moveSpeed;
     public GameObject p1, p2, p3, p4;
     public int pathChoser;
-    private bool inpath;
-    private bool onMyWay;
+    private bool inpath = false;
+    private bool onMyWay = true;
     public int ataquesBarridos;
     private bool canStart;
     private bool izq;
@@ -23,7 +23,7 @@ public class AtakBarrido : BossController
         numeroAtaques = 0;
         canStart = false;
         inpath = false;
-        onMyWay = true;
+
         if ((transform.position - p1.transform.position).magnitude <= (transform.position - p2.transform.position).magnitude)
         {
             izq = true;
