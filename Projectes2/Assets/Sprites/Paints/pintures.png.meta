@@ -1,0 +1,874 @@
+fileFormatVersion: 2
+guid: 89f5ed609d1b39848bedeff17904e560
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5731910578489214580
+    second: pintures_0
+  - first:
+      213: 1806712548174889286
+    second: pintures_1
+  - first:
+      213: -4266619265966585148
+    second: pintures_2
+  - first:
+      213: -2706052156723128275
+    second: pintures_3
+  - first:
+      213: 7621765907823404721
+    second: pintures_4
+  - first:
+      213: 4375926490612406024
+    second: pintures_5
+  - first:
+      213: -2980448717607078718
+    second: pintures_6
+  - first:
+      213: 8218354309932212483
+    second: pintures_7
+  - first:
+      213: 8617128628562186592
+    second: pintures_8
+  - first:
+      213: 4961693490859331263
+    second: pintures_9
+  - first:
+      213: -8394732473696991829
+    second: pintures_10
+  - first:
+      213: 1794370688502906719
+    second: pintures_11
+  - first:
+      213: -4428633455986937023
+    second: pintures_12
+  - first:
+      213: 6703975105588090503
+    second: pintures_13
+  - first:
+      213: 5505698429362110446
+    second: pintures_14
+  - first:
+      213: 5310799447436359286
+    second: pintures_15
+  - first:
+      213: -2137370533250236441
+    second: pintures_16
+  - first:
+      213: 7425713228682962577
+    second: pintures_17
+  - first:
+      213: 6190404128084373147
+    second: pintures_18
+  - first:
+      213: -8790949481862772469
+    second: pintures_19
+  - first:
+      213: -1507799667172329909
+    second: pintures_20
+  - first:
+      213: -2881884183886126544
+    second: pintures_21
+  - first:
+      213: 1771489881276907576
+    second: pintures_22
+  - first:
+      213: 5460252128464353184
+    second: pintures_23
+  - first:
+      213: 3536449657640631768
+    second: pintures_24
+  - first:
+      213: -7412186999016368065
+    second: pintures_25
+  - first:
+      213: 1815632630000603908
+    second: pintures_26
+  - first:
+      213: 187962277382614086
+    second: pintures_27
+  - first:
+      213: 7038409524855056457
+    second: pintures_28
+  - first:
+      213: 5806988262818799860
+    second: pintures_29
+  - first:
+      213: 4802916100411889407
+    second: pintures_30
+  - first:
+      213: -7890174673055370830
+    second: pintures_31
+  - first:
+      213: 4703563204090563960
+    second: pintures_32
+  - first:
+      213: -5994307631842343760
+    second: pintures_33
+  - first:
+      213: 355864650751815593
+    second: pintures_34
+  - first:
+      213: 7657394408703317797
+    second: pintures_35
+  - first:
+      213: 8780339478687908382
+    second: pintures_36
+  - first:
+      213: 1376206363416369938
+    second: pintures_37
+  - first:
+      213: -4665427493104976049
+    second: pintures_38
+  - first:
+      213: 3101788228481180807
+    second: pintures_39
+  - first:
+      213: -6794429381787925712
+    second: pintures_40
+  - first:
+      213: -7473530835588435800
+    second: pintures_41
+  - first:
+      213: 5709516814827983939
+    second: pintures_42
+  - first:
+      213: -7725393776386584264
+    second: pintures_43
+  - first:
+      213: 372018606377059042
+    second: pintures_44
+  - first:
+      213: 9221106441040107133
+    second: pintures_45
+  - first:
+      213: 5555282790366377562
+    second: pintures_46
+  - first:
+      213: 7120696629715385140
+    second: pintures_47
+  - first:
+      213: -3386218724699258793
+    second: pintures_48
+  - first:
+      213: -5337426015734343272
+    second: pintures_49
+  - first:
+      213: 5858342801311048789
+    second: pintures_50
+  - first:
+      213: 8037465595154025851
+    second: pintures_51
+  - first:
+      213: 771348465063900725
+    second: pintures_52
+  - first:
+      213: 2309279159192124836
+    second: pintures_53
+  - first:
+      213: 1815397589162504262
+    second: pintures_54
+  - first:
+      213: -2277585904523309919
+    second: pintures_55
+  - first:
+      213: -1551312502670139476
+    second: pintures_56
+  - first:
+      213: 2751386966533068794
+    second: pintures_57
+  - first:
+      213: -2144251996679757219
+    second: pintures_58
+  - first:
+      213: 4731542894792970590
+    second: pintures_59
+  - first:
+      213: 562096165457047865
+    second: pintures_60
+  - first:
+      213: 5086933925360356237
+    second: pintures_61
+  - first:
+      213: 6779678519524144361
+    second: pintures_62
+  - first:
+      213: 187719984327813321
+    second: pintures_63
+  - first:
+      213: -6717252750783185658
+    second: pintures_64
+  - first:
+      213: 8511678522964182261
+    second: pintures_65
+  - first:
+      213: -5591612471009337035
+    second: pintures_66
+  - first:
+      213: -4437489462961461560
+    second: pintures_67
+  - first:
+      213: 4201585666690673676
+    second: pintures_68
+  - first:
+      213: 6518906617458152416
+    second: pintures_69
+  - first:
+      213: 7741050200757931551
+    second: pintures_70
+  - first:
+      213: 7117409619374641264
+    second: pintures_71
+  - first:
+      213: -7625493223799058215
+    second: pintures_72
+  - first:
+      213: 2679238854980733488
+    second: pintures_73
+  - first:
+      213: 5146696601868488665
+    second: pintures_74
+  - first:
+      213: 5354307433099633855
+    second: pintures_75
+  - first:
+      213: -473807613076365680
+    second: pintures_76
+  - first:
+      213: 7112290726964117899
+    second: pintures_77
+  - first:
+      213: -5631002683194045787
+    second: pintures_78
+  - first:
+      213: 2744872068329113006
+    second: pintures_79
+  - first:
+      213: 7188628405758499430
+    second: pintures_80
+  - first:
+      213: 6995400898476400320
+    second: pintures_81
+  - first:
+      213: -3774431060031827243
+    second: pintures_82
+  - first:
+      213: 4547425811919821749
+    second: pintures_83
+  - first:
+      213: -1403802438304994128
+    second: pintures_84
+  - first:
+      213: 8979350223763143373
+    second: pintures_85
+  - first:
+      213: -8647535073595359876
+    second: pintures_86
+  - first:
+      213: -7665994680744218157
+    second: pintures_87
+  - first:
+      213: 3813707274714646790
+    second: pintures_88
+  - first:
+      213: -6160085341287150458
+    second: pintures_89
+  - first:
+      213: -8108471357338922211
+    second: pintures_90
+  - first:
+      213: 566634293523107932
+    second: pintures_91
+  - first:
+      213: 2098813512258702214
+    second: pintures_92
+  - first:
+      213: -6821257384024383067
+    second: pintures_93
+  - first:
+      213: 8081747275634482012
+    second: pintures_94
+  - first:
+      213: 5351010075623845375
+    second: pintures_95
+  - first:
+      213: 4858131493498997033
+    second: pintures_96
+  - first:
+      213: 3494745640935356774
+    second: pintures_97
+  - first:
+      213: -2265144570768421463
+    second: pintures_98
+  - first:
+      213: -5244809726487068137
+    second: pintures_99
+  - first:
+      213: -5121561970559661575
+    second: pintures_100
+  - first:
+      213: 922735215138826237
+    second: pintures_101
+  - first:
+      213: 123520879216190102
+    second: pintures_102
+  - first:
+      213: 9075509366938895266
+    second: pintures_103
+  - first:
+      213: 8738265685144307038
+    second: pintures_104
+  - first:
+      213: 152708145958316423
+    second: pintures_105
+  - first:
+      213: 977734421883570355
+    second: pintures_106
+  - first:
+      213: -4432234143754817036
+    second: pintures_107
+  - first:
+      213: 4583663103266919321
+    second: pintures_108
+  - first:
+      213: -2574702000075358871
+    second: pintures_109
+  - first:
+      213: 3963354578507556011
+    second: pintures_110
+  - first:
+      213: 6905024320478366860
+    second: pintures_111
+  - first:
+      213: -3567897211067852649
+    second: pintures_112
+  - first:
+      213: -659303622639768351
+    second: pintures_113
+  - first:
+      213: 8296670561281593538
+    second: pintures_114
+  - first:
+      213: -762480393409269697
+    second: pintures_115
+  - first:
+      213: -1251691806733169448
+    second: pintures_116
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pintures_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1482
+        width: 527
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476472b5d46db8f40800000000000000
+      internalID: 5731910578489214580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_1
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1503
+        width: 498
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641843d7d7bb21910800000000000000
+      internalID: 1806712548174889286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_2
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 1501
+        width: 464
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca4934126ce9c4c0800000000000000
+      internalID: -4266619265966585148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_3
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 1563
+        width: 380
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2896d696eb227ad0800000000000000
+      internalID: -2706052156723128275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_4
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 1602
+        width: 413
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b62ff816b3f5c960800000000000000
+      internalID: 7621765907823404721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 969
+        width: 498
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8079c2465f96abc30800000000000000
+      internalID: 4375926490612406024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_6
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 1032
+        width: 457
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4f2c3bea153a6d0800000000000000
+      internalID: -2980448717607078718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_7
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 1029
+        width: 464
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3016fc1c3b57d0270800000000000000
+      internalID: 8218354309932212483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_8
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1015
+        width: 502
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0615c4905d0369770800000000000000
+      internalID: 8617128628562186592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_9
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 1051
+        width: 428
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbec90711f97bd440800000000000000
+      internalID: 4961693490859331263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_10
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 533
+        width: 468
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5cad8da4bef7b80800000000000000
+      internalID: -8394732473696991829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_11
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 548
+        width: 468
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fb69b52a2e6e810800000000000000
+      internalID: 1794370688502906719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_12
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 484
+        width: 501
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143fc7fe5555a82c0800000000000000
+      internalID: -4428633455986937023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_13
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 518
+        width: 458
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786d3afd6dd490d50800000000000000
+      internalID: 6703975105588090503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_14
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 567
+        width: 400
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeffd821d8b286c40800000000000000
+      internalID: 5505698429362110446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 40
+        width: 437
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676f8c9a5ffb3b940800000000000000
+      internalID: 5310799447436359286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_16
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 50
+        width: 479
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef7b3403d88652e0800000000000000
+      internalID: -2137370533250236441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_17
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 74
+        width: 418
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196219f96de6d0760800000000000000
+      internalID: 7425713228682962577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_18
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 77
+        width: 414
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ea49e91cbb8e550800000000000000
+      internalID: 6190404128084373147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pintures_19
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 46
+        width: 476
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b094a2fc506400680800000000000000
+      internalID: -8790949481862772469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
