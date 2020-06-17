@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public enum BossStates
 {
     FollowPlayer, AtakBarrido, AtakBomb, AtakOrbitalStrike, KamikazePlayer
@@ -10,8 +12,14 @@ public class BossController : MonoBehaviour
 {
     Rigidbody2D rb2d;
 
+    protected float StartY= 6.04f;
     public float HP;
+    private float maxHP;
+    protected float bSpeed=10f;
 
+    public Image hpBar;
+    public float lerpHpBar = 0.1f;
+    
     // Use this for initialization
     void Start()
     {
@@ -19,13 +27,19 @@ public class BossController : MonoBehaviour
 
         // GetComponent<FollowPlayer>().enabled = true;
         //GetComponent<AtakBarrido>().enabled = true;
-        //GetComponent<KamikazePlayer>().enabled = true;
+        GetComponent<KamikazePlayer>().enabled = true;
         //GetComponent<AtakOrbitalStrike>().enabled = true;
-        GetComponent<AtakBomb>().enabled = true;
+        //GetComponent<AtakBomb>().enabled = true;
+
+        maxHP = HP;
+
     }
 
     private void Update()
     {
+
+        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, HP / maxHP, lerpHpBar);
+        
         if (Input.GetKeyDown(KeyCode.N))
         {
             GetComponent<AtakBarrido>().enabled = false;
@@ -36,10 +50,11 @@ public class BossController : MonoBehaviour
 
             GetComponent<AtakOrbitalStrike>().enabled = true;
         }
-
+        print(HP);
 
        if(HP <= 0)
-        {  
+        {
+            hpBar.fillAmount = 0;
             Destroy(gameObject); 
         }
     }
