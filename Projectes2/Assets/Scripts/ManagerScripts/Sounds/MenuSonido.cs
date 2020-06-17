@@ -6,10 +6,10 @@ public class MenuSonido : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject menuSonido;
-    public GameObject botonSonido;
-    public GameObject botonPlay;
-    public GameObject botonIdioma;
-    public GameObject botonExit;
+   // public GameObject botonSonido;
+   // public GameObject botonPlay;
+ //   public GameObject botonIdioma;
+ //   public GameObject botonExit;
 
     private bool isMuted = false;
 
@@ -20,11 +20,20 @@ public class MenuSonido : MonoBehaviour
     // Update is called once per frame
     public void SoundMenu()
     {
-        menuSonido.SetActive(true);
-        botonSonido.SetActive(false);
-        botonPlay.SetActive(false);
-        botonIdioma.SetActive(false);
-        botonExit.SetActive(false);
+        if (menuSonido.activeSelf)
+        {
+            menuSonido.SetActive(false);
+        }
+        else
+        {
+            menuSonido.SetActive(true);
+        }
+
+        
+       // botonSonido.SetActive(false);
+       // botonPlay.SetActive(false);
+       // botonIdioma.SetActive(false);
+       // botonExit.SetActive(false);
     }
 
     public void Mute()
@@ -46,9 +55,9 @@ public class MenuSonido : MonoBehaviour
     public void Done()
     {
         menuSonido.SetActive(false);
-        botonPlay.SetActive(true);
-        botonSonido.SetActive(true);
-        botonIdioma.SetActive(true);
+  //      botonPlay.SetActive(true);
+   //     botonSonido.SetActive(true);
+//botonIdioma.SetActive(true);
 
     }
 }
