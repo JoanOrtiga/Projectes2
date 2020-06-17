@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public int facingDirection = 1;
 
-    private bool isGrounded;
+    public bool isGrounded;
     private bool isOnSlope;
     private bool isJumping;
     private bool canWalkOnSlope;
@@ -50,10 +50,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D cc;
 
+    private Animator animator;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
+        animator = this.GetComponent<Animator>();
 
         capsuleColliderSize = cc.size;
     }
@@ -66,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<PlayerHealth>().RecieveDmg(100000);
         }
+      
     }
 
     private void FixedUpdate()
@@ -107,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
+
+
     }
     private void CheckGround()
     {
@@ -115,12 +120,16 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y <= 0.0f)
         {
             isJumping = false;
+
         }
 
         if (isGrounded && !isJumping /*&& slopeDownAngle <= maxSlopeAngle*/)
         {
             canJump = true;
         }
+
+        
+        
     }
 
     private void SlopeCheck()
@@ -209,6 +218,9 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = newVelocity;
             newForce.Set(0.0f, jumpForce);
             rb.AddForce(newForce, ForceMode2D.Impulse);
+
+            animator.SetTrigger("Jump");
+
         }
     }
 

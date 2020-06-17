@@ -17,7 +17,7 @@ public class AnimationPlayer : MonoBehaviour
     private void Update()
     {
         Walk();
-       // Jump();
+        //Jump();
     }
 
     void Walk()
@@ -32,15 +32,16 @@ public class AnimationPlayer : MonoBehaviour
         }
     }
 
-    //void Jump()
-    //{
-    //    if (!player.GetComponent<PlayerController>().isGrounded)
-    //    {
-    //        animator.SetBool("Jump", true);
-    //    }
-    //    else
-    //    {
-    //        animator.SetBool("Jump", false);
-    //    }
-    //}
+    void Jump()
+    {
+        if (!player.GetComponent<PlayerMovement>().isGrounded)
+        {
+            
+            animator.SetBool("Jump", true);
+        }
+        else
+        {
+            animator.SetBool("Jump", false);
+        }
+    }
 }

@@ -29,6 +29,7 @@ public class FlyingEnemie : EnemieManager
     [SerializeField]
     private bool isPatroling = true;
 
+    Animator m_Animator;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");

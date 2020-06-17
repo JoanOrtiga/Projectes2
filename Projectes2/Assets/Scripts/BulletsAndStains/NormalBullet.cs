@@ -10,6 +10,8 @@ public class NormalBullet : MonoBehaviour
     public int Damage ;
     public Vector3 forward;
 
+    Animator m_animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +38,16 @@ public class NormalBullet : MonoBehaviour
             {
                 print("HIT FLYING ALEIN");
                 other.gameObject.GetComponentInChildren<FlyingEnemie>().HP = other.gameObject.GetComponentInChildren<FlyingEnemie>().HP - Damage;
+                m_animator = other.gameObject.transform.GetComponentInChildren<Animator>();
+                m_animator.SetTrigger("Shoot");
             }
             else if(other.gameObject.name == "meleEnemie")
             {
                 print("HIT MELE ENEMIE");
 
                 other.gameObject.transform.GetComponentInChildren<MeleEnemie>().HP = other.gameObject.GetComponentInChildren<MeleEnemie>().HP - Damage;
+                m_animator = other.gameObject.transform.GetComponentInChildren<Animator>();
+                m_animator.SetTrigger("Shoot");
 
             }
             else if (other.gameObject.name == "shootingAlien")
