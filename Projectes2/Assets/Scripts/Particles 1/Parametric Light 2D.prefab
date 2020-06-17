@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Color: {r: 0.14485706, g: 0, b: 0.4811321, a: 1}
   m_Intensity: 3
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 954bff68adcec43600000000f761cbcb1b099b85df0a6d67674b7c5683f576a971fdf5ae
+  m_ApplyToSortingLayers: 954bff68adcec436f761cbcb1b099b85df0a6d67674b7c5683f576a971fdf5ae
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 0
+  m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 26
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 0
-  m_ShapeLightFalloffSize: 1.49
+  m_ShapeLightFalloffSize: 1.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -0.5, y: -0.5, z: 0}
