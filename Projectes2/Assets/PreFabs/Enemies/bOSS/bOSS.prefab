@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237043396}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: SpawnPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310694922}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: ShootPointBrazo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 538180931}
   - component: {fileID: 538180933}
   - component: {fileID: 538180932}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: brazoOvniizq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,8 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 1431813800}
   bullet: {fileID: 5762908051199376835, guid: 181ae83822fcd444c8b8b9010a9d14a9, type: 3}
-  shootIntervall: 1.7
-  bulletSpeed: 4
+  shootIntervall: 1.5
+  bulletSpeed: 2
   BulletTimer: 10
   offset: -220
   awake: 0
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 559655553}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: SpawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076488399}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1431813801}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: ShootPointBrazo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1984326276}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: SpawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 638248390437131153}
   - component: {fileID: 6403119936588274089}
   - component: {fileID: 1044136242}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: brazoOvnider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ MonoBehaviour:
   shootPoint: {fileID: 310694921}
   bullet: {fileID: 5762908051199376835, guid: 181ae83822fcd444c8b8b9010a9d14a9, type: 3}
   shootIntervall: 1.5
-  bulletSpeed: 4
+  bulletSpeed: 2
   BulletTimer: 10
   offset: -220
   awake: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 5619325120886869101}
   - component: {fileID: 2073011883}
   - component: {fileID: 2073011892}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -709,8 +709,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1451821693
-  m_SortingLayer: 8
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fae6c7edb4a030943868049c77f97abf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -735,7 +735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dd8e5b00ebef649acde78ad66625fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
 --- !u!114 &5619325120886869102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,9 +747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c4f934a9716ba41aa5f4d802caf6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
   PlayerFollowTime: 0
-  followPlayerSpeed: 5
+  followPlayerSpeed: 3
   canMove: 0
   turret1: {fileID: 1044136242}
   turret2: {fileID: 538180932}
@@ -768,7 +766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d683e99899ef1542a697db69cb8707e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
   Points: []
   OrbitalP1: {fileID: 5619325121694531969}
   OrbitalP2: {fileID: 5619325120245560658}
@@ -789,7 +786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4423d97f03e41a7429b2871bebe3fe08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
   atackSpeed: 20
   moveSpeed: 40
   p1: {fileID: 5619325120741275703}
@@ -810,7 +806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6ec2ad2ca69d84589796cecf5ddfe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
   fireDelay: 2
   Points: []
   SpawnPoint1: {fileID: 559655552}
@@ -830,8 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcfe988b08b8e240af9210c775bfadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
-  followPlayerSpeed: 6
+  followPlayerSpeed: 10
   KamikazeDamage: 5
 --- !u!50 &2073011883
 Rigidbody2D:
