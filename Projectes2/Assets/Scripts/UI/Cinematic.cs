@@ -10,6 +10,4 @@ public class Cinematic : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-
-    
 }

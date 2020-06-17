@@ -14,7 +14,7 @@ public class PaintWheel : MonoBehaviour
 {
     public GameObject paintWheel;
     public bool shootable;
-    public GameObject mause;
+
 
     private int rightButtonSelected = 15;
     private int leftButtonSelected = 15 ;
@@ -27,14 +27,12 @@ public class PaintWheel : MonoBehaviour
     {
         if (Input.GetButtonDown("PaintWheel"))
         {
-            mause.GetComponent<MousePointer>().ShootingMouseBool = false;
             shootable = false;
             paintWheel.SetActive(true);
             Time.timeScale = 0.3f;
         }
         else if (Input.GetButtonUp("PaintWheel"))
         {
-            mause.GetComponent<MousePointer>().ShootingMouseBool = true;
             shootable = true;
             paintWheel.SetActive(false);
             Time.timeScale = 1f;
