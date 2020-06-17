@@ -43,14 +43,12 @@ public class SceneManagment : MonoBehaviour
             isPlaying = true;
 
         }
-        Debug.Log(SceneManager.GetActiveScene().name   +   currentScene    +   sceneChecker);
     }
 
     private void SceneSelector()
     {
         currentScene = SceneManager.GetActiveScene().name.ToString();
         print(currentScene);
-
     }
     public void NextScene()
     {
