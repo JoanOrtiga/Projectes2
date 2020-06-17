@@ -11,6 +11,8 @@ public class MovingPlatform : MonoBehaviour
     private bool notFreezed = true;
     public bool moveable = true;
 
+    public ParticleSystem part1;
+    public ParticleSystem part2;
 
     Vector3 nextPos;
 
@@ -18,6 +20,12 @@ public class MovingPlatform : MonoBehaviour
     void Start()
     {
         nextPos = startPos.position;
+
+        if (part1 != null && part2 != null)
+        {
+            part1.Stop();
+            part2.Stop();
+        }
     }
 
     private void Update()
@@ -38,6 +46,12 @@ public class MovingPlatform : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             moveable = true;
+            if(part1 != null && part2 != null)
+            {
+                part1.Play();
+                part2.Play();
+            }
+
         }
     }
 
