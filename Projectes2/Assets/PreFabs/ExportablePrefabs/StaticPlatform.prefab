@@ -441,7 +441,21 @@ MonoBehaviour:
   - {x: -0.5034963, y: 0.5099026, z: 0}
   m_ShapePathHash: -1213185118
   m_Mesh: {fileID: 0}
-  m_InstanceId: 164378
+  m_InstanceId: -64338
+--- !u!114 &1856711728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2945703015754085231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915273913fb637e4992944d8062e4a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatSpan: 1.04
+  speed: 1
 --- !u!1001 &6903261243986532862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1027036907, guid: 244e8e8c4f4cf184b840fc59154b7356, type: 3}
       propertyPath: m_InstanceId
-      value: -152922
+      value: -64332
       objectReference: {fileID: 0}
     - target: {fileID: 6931535201892814542, guid: 244e8e8c4f4cf184b840fc59154b7356,
         type: 3}
@@ -486,12 +500,12 @@ PrefabInstance:
     - target: {fileID: 8587364825361312400, guid: 244e8e8c4f4cf184b840fc59154b7356,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.71
+      value: 27.862343
       objectReference: {fileID: 0}
     - target: {fileID: 8587364825361312400, guid: 244e8e8c4f4cf184b840fc59154b7356,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 102.88
+      value: 103.09276
       objectReference: {fileID: 0}
     - target: {fileID: 8587364825361312400, guid: 244e8e8c4f4cf184b840fc59154b7356,
         type: 3}
@@ -546,7 +560,7 @@ PrefabInstance:
     - target: {fileID: 8587364825361312401, guid: 244e8e8c4f4cf184b840fc59154b7356,
         type: 3}
       propertyPath: m_Name
-      value: StairsFloor (1)
+      value: StaticPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 8587364825361312401, guid: 244e8e8c4f4cf184b840fc59154b7356,
         type: 3}
