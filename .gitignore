@@ -9,6 +9,7 @@ Projectes2/[Bb]uild/
 Projectes2/[Bb]uilds/
 Projectes2/[Ll]ogs/
 Projectes2/[Mm]emoryCaptures/
+Projectes2/Build/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
