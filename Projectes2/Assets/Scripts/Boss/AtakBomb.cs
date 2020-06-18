@@ -66,10 +66,11 @@ public class AtakBomb : BossController
 
     private void FixedUpdate()
     {
-        if (transform.position.y == StartY)
+        if (Mathf.Abs(transform.position.y-StartY)<0.25)
         {
-            if (transform.position.x>=StartX&&transform.position.x<=EndX) 
+            if (Mathf.Abs(transform.position.x - SelectedPos) < 0.25) 
             {
+                print("ss");
                 canMove = false;
             }
             else
@@ -92,8 +93,10 @@ public class AtakBomb : BossController
     }
     void choosePos()
     {
-        SelectedPos = Random.Range(StartX, EndX);
+        Mathf.Round(SelectedPos = Random.Range(StartX, EndX));
         print(SelectedPos);
+
+        SelectedPos -= 20;
     }
 
 
