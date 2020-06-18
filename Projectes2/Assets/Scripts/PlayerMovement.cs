@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGround();
-       // SlopeCheck();
+        SlopeCheck();
         ApplyMovement();
         Ladder();
     }

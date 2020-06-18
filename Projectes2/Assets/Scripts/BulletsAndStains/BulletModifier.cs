@@ -11,7 +11,6 @@ public class BulletModifier : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        print(other.name);
         if (other.CompareTag("HealMe"))
         {
             print("hola");
