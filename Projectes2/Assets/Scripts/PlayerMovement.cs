@@ -64,18 +64,17 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
 
-        //if (Input.GetKeyDown(KeyCode.B))
-        //{
-        //    GetComponent<PlayerHealth>().RecieveDmg(100000);
-        //}
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GetComponent<PlayerHealth>().RecieveDmg(100000);
+        }
       
     }
 
     private void FixedUpdate()
     {
-        print(isOnSlope);
         CheckGround();
-        SlopeCheck();
+       // SlopeCheck();
         ApplyMovement();
         Ladder();
     }

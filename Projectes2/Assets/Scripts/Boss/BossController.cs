@@ -12,7 +12,7 @@ public class BossController : MonoBehaviour
 {
     Rigidbody2D rb2d;
 
-    protected float StartY= 6.04f;
+    protected float StartY= 7.04f;
     protected float StartX = 6.28f;
     protected float EndX = 32.55f;
     public float HP;
@@ -39,7 +39,6 @@ public class BossController : MonoBehaviour
 
     private void Update()
     {
-
         hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, HP / maxHP, lerpHpBar);
         
         if (Input.GetKeyDown(KeyCode.N))
@@ -52,7 +51,7 @@ public class BossController : MonoBehaviour
 
             GetComponent<AtakOrbitalStrike>().enabled = true;
         }
-        print(HP);
+
 
        if(HP <= 0)
         {
@@ -64,12 +63,12 @@ public class BossController : MonoBehaviour
     protected void changeMov(BossStates state)
     {
         BossStates next = state;
-        print("state" + state);
+      
         while (next == state)
         {
             next = (BossStates)Random.Range(0, 5);
         }
-        print("next:" + next);
+
         GetComponent<AtakBarrido>().enabled = false;
         GetComponent<AtakBomb>().enabled = false;
         GetComponent<AtakOrbitalStrike>().enabled = false;

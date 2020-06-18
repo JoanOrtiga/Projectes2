@@ -70,7 +70,6 @@ public class AtakBomb : BossController
         {
             if (Mathf.Abs(transform.position.x - SelectedPos) < 0.25) 
             {
-                print("ss");
                 canMove = false;
             }
             else
@@ -94,7 +93,6 @@ public class AtakBomb : BossController
     void choosePos()
     {
         Mathf.Round(SelectedPos = Random.Range(StartX, EndX));
-        print(SelectedPos);
 
         SelectedPos -= 20;
     }
