@@ -90,7 +90,9 @@ public class StandardEnemie : EnemieManager
 
         if (HP <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetBool("dead", true);
+
+            Destroy(this.gameObject,2.5f);
         }
     }
 

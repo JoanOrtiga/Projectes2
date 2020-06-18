@@ -38,7 +38,8 @@ public class FlyingEnemie : EnemieManager
 
         transform.localRotation = Quaternion.Euler(0, 180, 0);
         spot = patrolSpots[0].position;
-       
+        m_Animator = this.GetComponent<Animator>();
+
     }
 
     void Update()
@@ -148,7 +149,9 @@ public class FlyingEnemie : EnemieManager
     {
         if (HP <= 0)
         {
-            Destroy(transform.parent.gameObject);
+            m_Animator.SetBool("Dead", true);
+            Destroy(transform.parent.gameObject,2.3f);
+
         }
     }
 

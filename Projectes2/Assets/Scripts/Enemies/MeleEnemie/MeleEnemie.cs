@@ -44,7 +44,9 @@ public class MeleEnemie : EnemieManager
 
         if (HP <= 0)
         {
-            Destroy(this.gameObject);
+            animator.SetBool("Dead", true);
+
+            Destroy(this.gameObject, 2.5f);
         }
 
 
