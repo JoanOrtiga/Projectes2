@@ -50,16 +50,16 @@ public class PlayerShot : MonoBehaviour
         switch (rightColor)
         {
             case PaintColors.red:
-                rightGun = Bala[0];
+                Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.cyan:
-                rightGun = Bala[1];
+                Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.blue:
                 rightGun = Bala[2];
                 break;
             case PaintColors.yellow:
-                rightGun = Bala[3];
+                Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.orange:
                 rightGun = Bala[4];
@@ -71,7 +71,7 @@ public class PlayerShot : MonoBehaviour
                 Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.green:
-                Debug.Log("no hay arma de este color");
+                rightGun = Bala[3];
                 break;
             default:
                 rightGun = Bala[5];
@@ -80,16 +80,16 @@ public class PlayerShot : MonoBehaviour
         switch (leftColor)
         {
             case PaintColors.red:
-                leftGun = Bala[0];
+                Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.cyan:
-                leftGun = Bala[1];
+                Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.blue:
                 leftGun = Bala[2];
                 break;
             case PaintColors.yellow:
-                leftGun = Bala[3];
+                Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.orange:
                 leftGun = Bala[4];
@@ -101,7 +101,7 @@ public class PlayerShot : MonoBehaviour
                 Debug.Log("no hay arma de este color");
                 break;
             case PaintColors.green:
-                Debug.Log("no hay arma de este color");
+                leftGun = Bala[3];
                 break;
             default:
                 leftGun = Bala[5];

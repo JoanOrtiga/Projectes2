@@ -30,7 +30,7 @@ public class ButtonClick : MonoBehaviour , IPointerClickHandler
         }
         else if (eventData.button == PointerEventData.InputButton.Middle)
         {
-            onMiddle.Invoke();
+           // onMiddle.Invoke();
         }
     }
 }

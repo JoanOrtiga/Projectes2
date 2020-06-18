@@ -6,13 +6,13 @@ using UnityEngine.EventSystems;
 
 public enum PaintColors
 {
-    red, cyan, blue, yellow, orange, pink, darkBlue, green
+    noPaint, red, cyan, blue, yellow, orange, pink, darkBlue, green
 }
 
 
 public class PaintWheel : MonoBehaviour
 {
-    public GameObject paintWheel;
+    public GameObject[] paintWheel;
     public bool shootable;
     public GameObject mause;
 
@@ -29,14 +29,16 @@ public class PaintWheel : MonoBehaviour
         {
             mause.GetComponent<MousePointer>().ShootingMouseBool = false;
             shootable = false;
-            paintWheel.SetActive(true);
+            foreach(GameObject item in paintWheel)
+                item.SetActive(true);
             Time.timeScale = 0.3f;
         }
         else if (Input.GetButtonUp("PaintWheel"))
         {
             mause.GetComponent<MousePointer>().ShootingMouseBool = true;
             shootable = true;
-            paintWheel.SetActive(false);
+            foreach (GameObject item in paintWheel)
+                item.SetActive(false);
             Time.timeScale = 1f;
         }
     }
@@ -44,62 +46,85 @@ public class PaintWheel : MonoBehaviour
     //Function called from Button when clicked with left mouse button;
     public void LeftWheelClick(int button)
     {
-       /* if (leftButtonSelected != rightButtonSelected)
-        {*/
-            if (leftButtonSelected != 15)
-            {
-                //resets color of the last button selected.
-                transform.GetChild(0).GetChild(leftButtonSelected).GetComponent<Image>().color = new Color(1f, 1f, 1f);
-            }
-     //   }
+        if(button != rightButtonSelected)
+        {
+            transform.GetChild(2).GetChild(0).GetComponent<Image>().color = GetColor(ChoiceColor(button));
+            leftButtonSelected = button;
 
+            leftPaint = ChoiceColor(button);
+        }
+        else
+        {
+            transform.GetChild(2).GetChild(0).GetComponent<Image>().color = GetColor(ChoiceColor(button));
+            leftButtonSelected = button;
 
-        //changes to the right color.
-        transform.GetChild(0).GetChild(button).GetComponent<Image>().color = new Color(1f, 0.3764f, 0.3764f);
-        leftButtonSelected = button;
-
-        leftPaint = ChoiceColor(button);
+            leftPaint = ChoiceColor(button);
+            rightPaint = ChoiceColor(15);
+            transform.GetChild(2).GetChild(1).GetComponent<Image>().color = GetColor(ChoiceColor(15));
+            rightButtonSelected = 15;
+        }
     }
 
-    //leftbuttonselected = 0 i rightbuttonselected = 0
-    //blau -> vermell
 
 
     //Function called from Button when clicked with right mouse button;
     public void RightWheelClick(int button)
     {
-      /*  if(rightButtonSelected != leftButtonSelected)
-        {*/
-            if (rightButtonSelected != 15)
-            {
-                //resets color of the last button selected.
-                transform.GetChild(0).GetChild(rightButtonSelected).GetComponent<Image>().color = new Color(1f, 1f, 1f);
-            }
-       // }
 
-        //changes to the right color..
-        transform.GetChild(0).GetChild(button).GetComponent<Image>().color = new Color(0.3764f, 0.4705f, 1);
-        rightButtonSelected = button;
+        if (button != leftButtonSelected)
+        {
+            transform.GetChild(2).GetChild(1).GetComponent<Image>().color = GetColor(ChoiceColor(button));
+            rightButtonSelected = button;
 
-        rightPaint = ChoiceColor(button);
+            rightPaint = ChoiceColor(button);
+        }
+        else
+        {
+            transform.GetChild(2).GetChild(1).GetComponent<Image>().color = GetColor(ChoiceColor(button));
+            rightButtonSelected = button;
+            rightPaint = ChoiceColor(button);
+
+            leftPaint = ChoiceColor(15);
+            transform.GetChild(2).GetChild(0).GetComponent<Image>().color = GetColor(ChoiceColor(15));
+            leftButtonSelected = 15;
+        }
     }
+
+
 
     private PaintColors ChoiceColor(int button)
     {
         switch (button)
         {
             case 0:
-                return PaintColors.red;
-            case 1:
-                return PaintColors.cyan;
-            case 2:
-                return PaintColors.yellow;
-            case 3:
                 return PaintColors.orange;
-            case 4:
+            case 1:
+                return PaintColors.blue;
+            case 2:
                 return PaintColors.pink;
+            case 3:
+                return PaintColors.green;
             default:
-                return PaintColors.red;
+                return PaintColors.noPaint;
         }
+    }
+
+    private Color GetColor(PaintColors i)
+    {
+        switch (i)
+        {
+            case PaintColors.blue:
+                return new Color(0, 0.686f, 0.85f);
+            case PaintColors.orange:
+                return new Color(1, 0.709f, 0.078f);
+            case PaintColors.pink:
+                return new Color(1, 0.68f, 0.8f);
+            case PaintColors.green:
+                return new Color(0, 0.69f, 0.24f);
+            default:
+                break;
+        }
+
+        return new Color(0.701f, 0.701f, 0.701f);
     }
 }
