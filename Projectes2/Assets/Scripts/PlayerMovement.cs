@@ -64,15 +64,16 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GetComponent<PlayerHealth>().RecieveDmg(100000);
-        }
+        //if (Input.GetKeyDown(KeyCode.B))
+        //{
+        //    GetComponent<PlayerHealth>().RecieveDmg(100000);
+        //}
       
     }
 
     private void FixedUpdate()
     {
+        print(isOnSlope);
         CheckGround();
         SlopeCheck();
         ApplyMovement();
@@ -107,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && jumpOnPaint)
         {
+            animator.SetBool("Jumping", true);
             Jump();
         }
 
@@ -117,24 +119,22 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if (rb.velocity.y <= 0.0f)
+        if (rb.velocity.y == 0.0f)
         {
             isJumping = false;
-
+            animator.SetBool("Jumping", false);
         }
 
         if (isGrounded && !isJumping /*&& slopeDownAngle <= maxSlopeAngle*/)
         {
             canJump = true;
         }
-
-        
-        
     }
 
     private void SlopeCheck()
     {
-        Vector2 checkPos = transform.position - (Vector3)(new Vector2(0.0f, capsuleColliderSize.y / 2));
+        //Vector2 checkPos = transform.position - (Vector3)(new Vector2(0.0f, capsuleColliderSize.y / 2));
+        Vector2 checkPos = groundCheck.position;
 
         SlopeCheckHorizontal(checkPos);
         SlopeCheckVertical(checkPos);
@@ -142,17 +142,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void SlopeCheckHorizontal(Vector2 checkPos)
     {
-        RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, transform.right, slopeCheckDistance, whatIsGround);
-        RaycastHit2D slopeHitBack = Physics2D.Raycast(checkPos, -transform.right, slopeCheckDistance, whatIsGround);
+        RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, new Vector2(1,0), slopeCheckDistance, whatIsGround);
+        RaycastHit2D slopeHitBack = Physics2D.Raycast(checkPos, new Vector2(-1, 0), slopeCheckDistance, whatIsGround);
 
-        if (slopeHitFront)
+        if (slopeHitFront && !isJumping)
         {
             isOnSlope = true;
-
             slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
 
         }
-        else if (slopeHitBack)
+        else if (slopeHitBack && !isJumping)
         {
             isOnSlope = true;
 
@@ -218,17 +217,14 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = newVelocity;
             newForce.Set(0.0f, jumpForce);
             rb.AddForce(newForce, ForceMode2D.Impulse);
-
-            animator.SetTrigger("Jump");
-
         }
     }
 
     private void ApplyMovement()
-    {
+    {    
         if (isGrounded && !isOnSlope && !isJumping) //if not on slope
         {
-            newVelocity.Set(movementSpeed * xInput, 0.0f);
+            newVelocity.Set(movementSpeed * xInput, -7.0f);
             rb.velocity = newVelocity;
         }
         else if (isGrounded && isOnSlope && canWalkOnSlope && !isJumping) //If on slope
@@ -254,5 +250,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         Gizmos.DrawWireSphere(groundCheck.position, slopeCheckDistance);
+
+        Vector3 pos = groundCheck.position;
+        Gizmos.DrawLine(pos, pos + new Vector3(1 * slopeCheckDistance, 0)); 
+        Gizmos.DrawLine(pos, pos + new Vector3(-1 * slopeCheckDistance, 0));
+
     }
 }
