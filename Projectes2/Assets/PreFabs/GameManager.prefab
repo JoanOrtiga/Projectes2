@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5004000392849421564}
   - component: {fileID: 5004000392849421565}
-  - component: {fileID: 5004000392849421566}
   - component: {fileID: 5004000392849421567}
   - component: {fileID: 5004000392849421505}
   m_Layer: 0
@@ -47,27 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSonido: {fileID: 0}
-  botonSonido: {fileID: 0}
-  botonPlay: {fileID: 0}
-  botonIdioma: {fileID: 0}
-  botonExit: {fileID: 0}
---- !u!114 &5004000392849421566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004000392849421562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19b4d81853526b14dadec8193c98643d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuIdioma: {fileID: 0}
-  botonSonido: {fileID: 0}
-  botonPlay: {fileID: 0}
-  botonIdioma: {fileID: 0}
-  botonExit: {fileID: 0}
 --- !u!114 &5004000392849421567
 MonoBehaviour:
   m_ObjectHideFlags: 0

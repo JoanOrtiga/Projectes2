@@ -7845,7 +7845,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuSonido
       value: 
-      objectReference: {fileID: 2117260284}
+      objectReference: {fileID: 0}
     - target: {fileID: 5004000392849421565, guid: ea7cbdf1d3ea8614fa0d3b461dce845c,
         type: 3}
       propertyPath: botonSonido
@@ -7866,31 +7866,25 @@ PrefabInstance:
       propertyPath: botonExit
       value: 
       objectReference: {fileID: 1994034150}
-    - target: {fileID: 5004000392849421566, guid: ea7cbdf1d3ea8614fa0d3b461dce845c,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: menuIdioma
       value: 
       objectReference: {fileID: 51346938}
-    - target: {fileID: 5004000392849421566, guid: ea7cbdf1d3ea8614fa0d3b461dce845c,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: botonSonido
       value: 
       objectReference: {fileID: 1902211024}
-    - target: {fileID: 5004000392849421566, guid: ea7cbdf1d3ea8614fa0d3b461dce845c,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: botonPlay
       value: 
       objectReference: {fileID: 2083872203}
-    - target: {fileID: 5004000392849421566, guid: ea7cbdf1d3ea8614fa0d3b461dce845c,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: botonIdioma
       value: 
       objectReference: {fileID: 893020320}
-    - target: {fileID: 5004000392849421566, guid: ea7cbdf1d3ea8614fa0d3b461dce845c,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: botonExit
       value: 
       objectReference: {fileID: 1994034150}
-    m_RemovedComponents:
-    - {fileID: 5004000392849421566, guid: ea7cbdf1d3ea8614fa0d3b461dce845c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cbdf1d3ea8614fa0d3b461dce845c, type: 3}

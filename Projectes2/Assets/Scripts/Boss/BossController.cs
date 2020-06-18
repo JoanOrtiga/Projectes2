@@ -13,6 +13,8 @@ public class BossController : MonoBehaviour
     Rigidbody2D rb2d;
 
     protected float StartY= 6.04f;
+    protected float StartX = 6.28f;
+    protected float EndX = 32.55f;
     public float HP;
     private float maxHP;
     protected float bSpeed=10f;
@@ -27,9 +29,9 @@ public class BossController : MonoBehaviour
 
         // GetComponent<FollowPlayer>().enabled = true;
         //GetComponent<AtakBarrido>().enabled = true;
-        GetComponent<KamikazePlayer>().enabled = true;
+        //GetComponent<KamikazePlayer>().enabled = true;
         //GetComponent<AtakOrbitalStrike>().enabled = true;
-        //GetComponent<AtakBomb>().enabled = true;
+        GetComponent<AtakBomb>().enabled = true;
 
         maxHP = HP;
 
