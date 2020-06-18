@@ -11,20 +11,16 @@ public class BulletModifier : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other)
     {
-  
+        print(other.name);
         if (other.CompareTag("HealMe"))
         {
+            print("hola");
             if (gameObject.GetComponent<PlayerHealth>().currentHP < gameObject.GetComponent<PlayerHealth>().maxHP)
             {
-
                 print(HealAmmount * Time.deltaTime);
                 
                 gameObject.GetComponent<PlayerHealth>().currentHP += (HealAmmount * Time.deltaTime);
             }
         }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-
     }
 }

@@ -12,7 +12,6 @@ public class RotatingPlatform : MonoBehaviour
     {
         for (int i = 0; i < transform.GetChild(0).childCount; i++)
         {
-            print(transform.GetChild(0).GetChild(i).name);
             if (transform.GetChild(0).GetChild(i).transform.CompareTag("TimeStop"))
             {
                 transform.GetChild(0).GetChild(i).GetComponent<TimeStopPlatform>().reactivateTime.AddListener(Defreeze);
