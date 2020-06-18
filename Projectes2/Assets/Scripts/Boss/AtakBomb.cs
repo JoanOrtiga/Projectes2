@@ -6,6 +6,7 @@ public class AtakBomb : BossController
 {
     public float fireDelay;
     private float fireDelaySeconds;
+    private float SelectedPos;
     [SerializeField]
     private List<GameObject> Points;
     public GameObject SpawnPoint1;
@@ -13,6 +14,7 @@ public class AtakBomb : BossController
     public GameObject SpawnPoint3;
 
     private bool canMove;
+    private bool posChossen;
 
     private GameObject bombShooter;
     public GameObject bomb;
@@ -32,6 +34,13 @@ public class AtakBomb : BossController
     {
         canMove = true;
         currentBomb = 0;
+        posChossen = true;
+    }
+    private void OnDisable()
+    {
+        canMove = false;
+        currentBomb = 0;
+        posChossen = true;
     }
     private void Update()
     {
@@ -59,12 +68,32 @@ public class AtakBomb : BossController
     {
         if (transform.position.y == StartY)
         {
-            canMove = false;
+            if (transform.position.x>=StartX&&transform.position.x<=EndX) 
+            {
+                canMove = false;
+            }
+            else
+            {
+                if (posChossen)
+                {
+                    choosePos();
+                    posChossen = false;
+                }
+                else
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector3(SelectedPos, transform.position.y, transform.position.z), bSpeed * Time.deltaTime);
+                }
+            }
         }
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector3(transform.position.x, StartY, transform.position.z), bSpeed * Time.deltaTime);
         }
+    }
+    void choosePos()
+    {
+        SelectedPos = Random.Range(StartX, EndX);
+        print(SelectedPos);
     }
 
 
