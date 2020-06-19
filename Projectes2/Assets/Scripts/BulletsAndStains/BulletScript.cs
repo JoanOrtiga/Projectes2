@@ -8,7 +8,7 @@ public class BulletScript : MonoBehaviour
     public Vector3 forward;
     public List<GameObject> stain;
     private GameObject stainToSpawn;
-    int r ;
+    int r;
     private Rigidbody2D rb2D;
     private GameObject manager;
 
@@ -25,12 +25,12 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      // transform.Translate(transform.right * BulletSpeed * Time.deltaTime);
+        // transform.Translate(transform.right * BulletSpeed * Time.deltaTime);
     }
     private void FixedUpdate()
     {
         //   rb2D.transform.Translate(transform.right * 1 * Time.deltaTime) ;
-         rb2D.AddForce(direction * Time.deltaTime);
+        rb2D.AddForce(direction * Time.deltaTime);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -52,13 +52,13 @@ public class BulletScript : MonoBehaviour
 
             GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
-            newstain.transform.parent = manager.transform;
+            newstain.transform.parent = other.transform;
         }
-        
 
 
 
-            if (!other.gameObject.CompareTag("stairs"))
+
+        if (!other.gameObject.CompareTag("stairs"))
             Destroy(this.gameObject);
         else
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
@@ -66,7 +66,7 @@ public class BulletScript : MonoBehaviour
     }
     void StainSelector()
     {
-        r = Random.Range(0,3);
+        r = Random.Range(0, 3);
 
         stainToSpawn = stain[r];
     }
