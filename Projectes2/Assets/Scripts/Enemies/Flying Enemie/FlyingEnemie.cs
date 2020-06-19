@@ -149,9 +149,16 @@ public class FlyingEnemie : EnemieManager
         {
             GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             m_Animator.SetBool("Dead", true);
-            Destroy(transform.parent.gameObject,2.3f);
 
+            Invoke("InvokeDestroy", 2.3f);
         }
+    }
+
+    private void InvokeDestroy()
+    {
+        m_Animator.SetBool("Dead", false);
+
+        transform.parent.gameObject.SetActive(false);
     }
 
 }

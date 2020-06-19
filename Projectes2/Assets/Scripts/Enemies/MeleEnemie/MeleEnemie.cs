@@ -54,16 +54,27 @@ public class MeleEnemie : EnemieManager
             dead = true;
             GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             animator.SetBool("Dead", true);
-            Destroy(this.gameObject, 2.5f);
 
-            
-            audioManager.Play("EnemyDie");
+            if(audioManager!=null)
+                audioManager.Play("EnemyDie");
 
-
+            Invoke("InvokeDestroy", 2.5f);
         }
 
         checkDirection();
         patrol();
+    }
+
+    private void InvokeDestroy()
+    {
+        foreach (BoxCollider2D item in GetComponents<BoxCollider2D>())
+        {
+            item.enabled = true;
+        }
+        dead = false;
+        animator.SetBool("Dead", false);
+
+        transform.parent.gameObject.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -104,7 +115,6 @@ public class MeleEnemie : EnemieManager
             //  print((distance < chaseDistance && distance > attackDistance) + " Chase " + chaseDistance + " attack " + attackDistance + "distace" + distance);
             if (distance < chaseDistance && distance > attackDistance)
             {
-                print("CHASE");
                 animator.SetBool("Chasing", true);
                 animator.SetBool("Attacking", false);
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), ChaseSpeed * Time.deltaTime);
@@ -123,8 +133,8 @@ public class MeleEnemie : EnemieManager
             if (distance < attackDistance)
             {
                 animator.SetBool("Attacking", true);
-                audioManager.Play("EnemyMeleAtack");
-                print("ATTACK");
+                if (audioManager != null)
+                    audioManager.Play("EnemyMeleAtack");
             }
         }
         

@@ -67,9 +67,6 @@ public class StandardEnemie : EnemieManager
         {
             Shoot();
         }
-
-        
-        
     }
 
 
@@ -86,14 +83,28 @@ public class StandardEnemie : EnemieManager
         if (HP <= 0)
         {
             GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
+            
             animator.SetBool("dead", true);
-            Destroy(this.gameObject,2.5f);
 
             foreach (BoxCollider2D item in GetComponents<BoxCollider2D>())
             {
                 item.enabled = false;
             }
+
+            Invoke("InvokeDestroy",2.5f);
         }
+    }
+
+    private void InvokeDestroy()
+    {
+        animator.SetBool("dead", false);
+
+        foreach (BoxCollider2D item in GetComponents<BoxCollider2D>())
+        {
+            item.enabled = true;
+        }
+
+        gameObject.SetActive(false);
     }
 
     public void Shoot()
@@ -105,7 +116,8 @@ public class StandardEnemie : EnemieManager
         {
             actualTime = 0;
             Instantiate(projectile, shootingPoint.transform.position, Quaternion.identity);
-            audioManager.Play("EnemyShoot"); ;
+            if (audioManager != null)
+                audioManager.Play("EnemyShoot"); ;
 
     // projectile.GetComponent<Rigidbody2D>().velocity = (target.transform.position - projectile.GetComponent<Transform>().position).normalized * 5;
 }

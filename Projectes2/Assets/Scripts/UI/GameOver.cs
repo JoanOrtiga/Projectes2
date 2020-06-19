@@ -24,7 +24,6 @@ public class GameOver : MonoBehaviour
 
     public void DeathScreen()
     {
-        
         mouse.GetComponent<MousePointer>().ShootingMouseBool = false;
         Time.timeScale = 0.1f;
         foreach (GameObject item in gameOver)

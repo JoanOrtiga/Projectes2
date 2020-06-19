@@ -31,6 +31,8 @@ public class CheckPointManager : MonoBehaviour
 
     public void Restart()
     {
+        Camera.main.transform.position = StartingPosition;
+
         player.transform.position = StartingPosition;
         player.GetComponent<PlayerHealth>().currentHP  = player.GetComponent<PlayerHealth>().maxHP;
         bulletManager.GetComponent<StainManager>().manaMana = bulletManager.GetComponent<StainManager>().manaMax;
