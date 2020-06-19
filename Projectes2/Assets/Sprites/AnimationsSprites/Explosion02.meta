@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Projectes2/Assets/Animator/Enemies/Enemie Shooting/deathEnemy1.anim.meta
+guid: 68f9107dc2aced94e8a90df24dc12b50
+NativeFormatImporter:
+=======
 guid: 80e2108d925690540920c5973aea6701
 folderAsset: yes
 DefaultImporter:
+>>>>>>> master:Projectes2/Assets/Sprites/AnimationsSprites/Explosion02.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
