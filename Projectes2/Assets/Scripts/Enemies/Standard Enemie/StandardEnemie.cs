@@ -21,11 +21,13 @@ public class StandardEnemie : EnemieManager
     private float distance;
 
     public int manaRecover = 50;
+    private AudioManager audioManager;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         animator = this.GetComponent<Animator>();
+
     }
 
     void Update()
@@ -86,6 +88,11 @@ public class StandardEnemie : EnemieManager
             GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             animator.SetBool("dead", true);
             Destroy(this.gameObject,2.5f);
+
+            foreach (BoxCollider2D item in GetComponents<BoxCollider2D>())
+            {
+                item.enabled = false;
+            }
         }
     }
 
@@ -98,8 +105,10 @@ public class StandardEnemie : EnemieManager
         {
             actualTime = 0;
             Instantiate(projectile, shootingPoint.transform.position, Quaternion.identity);
-           // projectile.GetComponent<Rigidbody2D>().velocity = (target.transform.position - projectile.GetComponent<Transform>().position).normalized * 5;
-        }
+            audioManager.Play("EnemyShoot"); ;
+
+    // projectile.GetComponent<Rigidbody2D>().velocity = (target.transform.position - projectile.GetComponent<Transform>().position).normalized * 5;
+}
     }
 
     void Flip()

@@ -20,6 +20,8 @@ public class MeleEnemie : EnemieManager
     private Animator animator;
     private bool dead = false;
 
+    private AudioManager audioManager;
+
     Vector3 lastPos;
     Vector3 currentPos;
     private bool checkDirectionBool = true;
@@ -33,6 +35,8 @@ public class MeleEnemie : EnemieManager
         player = GameObject.FindGameObjectWithTag("Player");
         spot = patrolPoints[0].position;
         animator = this.GetComponent<Animator>();
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -52,10 +56,10 @@ public class MeleEnemie : EnemieManager
             animator.SetBool("Dead", true);
             Destroy(this.gameObject, 2.5f);
 
-            FindObjectOfType<AudioManager>().Play("EnemyDie");
             
+            audioManager.Play("EnemyDie");
 
-            
+
         }
 
         checkDirection();
@@ -119,7 +123,7 @@ public class MeleEnemie : EnemieManager
             if (distance < attackDistance)
             {
                 animator.SetBool("Attacking", true);
-                FindObjectOfType<AudioManager>().Play("EnemyMeleAtack");
+                audioManager.Play("EnemyMeleAtack");
                 print("ATTACK");
             }
         }
