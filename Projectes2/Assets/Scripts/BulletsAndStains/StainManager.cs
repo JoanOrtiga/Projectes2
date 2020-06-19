@@ -28,7 +28,6 @@ public class StainManager : MonoBehaviour
 
     void Update()
     {
-        print(manaMana);
         if (manaMana < manaMax)
             manaMana += manaXSecond * Time.deltaTime;
 
@@ -92,11 +91,21 @@ public class StainManager : MonoBehaviour
     {
         if (sum)
         {
-            manaMana += amount;
+            if(manaMana < manaMax)
+                manaMana += amount;
+            else
+            {
+                manaMana = manaMax;
+            }
         }
         else
         {
-            manaMana -= amount;
+            if (manaMana > 0)
+                manaMana -= amount;
+            else
+            {
+                manaMana = 0;
+            }
         }
     }
 }

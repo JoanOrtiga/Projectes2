@@ -134,6 +134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velY: 25
-  explosion: {fileID: 8992293295579973536, guid: 88823f6ba26fb21448d8f0d8b0583150,
+  explosion: {fileID: 1501472288594092325, guid: dfbe4cbabc24f584086146bf2c392cb7,
     type: 3}
   damage: 10

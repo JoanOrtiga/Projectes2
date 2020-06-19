@@ -43,6 +43,11 @@ public class PaintWheel : MonoBehaviour
                 item.SetActive(false);
             Time.timeScale = 1f;
         }
+        else if (isInPause.gamePaused)
+        {
+            foreach (GameObject item in paintWheel)
+                item.SetActive(false);
+        }
     }
 
     //Function called from Button when clicked with left mouse button;

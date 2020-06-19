@@ -21,8 +21,10 @@ public class OrbitalAtackManager : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
+        print("ade");
         if (other.CompareTag("Player"))
         {
+            print("hola");
             other.GetComponent<PlayerHealth>().currentHP -= damage * Time.deltaTime;
         }
     }

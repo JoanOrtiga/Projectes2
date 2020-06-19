@@ -48,7 +48,6 @@ public class SceneManagment : MonoBehaviour
     private void SceneSelector()
     {
         currentScene = SceneManager.GetActiveScene().name.ToString();
-        print(currentScene);
     }
     public void NextScene()
     {

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Projectes2/Assets/Sounds/Sound Effect.meta
 guid: e64a73aa8984d6e4491b00d20b3e11e2
 folderAsset: yes
 DefaultImporter:
+=======
+guid: dfbe4cbabc24f584086146bf2c392cb7
+PrefabImporter:
+>>>>>>> master:Projectes2/Assets/PreFabs/Enemies/bOSS/Explosion.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
