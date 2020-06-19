@@ -45,6 +45,9 @@ public class MeleEnemie : EnemieManager
             GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             animator.SetBool("Dead", true);
             Destroy(this.gameObject, 2.5f);
+
+            FindObjectOfType<AudioManager>().Play("EnemyDie");
+            
         }
 
         checkDirection();
@@ -97,6 +100,7 @@ public class MeleEnemie : EnemieManager
         if (distance < attackDistance)
         {
             animator.SetBool("Attacking", true);
+            FindObjectOfType<AudioManager>().Play("EnemyMeleAtack");
             print("ATTACK");
         }
 

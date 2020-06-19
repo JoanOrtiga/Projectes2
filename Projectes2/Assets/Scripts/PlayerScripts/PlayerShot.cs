@@ -184,6 +184,7 @@ public class PlayerShot : MonoBehaviour
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
+                FindObjectOfType<AudioManager>().Play("PlayerAtack");
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                 //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 
