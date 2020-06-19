@@ -129,7 +129,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: EnemyDie
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c0852aa7ba718694bb9daafb50fb868f, type: 3}
     loop: 0
     isSFX: 1
     volume: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: EnemyMeleAtack
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 159323eb9d801f545ac40335fc1e8390, type: 3}
     loop: 0
     isSFX: 1
     volume: 1
