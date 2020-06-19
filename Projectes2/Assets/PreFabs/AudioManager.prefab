@@ -114,13 +114,6 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: PlayerTakeGun
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 1
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
   - name: EnemyShoot
     clip: {fileID: 8300000, guid: 4daa0fb794fdb324496de79c3a7b9803, type: 3}
     loop: 0
