@@ -14,6 +14,7 @@ public class AtakOrbitalStrike : BossController
     public int movementSpeed;
     public GameObject shootPoint;
     private float time;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,6 +22,8 @@ public class AtakOrbitalStrike : BossController
         Points.Add(OrbitalP1);
         Points.Add(OrbitalP2);
         Points.Add(OrbitalP3);
+        audioManager = FindObjectOfType<AudioManager>();
+
     }
     private void OnEnable()
     {
@@ -67,14 +70,16 @@ public class AtakOrbitalStrike : BossController
     void InstaniateProjectile()
     {
         Instantiate(OrbitalAtack, shootPoint.transform.position, shootPoint.transform.rotation);
-        FindObjectOfType<AudioManager>().Play("BossOrbital");
+        if (audioManager != null)
+            audioManager.Play("BossOrbital");
         time = 2;
 
     }
     
     public void ChangeState()
     {
-        FindObjectOfType<AudioManager>().Stop("BossOrbital");
+        if (audioManager != null)
+            audioManager.Stop("BossOrbital");
 
         changeMov(BossStates.AtakOrbitalStrike);
 

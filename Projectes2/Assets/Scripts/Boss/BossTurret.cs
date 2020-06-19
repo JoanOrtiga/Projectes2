@@ -20,6 +20,7 @@ public class BossTurret : MonoBehaviour
     public float BulletTimer;
     public float offset;
     private float angle;
+    private AudioManager audioManager;
 
     //booleans
     public bool awake;
@@ -27,6 +28,11 @@ public class BossTurret : MonoBehaviour
     private void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+
     }
     void LateUpdate()
     {
@@ -53,7 +59,8 @@ public class BossTurret : MonoBehaviour
             Vector2 direction = player.position - transform.position;
             GameObject bulletClone;
             bulletClone = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
-            FindObjectOfType<AudioManager>().Play("BossAtackShoot");
+            if (audioManager != null)
+                audioManager.Play("BossAtackShoot");
             bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
             BulletTimer = 0;
         }
