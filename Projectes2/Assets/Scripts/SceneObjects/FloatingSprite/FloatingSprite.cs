@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FloatingSprite : MonoBehaviour
 {
-
     public float floatSpan = 2.0f;
     public float speed = 1.0f;
 
