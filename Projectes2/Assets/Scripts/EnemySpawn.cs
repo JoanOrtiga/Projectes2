@@ -15,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
                 item.SetActive(true);
             }
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -53,6 +53,7 @@ public class BossTurret : MonoBehaviour
             Vector2 direction = player.position - transform.position;
             GameObject bulletClone;
             bulletClone = Instantiate(bullet, shootPoint.transform.position, shootPoint.transform.rotation);
+            FindObjectOfType<AudioManager>().Play("BossAtackShoot");
             bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
             BulletTimer = 0;
         }

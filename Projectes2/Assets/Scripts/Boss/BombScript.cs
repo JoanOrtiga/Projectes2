@@ -35,6 +35,8 @@ public class BombScript : MonoBehaviour
                 other.GetComponent<PlayerHealth>().currentHP -= damage;
             }
             Instantiate(explosion, transform.position, transform.rotation);
+            FindObjectOfType<AudioManager>().Play("BossBomb");
+
             Destroy(gameObject);
         }
     }

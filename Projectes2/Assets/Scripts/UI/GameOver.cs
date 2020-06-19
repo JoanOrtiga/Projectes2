@@ -1,35 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    public UnityEvent restart;
+
     private GameObject player;
     public GameObject mouse;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-       // this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DeathScreen()
     {
-        if (player.GetComponent<PlayerHealth>().currentHP >= 0)
-        {
-            mouse.GetComponent<MousePointer>().ShootingMouseBool = false;
-            this.gameObject.SetActive(true);
-            Time.timeScale = 0;
-        }
+        mouse.GetComponent<MousePointer>().ShootingMouseBool = false;
+        this.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
+
 
     public void exitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
     public void restartGame()
     {
-
+        restart.Invoke();
     }
 }
