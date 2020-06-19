@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Cinematic : MonoBehaviour
 {
+    private SceneManagment manager;
     // Start is called before the first frame update
-   public void nextScene()
+    public void Start()
     {
+        manager = FindObjectOfType<SceneManagment>();
+
+    }
+    public void nextScene()
+    {
+        manager.isPlaying = false;
         SceneManager.LoadScene(2);
     }
 

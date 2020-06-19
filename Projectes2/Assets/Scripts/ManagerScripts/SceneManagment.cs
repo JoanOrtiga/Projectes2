@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagment : MonoBehaviour
 {
     private string currentScene;
-    private bool isPlaying;
+    public bool isPlaying;
     [HideInInspector]
     public bool sceneChecker;
     private bool menu;
@@ -35,13 +35,13 @@ public class SceneManagment : MonoBehaviour
         {
             SceneSelector();
         }
-        if (currentScene == "MainMenu" &&  menu)
+        if (currentScene == "MainMenu" &&  menu && !isPlaying)
         {
             if (audioManager != null)
                 audioManager.Play("MenuSong");
             isPlaying = true;
         }
-        else if (currentScene == "Nivell1" && !menu)
+        else if (currentScene == "Nivell1" && !menu && !isPlaying)
         {
             if (audioManager != null)
                 audioManager.Stop("Cinematica");
@@ -50,7 +50,7 @@ public class SceneManagment : MonoBehaviour
             isPlaying = true;
 
         }
-        else if (currentScene == "Cinematic" && !menu)
+        else if (currentScene == "Cinematic" && !menu && !isPlaying)
         {
             if (audioManager != null)
                 audioManager.Stop("MenuSong");
@@ -58,7 +58,7 @@ public class SceneManagment : MonoBehaviour
                 audioManager.Play("Cinematica");
             isPlaying = true;
         }
-        else if (currentScene == "BossFight" && !menu)
+        else if (currentScene == "BossFight" && !menu && !isPlaying)
         {
             if (audioManager != null)
                 audioManager.Play("BossAmbient");
@@ -76,6 +76,7 @@ public class SceneManagment : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(1);
+        isPlaying = false;
         menu = false;
     }
 }
