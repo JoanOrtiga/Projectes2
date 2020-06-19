@@ -67,12 +67,15 @@ public class AtakOrbitalStrike : BossController
     void InstaniateProjectile()
     {
         Instantiate(OrbitalAtack, shootPoint.transform.position, shootPoint.transform.rotation);
+        FindObjectOfType<AudioManager>().Play("BossOrbital");
         time = 2;
 
     }
     
     public void ChangeState()
     {
+        FindObjectOfType<AudioManager>().Stop("BossOrbital");
+
         changeMov(BossStates.AtakOrbitalStrike);
 
     }

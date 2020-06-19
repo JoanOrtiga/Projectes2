@@ -87,11 +87,11 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: PlayerReceiveDMG
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: f2f634ba977e99e44a55bd5dd16c54b8, type: 3}
     loop: 0
     isSFX: 1
     volume: 1
-    pitch: 1
+    pitch: 1.07
     source: {fileID: 0}
   - name: PlayerDeath
     clip: {fileID: 0}
@@ -156,15 +156,15 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: BossAtack
-    clip: {fileID: 0}
+  - name: BossAtackShoot
+    clip: {fileID: 8300000, guid: 154ce8db6821bcf4da59c9a1ce24d126, type: 3}
     loop: 0
     isSFX: 1
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: BossReceiveDMG
-    clip: {fileID: 0}
+  - name: BossOrbital
+    clip: {fileID: 8300000, guid: c411773f4be433443bf48b590b7855ec, type: 3}
     loop: 0
     isSFX: 1
     volume: 1
@@ -177,31 +177,31 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: BossMove
-    clip: {fileID: 0}
+  - name: BossBomb
+    clip: {fileID: 8300000, guid: 4713cb527f7b2504cb654295cc7e8966, type: 3}
     loop: 0
     isSFX: 1
     volume: 1
-    pitch: 1
+    pitch: 1.13
     source: {fileID: 0}
-  - name: RadioAmbient
-    clip: {fileID: 0}
+  - name: BossBombDrop
+    clip: {fileID: 8300000, guid: ca7f9cbc458b3cb498584eb5679118b3, type: 3}
     loop: 0
+    isSFX: 0
+    volume: 1
+    pitch: 1.15
+    source: {fileID: 0}
+  - name: BossAmbient
+    clip: {fileID: 8300000, guid: 647a81f59c04753498c18c2b870681a8, type: 3}
+    loop: 1
     isSFX: 0
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: OuterHouse
-    clip: {fileID: 0}
+  - name: Cinematica
+    clip: {fileID: 8300000, guid: bd0a92c558aadf24ca4ba02d5a8b8faa, type: 3}
     loop: 0
-    isSFX: 0
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
-  - name: Blank
-    clip: {fileID: 0}
-    loop: 0
-    isSFX: 0
+    isSFX: 1
     volume: 1
     pitch: 1
     source: {fileID: 0}
