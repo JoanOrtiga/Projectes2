@@ -12,9 +12,10 @@ public class CheckPointManager : MonoBehaviour
     Vector2 StartingPosition;
 
     public GameObject enemiesItem;
+    public GameObject spawnersItem;
 
-    private List<GameObject> enemiesCollection;
-    private List<Vector2> enemiesCollectionPosition;
+    private List<GameObject> enemiesCollection = new List<GameObject>();
+    private List<Vector2> enemiesCollectionPosition = new List<Vector2>();
 
     private void Start()
     {
@@ -47,7 +48,11 @@ public class CheckPointManager : MonoBehaviour
                 enemiesCollection[i].transform.GetChild(0).GetComponent<FlyingEnemie>().HP = 15;
             }
         }
-        
+
+        for (int i = 0; i < spawnersItem.transform.childCount; i++)
+        {
+            spawnersItem.transform.GetChild(i).gameObject.SetActive(true);
+        }
     }
 
     public void GetCheckPoint(Vector2 pos)
