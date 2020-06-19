@@ -18,6 +18,7 @@ public class AtakBomb : BossController
 
     private GameObject bombShooter;
     public GameObject bomb;
+    private AudioManager audioManager;
 
     private int index;
 
@@ -29,6 +30,8 @@ public class AtakBomb : BossController
         Points.Add(SpawnPoint1);
         Points.Add(SpawnPoint2);
         Points.Add(SpawnPoint3);
+        audioManager = FindObjectOfType<AudioManager>();
+
     }
     private void OnEnable()
     {
@@ -101,7 +104,8 @@ public class AtakBomb : BossController
     void fire()
     {
         Instantiate(bomb, bombShooter.transform.position, Quaternion.identity);
-        FindObjectOfType<AudioManager>().Play("BossBombDrop");
+        if(audioManager != null)
+            audioManager.Play("BossBombDrop");
         currentBomb++;
     }
     public void ChangeState()

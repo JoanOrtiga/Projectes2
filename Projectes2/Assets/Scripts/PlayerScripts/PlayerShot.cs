@@ -136,6 +136,10 @@ public class PlayerShot : MonoBehaviour
             //left mouse button
             if (Input.GetMouseButtonDown(0))
             {
+                if (audioManager != null)
+                    audioManager.Play("PlayerAtack");
+
+
                 //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
                 //bulletLeft.GetComponent<Rigidbody2D>().velocity = shotPoint.TransformDirection(new Vector3(0, 0, 4));
                 //GameObject bulletLeft = Instantiate(leftGun, shotPoint.position, shotPoint.rotation);
@@ -185,8 +189,6 @@ public class PlayerShot : MonoBehaviour
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
-
-                GameObject.FindGameObjectWithTag("AudioManager");
                 if(audioManager!=null)
                     audioManager.Play("PlayerAtack");
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);

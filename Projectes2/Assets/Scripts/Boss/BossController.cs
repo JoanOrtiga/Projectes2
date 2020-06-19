@@ -16,11 +16,16 @@ public class BossController : MonoBehaviour
     protected float StartX = 6.28f;
     protected float EndX = 32.55f;
     public float HP;
-    private float maxHP;
+    public float maxHP;
     protected float bSpeed=10f;
 
-    public Image hpBar;
+    [SerializeField]
+    private Image hpBar;
     public float lerpHpBar = 0.1f;
+
+    public GameObject explosion;
+
+    private GameObject a;
     
     // Use this for initialization
     void Start()
@@ -56,8 +61,21 @@ public class BossController : MonoBehaviour
        if(HP <= 0)
         {
             hpBar.fillAmount = 0;
-            Destroy(gameObject); 
+
+            a = Instantiate(explosion, transform);
+            Invoke("destroyEffects", 0.917f);
+            Invoke("switchScene", 2f);
         }
+    }
+
+    private void destroyEffects()
+    {
+        Destroy(a);
+    }
+
+    private void switchScene()
+    {
+        SceneManager.LoadScene(0);
     }
 
     protected void changeMov(BossStates state)
