@@ -56,7 +56,7 @@ public class MeleEnemie : EnemieManager
             animator.SetBool("Dead", true);
 
             if(audioManager!=null)
-                audioManager.Play("EnemyDie");
+               // audioManager.Play("EnemyDie");
 
             Invoke("InvokeDestroy", 2.5f);
         }
@@ -194,5 +194,10 @@ public class MeleEnemie : EnemieManager
         }
         
         
+    }
+
+    public void deadSound()
+    {
+        audioManager.Play("EnemyDie");
     }
 }

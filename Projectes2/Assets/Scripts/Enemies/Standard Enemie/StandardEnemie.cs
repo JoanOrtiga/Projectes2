@@ -25,6 +25,7 @@ public class StandardEnemie : EnemieManager
 
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         target = GameObject.FindGameObjectWithTag("Player");
         animator = this.GetComponent<Animator>();
 
@@ -93,6 +94,11 @@ public class StandardEnemie : EnemieManager
 
             Invoke("InvokeDestroy",2.5f);
         }
+    }
+
+    public void DeathSound()
+    {
+        audioManager.Play("EnemyDie");
     }
 
     private void InvokeDestroy()
