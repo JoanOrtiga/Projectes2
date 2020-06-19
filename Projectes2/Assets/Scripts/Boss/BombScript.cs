@@ -22,7 +22,6 @@ public class BombScript : MonoBehaviour
     private void FixedUpdate()
     {
         rb2D.velocity = new Vector2(velX, -velY);
-
     }
    
  
@@ -35,6 +34,7 @@ public class BombScript : MonoBehaviour
                 other.GetComponent<PlayerHealth>().currentHP -= damage;
             }
             Instantiate(explosion, transform.position, transform.rotation);
+
             FindObjectOfType<AudioManager>().Play("BossBomb");
 
             Destroy(gameObject);

@@ -185,8 +185,11 @@ public class PlayerShot : MonoBehaviour
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
+<<<<<<< HEAD
 
                 
+=======
+>>>>>>> 836c13becefd5f7d97970b24a3b0e1add5720c28
                 if(audioManager!=null)
                     audioManager.Play("PlayerAtack");
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
