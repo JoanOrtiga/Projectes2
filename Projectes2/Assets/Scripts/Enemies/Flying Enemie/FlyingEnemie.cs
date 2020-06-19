@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -25,6 +26,7 @@ public class FlyingEnemie : EnemieManager
     private bool scriptActivate = true;
     private bool isGoingBack = false;
 
+    public int manaRecover = 50;
 
     [SerializeField]
     private bool isPatroling = true;
@@ -112,7 +114,6 @@ public class FlyingEnemie : EnemieManager
     {
         if (collision.CompareTag("Player"))
         {
-            print("HIT PLAYER");
             collision.GetComponent<PlayerHealth>().currentHP -= DMG;
             isGoingBack = true;
             isPatroling = false;
@@ -125,8 +126,6 @@ public class FlyingEnemie : EnemieManager
         lastX = transform.position.x;
         activateScript(false);
         transform.position = Vector2.MoveTowards(transform.position, spot, goingBackSpeed * Time.deltaTime);
-
-
 
         if (transform.position.x < lastX)
         {
@@ -142,14 +141,13 @@ public class FlyingEnemie : EnemieManager
             activateScript(true);
             isGoingBack = false;
         }
-
     }
 
     void death()
     {
         if (HP <= 0)
         {
-
+            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             m_Animator.SetBool("Dead", true);
             Destroy(transform.parent.gameObject,2.3f);
 

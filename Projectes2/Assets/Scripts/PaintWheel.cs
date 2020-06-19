@@ -22,10 +22,12 @@ public class PaintWheel : MonoBehaviour
     [HideInInspector] public PaintColors rightPaint;
     [HideInInspector] public PaintColors leftPaint;
 
+    public PauseMenu isInPause;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("PaintWheel"))
+        if (Input.GetButtonDown("PaintWheel") && !isInPause.gamePaused)
         {
             mause.GetComponent<MousePointer>().ShootingMouseBool = false;
             shootable = false;
@@ -33,7 +35,7 @@ public class PaintWheel : MonoBehaviour
                 item.SetActive(true);
             Time.timeScale = 0.3f;
         }
-        else if (Input.GetButtonUp("PaintWheel"))
+        else if (Input.GetButtonUp("PaintWheel") && !isInPause.gamePaused)
         {
             mause.GetComponent<MousePointer>().ShootingMouseBool = true;
             shootable = true;

@@ -56,12 +56,12 @@ public class BulletScript : MonoBehaviour
         }
 
 
+        Destroy(this.gameObject);
 
-
-        if (!other.gameObject.CompareTag("stairs"))
-            Destroy(this.gameObject);
-        else
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
+        //if (!other.gameObject.CompareTag("stairs"))
+        //    Destroy(this.gameObject);
+        //else
+        //    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());
 
     }
     void StainSelector()

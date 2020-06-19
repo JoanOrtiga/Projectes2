@@ -1,35 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    
+    public GameObject pauseCanvas;
     public GameObject mouseCanvas;
+
+    public bool gamePaused;
 
     private void Start()
     {
-        this.gameObject.SetActive(false);
+        pauseCanvas.SetActive(false);
     }
     public void pauseButton()
     {
         Time.timeScale = 0f;
-        
-        this.gameObject.SetActive(true);
+
+        gamePaused = true;
+        pauseCanvas.SetActive(true);
         mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = false;
     }
 
     public void resumeButton()
     {
-        this.gameObject.SetActive(false);
+        pauseCanvas.SetActive(false);
         mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = true;
 
         Time.timeScale = 1f;
+        gamePaused = false;
     }
 
     public void exitButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
 }
