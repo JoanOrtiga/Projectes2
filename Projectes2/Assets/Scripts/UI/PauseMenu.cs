@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
     public GameObject mouseCanvas;
+
+    public bool gamePaused;
 
     private void Start()
     {
@@ -14,7 +17,8 @@ public class PauseMenu : MonoBehaviour
     public void pauseButton()
     {
         Time.timeScale = 0f;
-        
+
+        gamePaused = true;
         pauseCanvas.SetActive(true);
         mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = false;
     }
@@ -25,11 +29,12 @@ public class PauseMenu : MonoBehaviour
         mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = true;
 
         Time.timeScale = 1f;
+        gamePaused = false;
     }
 
     public void exitButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
 }

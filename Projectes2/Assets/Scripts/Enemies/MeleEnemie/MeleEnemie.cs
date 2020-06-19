@@ -42,7 +42,7 @@ public class MeleEnemie : EnemieManager
 
         if (HP <= 0)
         {
-            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(false, manaRecover);
+            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             animator.SetBool("Dead", true);
             Destroy(this.gameObject, 2.5f);
         }

@@ -28,7 +28,9 @@ public class StainManager : MonoBehaviour
 
     void Update()
     {
-        manaMana += manaXSecond * Time.deltaTime;
+        print(manaMana);
+        if (manaMana < manaMax)
+            manaMana += manaXSecond * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.V))
         {

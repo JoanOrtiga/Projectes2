@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D cc;
 
+    public PauseMenu isInPause;
+
     private Animator animator;
     private void Start()
     {
@@ -62,7 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CheckInput();
+        if(!isInPause.gamePaused)
+            CheckInput();
 
         if (Input.GetKeyDown(KeyCode.B))
         {
