@@ -41,7 +41,7 @@ public class BulletScript : MonoBehaviour
         {
             StainSelector();
 
-            
+
             GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
             newstain.transform.parent = manager.transform;
@@ -54,10 +54,11 @@ public class BulletScript : MonoBehaviour
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
             newstain.transform.parent = manager.transform;
         }
+        
 
 
 
-        if (!other.gameObject.CompareTag("stairs"))
+            if (!other.gameObject.CompareTag("stairs"))
             Destroy(this.gameObject);
         else
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), other.gameObject.GetComponent<Collider2D>());

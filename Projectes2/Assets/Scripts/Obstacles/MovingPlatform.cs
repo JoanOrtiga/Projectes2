@@ -34,6 +34,7 @@ public class MovingPlatform : MonoBehaviour
         {
             if (transform.GetChild(0).GetChild(i).transform.CompareTag("TimeStop"))
             {
+                print("hola");
                 transform.GetChild(0).GetChild(i).GetComponent<TimeStopPlatform>().reactivateTime.AddListener(Defreeze);
                 notFreezed = false;
             }

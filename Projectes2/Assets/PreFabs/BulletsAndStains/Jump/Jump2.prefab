@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbe2583fb549ef43b3642e60f0d5793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stainColor: 3
+  stainColor: 8
 --- !u!114 &593457390202977175
 MonoBehaviour:
   m_ObjectHideFlags: 0

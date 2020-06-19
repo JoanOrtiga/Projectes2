@@ -11,11 +11,8 @@ public class SpikeInstaDead : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("hola");
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("jajs");
-
             manager.GetComponent<CheckPointManager>().Restart();
         }
     }

@@ -12,10 +12,10 @@ public class TimeStopPlatform : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(destroy());
+        StartCoroutine(DestroyPaint());
     }
 
-    IEnumerator destroy()
+    IEnumerator DestroyPaint()
     {
         yield return new WaitForSeconds(TimeToReactivate);
 
