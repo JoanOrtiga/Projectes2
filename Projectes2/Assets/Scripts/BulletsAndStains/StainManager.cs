@@ -28,7 +28,8 @@ public class StainManager : MonoBehaviour
 
     void Update()
     {
-        manaMana += manaXSecond * Time.deltaTime;
+        if (manaMana < manaMax)
+            manaMana += manaXSecond * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.V))
         {
@@ -90,11 +91,21 @@ public class StainManager : MonoBehaviour
     {
         if (sum)
         {
-            manaMana += amount;
+            if(manaMana < manaMax)
+                manaMana += amount;
+            else
+            {
+                manaMana = manaMax;
+            }
         }
         else
         {
-            manaMana -= amount;
+            if (manaMana > 0)
+                manaMana -= amount;
+            else
+            {
+                manaMana = 0;
+            }
         }
     }
 }

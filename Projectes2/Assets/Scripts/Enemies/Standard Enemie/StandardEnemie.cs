@@ -83,7 +83,7 @@ public class StandardEnemie : EnemieManager
     {
         if (HP <= 0)
         {
-            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(false, manaRecover);
+            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             animator.SetBool("dead", true);
             Destroy(this.gameObject,2.5f);
         }

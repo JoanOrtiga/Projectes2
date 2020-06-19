@@ -147,7 +147,7 @@ public class FlyingEnemie : EnemieManager
     {
         if (HP <= 0)
         {
-            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(false, manaRecover);
+            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(true, manaRecover);
             m_Animator.SetBool("Dead", true);
             Destroy(transform.parent.gameObject,2.3f);
 
