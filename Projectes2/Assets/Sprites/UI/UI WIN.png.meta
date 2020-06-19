@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 8367f35aedc2bdb4684e01d32a5d0d21
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 9179940858690132464
+    second: UI WIN_0
+  - first:
+      213: 1321681304328702617
+    second: UI WIN_1
+  - first:
+      213: 2322236334188614054
+    second: UI WIN_2
+  - first:
+      213: -397294219246102750
+    second: UI WIN_3
+  - first:
+      213: 1370543392956058272
+    second: UI WIN_4
+  - first:
+      213: 2123212724395992594
+    second: UI WIN_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +88,147 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI WIN_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 542
+        width: 639
+        height: 481
+      alignment: 9
+      pivot: {x: 0.87558675, y: 0.93531734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9d155d293b56f70800000000000000
+      internalID: 9179940858690132464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI WIN_1
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 544
+        width: 641
+        height: 481
+      alignment: 9
+      pivot: {x: 0.87823534, y: 0.9276802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a89cac42e875210800000000000000
+      internalID: 1321681304328702617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI WIN_2
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 546
+        width: 639
+        height: 478
+      alignment: 9
+      pivot: {x: 0.87750274, y: 0.91572165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a151d764ad3a3020800000000000000
+      internalID: 2322236334188614054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI WIN_3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 65
+        width: 640
+        height: 479
+      alignment: 9
+      pivot: {x: 0.8769129, y: 0.93202233}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227158633078c7af0800000000000000
+      internalID: -397294219246102750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI WIN_4
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 67
+        width: 638
+        height: 475
+      alignment: 9
+      pivot: {x: 0.8780946, y: 0.9356604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa876654f5250310800000000000000
+      internalID: 1370543392956058272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI WIN_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 640
+        height: 481
+      alignment: 9
+      pivot: {x: 0.8845663, y: 0.9353175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216663c39ba277d10800000000000000
+      internalID: 2123212724395992594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

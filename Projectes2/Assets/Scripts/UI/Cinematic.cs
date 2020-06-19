@@ -11,5 +11,10 @@ public class Cinematic : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    
+
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

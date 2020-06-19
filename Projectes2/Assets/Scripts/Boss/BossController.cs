@@ -75,7 +75,7 @@ public class BossController : MonoBehaviour
 
     private void switchScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
     }
 
     protected void changeMov(BossStates state)
