@@ -27280,6 +27280,11 @@ PrefabInstance:
       propertyPath: restart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4042985054665698533, guid: 960bcd2393d27004197fd35f25b6ff7b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4042985054665698536, guid: 960bcd2393d27004197fd35f25b6ff7b,
         type: 3}
       propertyPath: m_LocalPosition.x
