@@ -33,7 +33,6 @@ public class NormalBullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemie"))
         {
-            print("HIT ENEMIE");
             if (other.gameObject.name == "FlyingEnemie")
             {
                 print("HIT FLYING ALEIN");
@@ -43,7 +42,6 @@ public class NormalBullet : MonoBehaviour
             }
             else if(other.gameObject.name == "meleEnemie")
             {
-                print("HIT MELE ENEMIE");
 
                 other.gameObject.transform.GetComponentInChildren<MeleEnemie>().HP = other.gameObject.GetComponentInChildren<MeleEnemie>().HP - Damage;
                 m_animator = other.gameObject.transform.GetComponentInChildren<Animator>();
@@ -52,8 +50,6 @@ public class NormalBullet : MonoBehaviour
             }
             else if (other.gameObject.name == "shootingAlien")
             {
-                print("HIT BASIC ENEMIE");
-
                 other.gameObject.GetComponent<StandardEnemie>().HP = other.gameObject.GetComponent<StandardEnemie>().HP - Damage;
 
             }

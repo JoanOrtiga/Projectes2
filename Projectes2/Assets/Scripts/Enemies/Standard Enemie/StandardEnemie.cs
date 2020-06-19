@@ -61,13 +61,11 @@ public class StandardEnemie : EnemieManager
 
         if (distance < chaseDistance && distance > shootDistance)
         {
-            print("Chase");
             
             Chase();
         }
         else if(distance <= shootDistance)
         {
-            print("shoot");
             Shoot();
         }
 

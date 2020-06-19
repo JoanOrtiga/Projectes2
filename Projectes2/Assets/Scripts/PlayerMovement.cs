@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private PhysicsMaterial2D fullFriction;
 
 
-    [HideInInspector]public float xInput;
+    [HideInInspector] public float xInput;
     private float slopeDownAngle;
     private float slopeSideAngle;
     private float lastSlopeAngle;
@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     private bool canWalkOnSlope;
     private bool canJump;
-    [HideInInspector]public bool jumpOnPaint;
-    [HideInInspector]public bool onLadder;
+    [HideInInspector] public bool jumpOnPaint;
+    [HideInInspector] public bool onLadder;
 
     private Vector2 newVelocity;
     private Vector2 newForce;
@@ -64,16 +64,15 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
 
-        //if (Input.GetKeyDown(KeyCode.B))
-        //{
-        //    GetComponent<PlayerHealth>().RecieveDmg(100000);
-        //}
-      
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GetComponent<PlayerHealth>().RecieveDmg(100000);
+        }
+
     }
 
     private void FixedUpdate()
     {
-        print(isOnSlope);
         CheckGround();
         SlopeCheck();
         ApplyMovement();
@@ -84,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (onLadder && Input.GetKey(KeyCode.W))
         {
-           GetComponent<Rigidbody2D>().gravityScale = 0;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, Input.GetAxis("Vertical") * Time.deltaTime * ladderSpeed); ;
         }
         else
@@ -119,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if (rb.velocity.y == 0.0f)
+        if (rb.velocity.y <= 0.0f)
         {
             isJumping = false;
             animator.SetBool("Jumping", false);
@@ -142,27 +141,31 @@ public class PlayerMovement : MonoBehaviour
 
     private void SlopeCheckHorizontal(Vector2 checkPos)
     {
-        RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, new Vector2(1,0), slopeCheckDistance, whatIsGround);
+        RaycastHit2D slopeHitFront = Physics2D.Raycast(checkPos, new Vector2(1, 0), slopeCheckDistance, whatIsGround);
         RaycastHit2D slopeHitBack = Physics2D.Raycast(checkPos, new Vector2(-1, 0), slopeCheckDistance, whatIsGround);
 
         if (slopeHitFront && !isJumping)
         {
-            isOnSlope = true;
-            slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
-
+            if (slopeHitFront.collider.CompareTag("stairs"))
+            {
+                isOnSlope = true;
+                slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
+            }
         }
         else if (slopeHitBack && !isJumping)
         {
-            isOnSlope = true;
+            if (slopeHitBack.collider.CompareTag("stairs"))
+            {
+                isOnSlope = true;
+                slopeSideAngle = Vector2.Angle(slopeHitBack.normal, Vector2.up);
+            }
 
-            slopeSideAngle = Vector2.Angle(slopeHitBack.normal, Vector2.up);
         }
         else
         {
             slopeSideAngle = 0.0f;
             isOnSlope = false;
         }
-
     }
 
     private void SlopeCheckVertical(Vector2 checkPos)
@@ -171,21 +174,25 @@ public class PlayerMovement : MonoBehaviour
 
         if (hit)
         {
-
-            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
-
-            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
-
-            if (slopeDownAngle != lastSlopeAngle)
+            if (hit.collider.CompareTag("stairs"))
             {
-                isOnSlope = true;
+
+
+                slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
+
+                slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+                if (slopeDownAngle != lastSlopeAngle)
+                {
+
+                    isOnSlope = true;
+                }
+
+                lastSlopeAngle = slopeDownAngle;
+
+                Debug.DrawRay(hit.point, slopeNormalPerp, Color.blue);
+                Debug.DrawRay(hit.point, hit.normal, Color.green);
             }
-
-            lastSlopeAngle = slopeDownAngle;
-
-            Debug.DrawRay(hit.point, slopeNormalPerp, Color.blue);
-            Debug.DrawRay(hit.point, hit.normal, Color.green);
-
         }
 
         if (slopeDownAngle > maxSlopeAngle || slopeSideAngle > maxSlopeAngle)
@@ -194,12 +201,17 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            canWalkOnSlope = true;
+            if (hit)
+                if (hit.collider.CompareTag("stairs"))
+                    canWalkOnSlope = true;
         }
 
         if (isOnSlope && canWalkOnSlope && xInput == 0.0f)
         {
-            rb.sharedMaterial = fullFriction;
+            if (hit)
+                if (hit.collider.CompareTag("stairs"))
+                    rb.sharedMaterial = fullFriction;
+
         }
         else
         {
@@ -221,9 +233,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void ApplyMovement()
-    {    
+    {
         if (isGrounded && !isOnSlope && !isJumping) //if not on slope
         {
+
             newVelocity.Set(movementSpeed * xInput, -7.0f);
             rb.velocity = newVelocity;
         }
@@ -252,7 +265,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, slopeCheckDistance);
 
         Vector3 pos = groundCheck.position;
-        Gizmos.DrawLine(pos, pos + new Vector3(1 * slopeCheckDistance, 0)); 
+        Gizmos.DrawLine(pos, pos + new Vector3(1 * slopeCheckDistance, 0));
         Gizmos.DrawLine(pos, pos + new Vector3(-1 * slopeCheckDistance, 0));
 
     }

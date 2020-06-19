@@ -9,7 +9,7 @@ public class SlopeGoDown : MonoBehaviour
     public float time1;
     public float time2;
     
-    private float waitTime;
+    private float waitTime = 0;
     private float timer;
 
     private bool fliper; //como el delfin
@@ -44,20 +44,20 @@ public class SlopeGoDown : MonoBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            effector.rotationalOffset = 0f;
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    effector.rotationalOffset = 0f;
 
-        }
+        //}
 
         if (fliper)
         {
             if (timer <= 0)
             {
                 effector.rotationalOffset = 0f;
-                fliper = false;
                 timer = time2;
-
+                fliper = false;
+                waitTime = 0;
             }
             else
             {
