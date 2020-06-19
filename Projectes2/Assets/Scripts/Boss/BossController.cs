@@ -16,10 +16,11 @@ public class BossController : MonoBehaviour
     protected float StartX = 6.28f;
     protected float EndX = 32.55f;
     public float HP;
-    private float maxHP;
+    public float maxHP;
     protected float bSpeed=10f;
 
-    public Image hpBar;
+    [SerializeField]
+    private Image hpBar;
     public float lerpHpBar = 0.1f;
     
     // Use this for initialization
@@ -56,6 +57,8 @@ public class BossController : MonoBehaviour
        if(HP <= 0)
         {
             hpBar.fillAmount = 0;
+
+            SceneManager.LoadScene(0);
             Destroy(gameObject); 
         }
     }

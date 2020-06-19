@@ -15,6 +15,8 @@ public class AtakOrbitalStrike : BossController
     public GameObject shootPoint;
     private float time;
 
+
+
     // Start is called before the first frame update
     private void Start()
     {

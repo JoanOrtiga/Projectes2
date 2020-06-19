@@ -185,8 +185,6 @@ public class PlayerShot : MonoBehaviour
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
-
-                GameObject.FindGameObjectWithTag("AudioManager")
                 if(audioManager!=null)
                     audioManager.Play("PlayerAtack");
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
