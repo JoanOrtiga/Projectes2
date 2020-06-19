@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StainManager : MonoBehaviour
 {
+    public float manaXSecond;
     public float manaMax;
     [HideInInspector]
     public float manaMana; //Variable recieves this name because https://www.youtube.com/watch?v=9ytei6bu7kQ
@@ -27,6 +28,8 @@ public class StainManager : MonoBehaviour
 
     void Update()
     {
+        manaMana += manaXSecond * Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             manaMana += 100;
@@ -68,7 +71,7 @@ public class StainManager : MonoBehaviour
             case PaintColors.blue:
                 PortalList.Add(stain);
                 break;
-            case PaintColors.yellow:
+            case PaintColors.green:
                 JumpList.Add(stain);
                 break;
             case PaintColors.orange:

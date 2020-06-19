@@ -19,8 +19,8 @@ public class StandardEnemie : EnemieManager
 
     private float actualTime;
     private float distance;
-    
 
+    public int manaRecover = 50;
 
     void Start()
     {
@@ -55,13 +55,10 @@ public class StandardEnemie : EnemieManager
 
     void checkDistance()
     {
-        
-        
         //print((distance < chaseDistance && distance > shootDistance)+ " distance " + (distance) + " chase distance " + (chaseDistance) + " Shoot distance " + (shootDistance));
 
         if (distance < chaseDistance && distance > shootDistance)
         {
-            
             Chase();
         }
         else if(distance <= shootDistance)
@@ -84,10 +81,9 @@ public class StandardEnemie : EnemieManager
 
     void Death()
     {
-       
-
         if (HP <= 0)
         {
+            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(false, manaRecover);
             Destroy(this.gameObject);
         }
     }
@@ -107,8 +103,6 @@ public class StandardEnemie : EnemieManager
 
     void Flip()
     {
-
-
         if (target.transform.position.x > this.transform.position.x)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
@@ -117,6 +111,5 @@ public class StandardEnemie : EnemieManager
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-    }
-        
+    }  
 }
