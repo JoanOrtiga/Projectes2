@@ -32,16 +32,31 @@ public class SceneManagment : MonoBehaviour
         {
             SceneSelector();
         }
-        if (currentScene == "MainMenu" && !isPlaying && menu)
+        if (currentScene == "MainMenu" &&  menu)
         {
             FindObjectOfType<AudioManager>().Play("MenuSong");
             isPlaying = true;
         }
-        else if (currentScene == "Nivell1" && !isPlaying && !menu)
+        else if (currentScene == "Nivell1" && !menu)
         {
+            FindObjectOfType<AudioManager>().Stop("Cinematica");
+
             FindObjectOfType<AudioManager>().Play("InGameSong");
             isPlaying = true;
 
+        }
+        else if (currentScene == "Cinematic" && !menu)
+        {
+            FindObjectOfType<AudioManager>().Stop("MenuSong");
+            FindObjectOfType<AudioManager>().Play("Cinematica");
+            isPlaying = true;
+        }
+        else if (currentScene == "BossFight" && !menu)
+        {
+            FindObjectOfType<AudioManager>().Play("BossAmbient");
+            FindObjectOfType<AudioManager>().Stop("InGameSong");
+
+            isPlaying = true;
         }
     }
 
@@ -51,9 +66,7 @@ public class SceneManagment : MonoBehaviour
     }
     public void NextScene()
     {
-        FindObjectOfType<AudioManager>().Stop("MenuSong");
         SceneManager.LoadScene(1);
         menu = false;
-        isPlaying = false;
     }
 }
