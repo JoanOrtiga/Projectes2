@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject PauseCanvas;
+    public GameObject pauseCanvas;
+    public GameObject mouseCanvas;
 
     private void Start()
     {
-        PauseCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
     }
     public void pauseButton()
     {
         Time.timeScale = 0f;
-        PauseCanvas.SetActive(true);
+        
+        pauseCanvas.SetActive(true);
+        mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = false;
     }
 
     public void resumeButton()
     {
-        PauseCanvas.SetActive(false);
+        pauseCanvas.SetActive(false);
+        mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = true;
+
         Time.timeScale = 1f;
     }
 
