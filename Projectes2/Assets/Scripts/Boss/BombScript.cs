@@ -35,7 +35,7 @@ public class BombScript : MonoBehaviour
             }
             Instantiate(explosion, transform.position, transform.rotation);
 
-            FindObjectOfType<AudioManager>().Play("BossBomb");
+
 
             Destroy(gameObject);
         }

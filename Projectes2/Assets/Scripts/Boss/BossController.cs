@@ -22,6 +22,10 @@ public class BossController : MonoBehaviour
     [SerializeField]
     private Image hpBar;
     public float lerpHpBar = 0.1f;
+
+    public GameObject explosion;
+
+    private GameObject a;
     
     // Use this for initialization
     void Start()
@@ -58,9 +62,20 @@ public class BossController : MonoBehaviour
         {
             hpBar.fillAmount = 0;
 
-            SceneManager.LoadScene(0);
-            Destroy(gameObject); 
+            a = Instantiate(explosion, transform);
+            Invoke("destroyEffects", 0.917f);
+            Invoke("switchScene", 2f);
         }
+    }
+
+    private void destroyEffects()
+    {
+        Destroy(a);
+    }
+
+    private void switchScene()
+    {
+        SceneManager.LoadScene(0);
     }
 
     protected void changeMov(BossStates state)

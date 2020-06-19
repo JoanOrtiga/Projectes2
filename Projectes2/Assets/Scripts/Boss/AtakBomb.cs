@@ -104,7 +104,8 @@ public class AtakBomb : BossController
     void fire()
     {
         Instantiate(bomb, bombShooter.transform.position, Quaternion.identity);
-        audioManager.Play("BossBombDrop");
+        if(audioManager != null)
+            audioManager.Play("BossBombDrop");
         currentBomb++;
     }
     public void ChangeState()

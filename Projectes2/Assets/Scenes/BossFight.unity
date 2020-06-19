@@ -12351,6 +12351,12 @@ PrefabInstance:
       propertyPath: lerpHpBar
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5619325120886869097, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1277612791923929983, guid: 99c8eb6c042fc664e907c3cc87d9c2b2,
+        type: 3}
     - target: {fileID: 5619325120886869099, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
       propertyPath: m_Layer
@@ -27395,6 +27401,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Over Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4042985054715478122, guid: 960bcd2393d27004197fd35f25b6ff7b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042985054715478122, guid: 960bcd2393d27004197fd35f25b6ff7b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 177
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042985055897436252, guid: 960bcd2393d27004197fd35f25b6ff7b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042985055897436252, guid: 960bcd2393d27004197fd35f25b6ff7b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -329
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 960bcd2393d27004197fd35f25b6ff7b, type: 3}
 --- !u!224 &1407835827 stripped
@@ -32935,7 +32961,7 @@ PrefabInstance:
     - target: {fileID: 3910239315091240617, guid: f82c63497cd15584c84d93b20f91f8c8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3910239315091240631, guid: f82c63497cd15584c84d93b20f91f8c8,
         type: 3}
