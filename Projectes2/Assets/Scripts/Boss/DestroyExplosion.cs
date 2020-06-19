@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class DestroyExplosion : MonoBehaviour
 {
-    private float time;
-    private void Start()
-    {
-        time = 2;
-    }
+    public float time = 2;
+
     private void Update()
     {
         time -= Time.deltaTime;

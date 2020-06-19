@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8260555326964689570
-    second: anim Raig_0
+    second: anim Raig_4
   - first:
       213: -408302196446564002
     second: anim Raig_1
@@ -28,13 +28,13 @@ TextureImporter:
     second: anim Raig_7
   - first:
       213: 5041928929396883664
-    second: anim Raig_8
+    second: anim Raig_1
   - first:
       213: 3523896463331959994
-    second: anim Raig_9
+    second: anim Raig_2
   - first:
       213: -6692595634570935959
-    second: anim Raig_10
+    second: anim Raig_3
   - first:
       213: 3095000336090728807
     second: anim Raig_11
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: anim Raig_8
+      name: anim Raig_1
       rect:
         serializedVersion: 2
         x: 91
@@ -143,7 +143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim Raig_9
+      name: anim Raig_2
       rect:
         serializedVersion: 2
         x: 471
@@ -164,7 +164,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim Raig_10
+      name: anim Raig_3
       rect:
         serializedVersion: 2
         x: 966
@@ -185,7 +185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim Raig_0
+      name: anim Raig_4
       rect:
         serializedVersion: 2
         x: 1761

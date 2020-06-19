@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 888996682}
+    - target: {fileID: 7408939142167786688, guid: fa12c827e4a58d24fad33b835f9681c4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7408939142167786691, guid: fa12c827e4a58d24fad33b835f9681c4,
         type: 3}
       propertyPath: m_Name
@@ -424,7 +429,7 @@ Transform:
   - {fileID: 101383508}
   - {fileID: 378898879}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &178762286
 GameObject:
@@ -5675,6 +5680,11 @@ PrefabInstance:
       propertyPath: isInPause
       value: 
       objectReference: {fileID: 1242362760}
+    - target: {fileID: 6376559356907280290, guid: 1aa2063e790518e4d9fa25206051d10b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6376559356907280293, guid: 1aa2063e790518e4d9fa25206051d10b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5788,6 +5798,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 371822883}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &371822885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6376559356907280289, guid: 1aa2063e790518e4d9fa25206051d10b,
+    type: 3}
+  m_PrefabInstance: {fileID: 371822883}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256076957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94044aa6f5fc9344084bb3f528787e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &377815485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5868,7 +5890,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -1359610511
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &378898878
 GameObject:
@@ -6140,7 +6162,7 @@ PrefabInstance:
     - target: {fileID: 2593017802536644997, guid: 2dce40d7469606444be6ae975e9a7af1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2593017802536644997, guid: 2dce40d7469606444be6ae975e9a7af1,
         type: 3}
@@ -12287,6 +12309,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5619325120886869074, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
+        type: 3}
+      propertyPath: OrbitalAtack
+      value: 
+      objectReference: {fileID: 6184451762685636208, guid: 073b45d3250f42840a294a668d2536e2,
+        type: 3}
     - target: {fileID: 5619325120886869096, guid: 4f7f86a6926d7534c8ca83e50e706f7d,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -17963,11 +17991,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8885958464574832756, guid: e81dd4db78e990742b19e95d4198a91c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8885958464574832757, guid: e81dd4db78e990742b19e95d4198a91c,
         type: 3}
       propertyPath: mouseCanvas
       value: 
       objectReference: {fileID: 1544033618}
+    - target: {fileID: 8885958464574832757, guid: e81dd4db78e990742b19e95d4198a91c,
+        type: 3}
+      propertyPath: paintWheel
+      value: 
+      objectReference: {fileID: 371822885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e81dd4db78e990742b19e95d4198a91c, type: 3}
 --- !u!114 &1242362760 stripped
@@ -27290,6 +27328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814606128917601804, guid: 0e7babffa12bd5448966e8862a6d3e31,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e7babffa12bd5448966e8862a6d3e31, type: 3}

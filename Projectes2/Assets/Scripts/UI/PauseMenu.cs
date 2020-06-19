@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
     public GameObject mouseCanvas;
+    public PaintWheel paintWheel;
 
     public bool gamePaused;
 
@@ -16,8 +17,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void pauseButton()
     {
+        paintWheel.shootable = false;
         Time.timeScale = 0f;
-
         gamePaused = true;
         pauseCanvas.SetActive(true);
         mouseCanvas.GetComponent<MousePointer>().ShootingMouseBool = false;
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1f;
         gamePaused = false;
+        paintWheel.shootable = true;
     }
 
     public void exitButton()
