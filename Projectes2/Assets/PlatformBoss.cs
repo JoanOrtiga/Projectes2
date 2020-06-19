@@ -12,16 +12,17 @@ public class PlatformBoss : MonoBehaviour
     private bool moving = true;
     private bool goUp = false;
     public GameObject reference;
+    SpriteMask a;
 
     void Start()
     {
         startY = transform.position.y;
         StartCoroutine(ChangePlatform());
-        
     }
 
     void Update()
     {
+
         if (moving)
         {
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x, (float)(startY + Mathf.Sin(Time.time * speed) * floatSpan / 2.0)), 0.05f);

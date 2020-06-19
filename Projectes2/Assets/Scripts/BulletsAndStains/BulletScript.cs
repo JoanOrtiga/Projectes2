@@ -52,7 +52,7 @@ public class BulletScript : MonoBehaviour
 
             GameObject newstain = Instantiate(stainToSpawn, this.gameObject.transform.position, this.gameObject.transform.rotation);
             manager.GetComponent<StainManager>().newStain(newstain, newstain.GetComponent<StainColors>().stainColor);
-            newstain.transform.parent = other.transform;
+            newstain.transform.parent = manager.transform;
         }
 
 

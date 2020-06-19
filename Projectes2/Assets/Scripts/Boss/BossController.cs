@@ -12,7 +12,7 @@ public class BossController : MonoBehaviour
 {
     Rigidbody2D rb2d;
 
-    protected float StartY= 7.04f;
+    protected float StartY= 9.5f;
     protected float StartX = 6.28f;
     protected float EndX = 32.55f;
     public float HP;
