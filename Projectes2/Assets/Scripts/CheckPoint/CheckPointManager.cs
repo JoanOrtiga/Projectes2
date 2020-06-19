@@ -14,6 +14,9 @@ public class CheckPointManager : MonoBehaviour
     public GameObject enemiesItem;
     public GameObject spawnersItem;
 
+
+    public GameObject mouse;
+
     private List<GameObject> enemiesCollection = new List<GameObject>();
     private List<Vector2> enemiesCollectionPosition = new List<Vector2>();
 
@@ -53,6 +56,9 @@ public class CheckPointManager : MonoBehaviour
         {
             spawnersItem.transform.GetChild(i).gameObject.SetActive(true);
         }
+
+        mouse.GetComponent<MousePointer>().ShootingMouseBool = true;
+        Time.timeScale = 1;
     }
 
     public void GetCheckPoint(Vector2 pos)

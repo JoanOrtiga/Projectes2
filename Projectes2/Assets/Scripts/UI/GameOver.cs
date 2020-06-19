@@ -10,27 +10,45 @@ public class GameOver : MonoBehaviour
 
     private GameObject player;
     public GameObject mouse;
+
+
+    public GameObject[] gameOver;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        this.gameObject.SetActive(false);
+        foreach (GameObject item in gameOver)
+        {
+            item.SetActive(false);
+        }
     }
 
     public void DeathScreen()
     {
+        
         mouse.GetComponent<MousePointer>().ShootingMouseBool = false;
-        this.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0.1f;
+        foreach (GameObject item in gameOver)
+        {
+            item.SetActive(true);
+        }
     }
 
 
     public void exitGame()
     {
+        foreach (GameObject item in gameOver)
+        {
+            item.SetActive(true);
+        }
         SceneManager.LoadScene(0);
     }
 
     public void restartGame()
     {
         restart.Invoke();
+        foreach (GameObject item in gameOver)
+        {
+            item.SetActive(false);
+        }
     }
 }
