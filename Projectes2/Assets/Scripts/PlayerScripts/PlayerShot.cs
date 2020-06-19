@@ -29,12 +29,13 @@ public class PlayerShot : MonoBehaviour
 
     public GameObject GunLimb;
 
+    public AudioManager audioManager;
 
     public float bulletStrenght = 50f;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioManager = FindObjectOfType<AudioManager>();
 
     }
 
@@ -184,7 +185,8 @@ public class PlayerShot : MonoBehaviour
             //right mouse button
             if (Input.GetMouseButtonDown(1))
             {
-                FindObjectOfType<AudioManager>().Play("PlayerAtack");
+                if(audioManager!=null)
+                    audioManager.Play("PlayerAtack");
                 //GameObject bulletRight = Instantiate(rightGun, shotPoint.position, shotPoint.rotation);
                 //bulletRight.GetComponent<Rigidbody2D>().velocity = difference * bulletStrenght;
 
