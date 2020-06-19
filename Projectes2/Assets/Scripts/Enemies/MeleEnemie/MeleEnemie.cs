@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MeleEnemie : EnemieManager
 {
-    
-    
     public float patrolSpeed = 3f;
     public float ChaseSpeed = 8f;
     public Transform[] patrolPoints;
@@ -25,6 +23,8 @@ public class MeleEnemie : EnemieManager
     Vector3 currentPos;
     private bool checkDirectionBool = true;
 
+    public int manaRecover = 50;
+
 
     void Start()
     {
@@ -40,31 +40,23 @@ public class MeleEnemie : EnemieManager
         distance = (player.transform.position.x - transform.position.x);
         distance = Mathf.Abs(distance);
 
-
-
         if (HP <= 0)
         {
+            GameObject.FindGameObjectWithTag("BulletManager").GetComponent<StainManager>().manaCalculator(false, manaRecover);
             animator.SetBool("Dead", true);
-
             Destroy(this.gameObject, 2.5f);
         }
 
-
         checkDirection();
         patrol();
-
-
-
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (collision.CompareTag("Player"))
         {
             Chase();
             Attack();
-
         }
 
         if (player.transform.position.x < this.transform.position.x)
@@ -95,8 +87,6 @@ public class MeleEnemie : EnemieManager
             animator.SetBool("Attacking", false);
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, transform.position.y, transform.position.z), ChaseSpeed * Time.deltaTime);
         }
-
-
     }
 
 
@@ -158,8 +148,4 @@ public class MeleEnemie : EnemieManager
         }
         
     }
-
-
-
-
 }
